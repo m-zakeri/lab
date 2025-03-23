@@ -28,9 +28,9 @@ jobs:
             mkdocs-material-
       - run: |
            python -m pip install --upgrade pip
-           pip install -r 'requirements.txt'
            pip install "mkdocs-material[imaging]"
            pip install mkdocs-glightbox
+#           pip install -r 'requirements.txt'
 
 # Step 4: Deploy each language
       - name: Deploy Persian site
@@ -44,12 +44,11 @@ jobs:
 
       - name: Deploy Persian site
         run: |
-          git checkout gh-page-fa
+          git checkout --orphan gh-page-fa
           cp -R site/* .
           git add .
           git commit -m "Deploy MkDocs site manually"
           git push origin gh-page-fa --force
-
 #         mkdocs gh-deploy --dirty --config-file mkdocs.yml --site-dir ./site --force --remote-branch gh-page-fa
 
 #      - name: Deploy English site
