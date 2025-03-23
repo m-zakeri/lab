@@ -1,0 +1,45 @@
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache 
+          restore-keys: |
+            mkdocs-material-
+      - run: |
+           python -m pip install --upgrade pip
+           pip install "mkdocs-material[imaging]"
+           pip install mkdocs-glightbox
+
+# Step 4: Deploy each language
+      - name: Deploy Persian site
+        run: |
+          mkdocs build -f mkdocs.yml
+
+      - name: Deploy English site
+        run: |
+           mkdocs build -f mkdocs_en.yml
+#           mkdocs gh-deploy -f mkdocs_en.yml --force --remote-branch gh-page-en
+
+      - name: Deploy All site
+        run: |
+          mkdocs gh-deploy --dirty -f mkdocs.yml --force --remote-branch gh-page-fa
