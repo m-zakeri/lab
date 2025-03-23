@@ -44,8 +44,14 @@ jobs:
 
       - name: Deploy Persian site
         run: |
-          mkdocs gh-deploy --dirty --config-file mkdocs.yml --site-dir ./site --force --remote-branch gh-page-fa
+          git checkout gh-page-fa
+          cp -R site/* .
+          git add .
+          git commit -m "Deploy MkDocs site manually"
+          git push origin gh-page-fa --force
 
-      - name: Deploy English site
-        run: |
-          mkdocs gh-deploy --dirty --config-file mkdocs_en.yml --site-dir ./site/en --force --remote-branch gh-page-fa
+#         mkdocs gh-deploy --dirty --config-file mkdocs.yml --site-dir ./site --force --remote-branch gh-page-fa
+
+#      - name: Deploy English site
+#        run: |
+#          mkdocs gh-deploy --dirty --config-file mkdocs_en.yml --site-dir ./site/en --force --remote-branch gh-page-fa
