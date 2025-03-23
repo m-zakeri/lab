@@ -1,17 +1,16 @@
 # mkdocs serve -f mkdocs_en.yml --dev-addr=127.0.0.1:8001
 site_name: Intelligent Software Engineering Laboratory
-site_url: https://m-zakeri.github.io/services/en/
+site_url: https://m-zakeri.github.io/lab/en/
 site_description: Intelligent Software Engineering Laboratory - Tehran Polytechnic
 site_author: Morteza Zakeri
 copyright: 2025 - 2024 &copy; all rights reserved.  Intelligent Software Engineering Laboratory at Tehran Polytechnic
 
-site_dir: 'site/en'
+site_dir: 'site/en/'
 docs_dir: docs/en/
 
 theme:
     name: material
     language: en
-
     font:
         text: Roboto
         code: Roboto Mono
