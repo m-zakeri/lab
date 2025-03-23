@@ -117,8 +117,7 @@ plugins:
       pagination: true
       pagination_per_page: 10
 
-  - search:
-      lang: fa
+  - search
 
   - social:
       enabled: !ENV [CI, false]

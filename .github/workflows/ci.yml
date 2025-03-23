@@ -38,7 +38,7 @@ jobs:
       - name: Deploy English site
         run: |
            mkdocs build -f mkdocs_en.yml
-#           mkdocs gh-deploy -f mkdocs_en.yml --force --remote-branch gh-page-en
+#          mkdocs gh-deploy -f mkdocs_en.yml --force --remote-branch gh-page-en
 
       - name: Deploy All site
         run: |
