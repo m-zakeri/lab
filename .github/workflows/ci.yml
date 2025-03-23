@@ -45,4 +45,4 @@ jobs:
       - name: Deploy All site
         run: |
           mkdocs gh-deploy --config-file mkdocs.yml --site-dir ./site --force --remote-branch gh-page-fa
-          mkdocs gh-deploy --config-file mkdocs.yml --site-dir ./site/en --force --remote-branch gh-page-fa
+          mkdocs gh-deploy --config-file mkdocs_en.yml --site-dir ./site/en --force --remote-branch gh-page-fa
