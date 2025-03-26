@@ -102,6 +102,7 @@ nav:
     - خدمات: services.md
     - محصولات: products.md
     - افراد: people.md
+    - دوره های آموزشی: courses.md
     - بلاگ:
         - blog/index.md
     - گزارش خطا: 'https://github.com/m-zakeri/lab/issues'

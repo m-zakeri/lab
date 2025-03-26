@@ -8,39 +8,49 @@
 
     ---
 
-    سعی کنید
-    [`mkdocs-material`](#) را
-    [`pip`](#) and get up
-    and running in minutes
+    امکان نصب سریع و آسان بر روی هر سیستم عامل و اسکن کلیه فایلهای اجرایی و غیر اجرایی در سریع ترین زمان
 
-    [:octicons-arrow-right-24: Getting started](#)
+    [:octicons-arrow-left-24: شروع کنید](#)
 
--   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
+-   :fontawesome-brands-markdown:{ .lg .middle } __تشخیص روز صفر__
 
     ---
 
-    Focus on your content and generate a responsive and searchable static site
+    تشخیص آسیب پذیری های ناشناخته و روز صفر به صورت بلادرنگ با استفاده از الگوریتم های یادگیری ماشین
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-left-24: بیشتر بخوانید](#)
 
--   :material-format-font:{ .lg .middle } __Made to measure__
-
-    ---
-
-    Change the colors, fonts, language, icons, logo and more with a few lines
-
-    [:octicons-arrow-left-24: Customization](#)
-
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+-   :material-format-font:{ .lg .middle } __تشخیص بدافزارهای غیر اجرایی__
 
     ---
 
-    Material for MkDocs is licensed under MIT and available on [GitHub]
+    قابلیت تشخیص بدافزارهای نهفته در فایل های غیر اجرایی مانند فایل های پی.دی.اف و آفیس 
 
-    [:octicons-arrow-left-24: License](#)
+    [:octicons-arrow-left-24: بیشتر بخوانید](#)
+
+-   :material-scale-balance:{ .lg .middle } __تشخیص خانواده__
+
+    ---
+
+    مقایسه با پایگاه داده بزرگ و بروز فایل های مخرب و تحلیل رفتار و تشخیص خانواده بدافزار
+
+    [:octicons-arrow-left-24: بیشتر بخوانید](#)
 
 </div>
 
 
+---
+
 ## موتور بازآرایی خودکار
 
+<div class="grid cards" markdown>
+
+-   :material-clock-fast:{ .lg .middle } __موتور بازآرایی خودکار CodART__
+
+    ---
+    
+    قابلیت تشخیص و اعمال بیش از 18 عملگر بازآرایی نرم افزار و افزایش سرعت تیم های تضمین کیفیت 
+
+    [مشاهده](  https://m-zakeri.github.io/CodART){target="_blank" .md-button }
+
+</div>
