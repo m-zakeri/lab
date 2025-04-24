@@ -80,7 +80,9 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  - pymdownx.tasklist
+  - pymdownx.tasklist:
+      clickable_checkbox: true
+
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
