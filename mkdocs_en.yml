@@ -105,6 +105,9 @@ nav:
     - Products: products.md
     - People: people.md
     - Checklists: checklist/index.md
+        - BSc: checklist/bsc_project.md
+        - MSc: checklist/mcs_thesis.md
+        - Phd: checklist/phd_dissertation.md
     - Blog:
         - blog/index.md
     - Issues: 'https://github.com/m-zakeri/lab/issues'
