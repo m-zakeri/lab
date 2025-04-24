@@ -66,6 +66,7 @@ Students should review each item before submitting their M.Sc. proposal to me.
 - [ ] The proposal has been proofread and reviewed multiple times for accuracy and coherence
 
 
+---
 
 ## M.Sc. Thesis Defense Submission Checklist
 
