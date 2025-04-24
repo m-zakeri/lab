@@ -115,4 +115,10 @@ This checklist ensures that all required materials are submitted and are in a re
 - [ ] Compliance with **file naming conventions** specified by the department  
 - [ ] Submission of all materials through the required platform or method (_e.g._, email, repository, physical medium)  
 
+### **8. Poster for Visual Presentation** (Optional) 
+- [X] A well-designed **poster** summarizing the thesis  
+- [X] Highlights key areas such as objectives, methodology, key results, and contributions  
+- [X] Uses **clear and readable formatting** with relevant visuals  
+- [X] Prepared for **conference or exhibition presentation** (if applicable)  
+
 ---
