@@ -3,7 +3,7 @@ site_name: Intelligent Software Engineering Laboratory
 site_url: https://m-zakeri.github.io/lab/en/
 site_description: Intelligent Software Engineering Laboratory - Tehran Polytechnic
 site_author: Morteza Zakeri
-copyright: 2025 - 2024 &copy; all rights reserved.  Intelligent Software Engineering Laboratory at Tehran Polytechnic
+copyright: 2024 - 2025 &copy; all rights reserved.  Intelligent Software Engineering Laboratory at Tehran Polytechnic
 
 site_dir: 'site/en/'
 docs_dir: docs/en/
