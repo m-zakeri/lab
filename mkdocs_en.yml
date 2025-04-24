@@ -30,6 +30,7 @@ theme:
       - navigation.top
       - navigation.path
       - navigation.footer
+      - navigation.sections
       - toc.follow
       - toc.integrate
       # setup the search -----------------------------------------
@@ -92,6 +93,7 @@ markdown_extensions:
   #- pymdownx.blocks.caption
 
   - toc:
+      permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
