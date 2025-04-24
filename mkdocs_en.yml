@@ -99,6 +99,7 @@ nav:
     - Services: services.md
     - Products: products.md
     - People: people.md
+    - Checklists: checklist/index.md
     - Blog:
         - blog/index.md
     - Issues: 'https://github.com/m-zakeri/lab/issues'
