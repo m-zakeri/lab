@@ -1,4 +1,4 @@
-# 📌 M.Sc. Thesis 
+# 📌 Ph.D. Dissertation
 
 
 ## Proposal Quality Assessment Checklist 
@@ -19,7 +19,7 @@ Students should review each item before submitting their M.Sc. proposal to me.
 
 ###  **2. Research Problem and Objectives**
 - [ ] Clearly defines a **significant and novel research problem** with academic or industrial relevance
-- [ ] At least _three_ contributions (**one major contribution** and **two minor contributions**) are mentioned and listed the introduction
+- [ ] At least _four_ contributions (**two major contributions** and **two minor contributions**) are mentioned and listed in the introduction
 - [ ] Objectives are **precise, measurable, and aligned with the research problem**  
 - [ ] Proposal explains why the problem is worth investigating and provides a **gap analysis**  
 
@@ -105,8 +105,8 @@ This checklist ensures that all required materials are submitted and are in a re
 - [ ] Includes visuals like charts, graphs, and tables for effective communication  
 - [ ] Proofread and rehearsed for clarity and timing  
 
-### **6. Supporting Documents** (Optional)
-- [X] Copies of **published papers or conference presentations** based on the thesis work (if any)  
+### **6. Supporting Documents**
+- [] Copies of **published papers or conference presentations** based on the thesis work (if any)  
 - [X] Permission letters for using proprietary or third-party datasets/tools (if applicable)  
 - [X] Ethics approval forms for human or animal studies (if applicable)  
 
