@@ -1,5 +1,7 @@
 # Checklists
 
+## Welcome
+
 Dear Students,
 
 Welcome! I am honored that you have selected me as your referee or thesis supervisor. Guiding you through this pivotal stage of your academic journey is a responsibility I take with great enthusiasm and dedication. My aim is to not only support you in meeting the requirements of your research but also to help you cultivate critical thinking, technical skills, and a professional approach that will serve you well beyond this thesis.
@@ -29,6 +31,6 @@ Submit the completed checklist alongside your proposal or thesis as part of the 
 
 
 ### Ph.D. students
-* [Ph.D. proposal checklist](phd_dissertation.md){target="_blank"}
+* [Ph.D. dissertation proposal checklist](phd_dissertation.md){target="_blank"}
 * [Ph.D. dissertation defense checklist](phd_dissertation.md){target="_blank"}
 

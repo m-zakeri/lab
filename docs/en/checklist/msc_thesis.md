@@ -8,7 +8,7 @@ A well-structured proposal is essential for establishing a strong research found
 Students should review each item before submitting their M.Sc. proposal to me.
 
 ### **1. General Structure and Formatting**
-- [x] Title page includes the thesis title, student’s name, supervisor’s name, and institution details  
+- [ ] Title page includes the thesis title, student’s name, supervisor’s name, and institution details  
 - [ ] Uses correct formatting style (_e.g._, IEEE, ACM, APA) as required by the department  
 - [ ] Page numbering, font consistency, and margins are properly set  
 - [ ] The English font size is 2pt smaller than the Persian font size (if bilingual)  
@@ -69,7 +69,7 @@ Students should review each item before submitting their M.Sc. proposal to me.
 
 ## M.Sc. Thesis Defense Submission Checklist
 
-This checklist ensures that all required materials are submitted and are in a ready state for review before the **M.Sc. thesis viva session**. 
+This checklist ensures that all required materials are submitted and are in a ready state for review before the **M.Sc. thesis viva session**. Optional items marked. 
 
 ### **1. Thesis Document**
 - [ ] Finalized thesis document adhering to the **department’s formatting guidelines**  

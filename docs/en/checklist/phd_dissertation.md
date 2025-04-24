@@ -1,4 +1,4 @@
-# 📌 Ph.D. Dissertation
+# Ph.D. Dissertation
 
 
 ## Proposal Quality Assessment Checklist 
@@ -69,7 +69,7 @@ Students should review each item before submitting their M.Sc. proposal to me.
 
 ## M.Sc. Thesis Defense Submission Checklist
 
-This checklist ensures that all required materials are submitted and are in a ready state for review before the **M.Sc. thesis viva session**. 
+This checklist ensures that all required materials are submitted and are in a ready state for review before the **M.Sc. thesis viva session**. Optional items marked. 
 
 ### **1. Thesis Document**
 - [ ] Finalized thesis document adhering to the **department’s formatting guidelines**  
@@ -106,7 +106,7 @@ This checklist ensures that all required materials are submitted and are in a re
 - [ ] Proofread and rehearsed for clarity and timing  
 
 ### **6. Supporting Documents**
-- [] Copies of **published papers or conference presentations** based on the thesis work (if any)  
+- [ ] Copies of **published papers or conference presentations** based on the thesis work (if any)  
 - [X] Permission letters for using proprietary or third-party datasets/tools (if applicable)  
 - [X] Ethics approval forms for human or animal studies (if applicable)  
 

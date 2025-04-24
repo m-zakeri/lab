@@ -67,7 +67,7 @@ Students should review each item before submitting their B.Sc. proposal to me.
 
 ## Project Quality Assessment Checklist
 
-This checklist ensures that all required materials are submitted and are in a ready state for review before your **B.Sc. project viva session**. Refer to the above checklist plus the following items:
+This checklist ensures that all required materials are submitted and are in a ready state for review before your **B.Sc. project viva session**. Refer to the above checklist plus the following items (Optional items marked):
 
 
 ### **1. Project Document**
