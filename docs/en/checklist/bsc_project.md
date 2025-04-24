@@ -60,7 +60,7 @@ My students should review each item before submitting their B.Sc. proposal to me
 ### **9. Supervisor-Specific Requirements**
 - [ ] Adheres to any **guidelines set by the supervisor or department**
 - [ ] Includes any additional materials (_e.g._, project requirements, feasibility study)
-- [ ] Proposal has been reviewed and proofread multiple times before submission for review
+- [ ] The proposal has been reviewed and proofread multiple times before submission for review
 
 
 
