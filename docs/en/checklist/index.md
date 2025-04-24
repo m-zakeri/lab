@@ -22,12 +22,12 @@ Submit the completed checklist alongside your proposal or thesis as part of the 
 
 ### B.Sc. students
 * [B.Sc. project proposal checklist](bsc_project.md){target="_blank"}
-* [B.Sc. project defense checklist](bsc_project.md){target="_blank"}
+* [B.Sc. project defense checklist](bsc_project.md#project-quality-assessment-checklist){target="_blank"}
 
 
 ### M.Sc. students
 * [M.Sc. thesis proposal checklist](msc_thesis.md){target="_blank"}
-* [M.Sc. thesis defense checklist](msc_thesis.md){target="_blank"}
+* [M.Sc. thesis defense checklist](msc_thesis.md#msc-thesis-defense-submission-checklist){target="_blank"}
 
 
 ### Ph.D. students
