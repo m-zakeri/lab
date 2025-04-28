@@ -31,11 +31,12 @@ theme:
       - navigation.tracking
       - navigation.tabs
       - navigation.tabs.sticky
+#      - navigation.sections
       - navigation.top
       - navigation.path
       - navigation.footer
       - toc.follow
-      - toc.integrate
+#      - toc.integrate
       # setup the search -----------------------------------------
       - search.suggest # search suggest completion
       - search.highlight # search highlight
@@ -111,6 +112,7 @@ nav:
         - people/index.md
     - بلاگ:
         - blog/index.md
+    - پرسش‌های متداول: faq.md
     - گزارش خطا: 'https://github.com/m-zakeri/lab/issues'
 
 
