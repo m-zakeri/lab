@@ -112,6 +112,6 @@ To order services, please contact the lab using the contact information below:
 ### How to Order Services
 1. **Review the list of services** and select your desired service  
 2. **Find the corresponding service code** from the provided list  
-3. **Send your order request** via email to `zakeri@aut.ac.ir` or by calling the lab at ۰۲۱۶۴۵۴۵۱۰۸  
+3. **Send your order request** via email to `zakeri@aut.ac.ir` or by calling the lab at +98(21)64545108  
 4. **Have the lab team review the details** and provide additional explanations  
 5. **Execute the order** and receive related reports
