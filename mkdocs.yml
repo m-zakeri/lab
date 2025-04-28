@@ -168,10 +168,14 @@ extra:
 
   generator: false
   social:
+    - icon: material/phone
+      link: "tel:+98(21)64545108"
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/mortazazakeri
     - icon: fontawesome/brands/telegram
       link: https://t.me/mztel
+
+
 extra_css:
     - assets/styles.css
 
