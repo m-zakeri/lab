@@ -30,9 +30,9 @@ theme:
       - navigation.top
       - navigation.path
       - navigation.footer
-      - navigation.sections
+      #- navigation.sections
       - toc.follow
-      - toc.integrate
+      #- toc.integrate
       # setup the search -----------------------------------------
       - search.suggest # search suggest completion
       - search.highlight # search highlight
@@ -101,10 +101,11 @@ markdown_extensions:
 
 nav:
     - Home: index.md
-    - Services: index.md
-    - Products: index.md
-    - People: index.md
-    - Checklists: checklist/index.md
+    - Services: services.md
+    - Products: product.md
+    - People: people.md
+    - Checklists:
+        - checklist/index.md
     - Blog:
         - blog/index.md
     - Issues: 'https://github.com/m-zakeri/lab/issues'
