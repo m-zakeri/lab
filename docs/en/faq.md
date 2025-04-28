@@ -4,8 +4,8 @@
 ??? Question "How can I participate in the lab?"  
 
     Interested students can submit their resumes along with a brief description of their areas of interest to  
-    `zakeri@aut.ac.ir`.  
-    After review, they may have the opportunity to participate in research projects, software development, or data analysis.  
+    `zakeri@aut.ac.ir`. 
+    After review/interview, they **may** have the opportunity to participate in research projects, software development, or data analysis.  
 
 
 ??? Question "Does participation in the lab require specific skills?"  

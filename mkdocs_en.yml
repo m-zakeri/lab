@@ -103,11 +103,13 @@ nav:
     - Home: index.md
     - Services: services.md
     - Products: products.md
+    - Research:
+        - research/index.md
     - People: people.md
     - Checklists:
         - checklist/index.md
         - PhD Dissertation: checklist/phd_dissertation.md
-        - MSc Thesis: checklist/mcs_thesis.md
+        - MSc Thesis: checklist/msc_thesis.md
         - BSc Project: checklist/bsc_project.md
     - Blog:
         - blog/index.md

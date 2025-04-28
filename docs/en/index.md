@@ -1,6 +1,6 @@
-# About us
+# About ISERL
 
-The **Intelligent Software Engineering Research Laboratory** at *Amirkabir University of Technology (Tehran Polytechnic)* is active in:
+The **Intelligent Software Engineering Research Laboratory (ISERL)** at [**Amirkabir University of Technology (Tehran Polytechnic)**](https://aut.ac.ir/en){target="_blank"} is a premier research facility dedicated to advancing the field of software engineering. The laboratory focuses on innovative research and development across various domains of software engineering, aiming to solve complex problems and improve software quality, reliability, and performance. **ISERL** provides a collaborative environment for researchers, industry professionals, and students to work together on cutting-edge projects. The laboratory is active in:
 
 - Developing technologies related to assessing and improving the quality of processes.
 - Designing, developing, and creating artifacts of software systems.
@@ -15,6 +15,8 @@ The laboratory operates in three areas:
 1. **Research**  
 2. **Industry**  
 3. **Education**
+
+
 
 ---
 
@@ -59,6 +61,25 @@ The laboratory provides specialized courses in:
 - Compiler and transpiler engineering.
 - Intelligent and automated software engineering.
 - Clean architecture and coding.
+
+---
+
+
+## Mission
+Towards high-quality software systems and better development experience with Compiler 2.0 and Software 2.0.
+
+
+## Vision
+To be a national leader in software engineering research and education, recognized for AUT contributions to the development of innovative solutions that transform the software industry.
+
+
+## Objectives
+1. **Innovative Research:** Conduct pioneering and world-class research to develop new methodologies, tools, and technologies solving complex problems in software engineering.
+2. **Education and Training:** Offer high-quality education and training programs to prepare and nurture the next generation of software engineers.
+3. **Collaboration:** Establish strong partnerships with industry, academia, and government to drive practical applications and innovation.
+4. **Technology Transfer:** Facilitate the transfer of research outcomes to industry to enhance software engineering practices, software systems quality, and reliable computing.
+5. **Community Engagement:** Engage with the broader software engineering community through seminars, workshops, and publications.
+
 
 ---
 

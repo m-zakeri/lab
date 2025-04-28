@@ -1,13 +1,16 @@
 ---
 authors:
   - zakeri
+  
 categories:
   - Blog
+
 date: 2025-04-28
 links:
-  - people/index.md
-  - products/index.md
+  - people.md
+  - products.md
 ---
+
 
 # 🎉 Welcome to the Intelligent Software Engineering Lab!
 

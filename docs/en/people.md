@@ -32,8 +32,8 @@
 - Major:  
 **Computer Engineering**  
 <br/>  
-- Specialization:  
-**Software**  
+- Specialization: 
+- **Software**  
 <br/>  
 - Research Areas:  
 **Software Testing, Deep Learning, Software Security**  
@@ -46,13 +46,13 @@
 :material-account-tie: __Full Name__  
 ![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
 <br/>
-Major:  
-**Computer Engineering**  
+Major:
+**Computer Engineering**
 <br/>
-Specialization:  
-**Software**  
+Specialization:
+**Software**
 <br/>
-Research Areas:  
+Research Areas:
 **Software Testing, Deep Learning, Software Security**  
 <br/>
 <br/>
@@ -70,14 +70,14 @@ Research Areas:
 <!-- Card 1 -->
 :material-account-tie: __Full Name__  
 ![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
-<br/>  
-- Major:  
-**Computer Engineering**  
 <br/>
-- Specialization:  
-**Software**  
+- Major:
+**Computer Engineering**
 <br/>
-- Research Areas:  
+- Specialization:
+**Software**
+<br/>
+- Research Areas:
 **Software Testing, Deep Learning, Software Security**  
 <br/>
 <br/>
@@ -93,11 +93,11 @@ Major:
 <br/>  
 Specialization:  
 **Software**  
-<br/>  
-Research Areas:  
-**Software Testing, Deep Learning, Software Security**  
-<br/>  
-<br/>  
+<br/>
+Research Areas:
+**Software Testing, Deep Learning, Software Security**
+<br/>
+<br/>
 [:fontawesome-brands-google-scholar:](#) | [:simple-researchgate:](#) | [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
