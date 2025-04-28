@@ -10,16 +10,13 @@
 <br/>
 **Ph.D. in Computer Engineering**
 <br/>
-**Software Focus**
+**Software and AI**
 <br/>
 <br/>
-[:material-web:](https://www.m-zakeri.ir/){target="_blank"}  
-|  
-[:fontawesome-brands-google-scholar:](https://scholar.google.com/citations?user=km5DzwwAAAAJ&hl=en){target="_blank"}  
-|  
-[:simple-researchgate:](https://www.researchgate.net/profile/Morteza-Zakeri){target="_blank"}  
-|  
-[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/mortazazakeri/){target="_blank"}  
+[:material-web:](https://www.m-zakeri.ir/){target="_blank"}
+| [:fontawesome-brands-google-scholar:](https://scholar.google.com/citations?user=km5DzwwAAAAJ&hl=en){target="_blank"}  
+| [:simple-researchgate:](https://www.researchgate.net/profile/Morteza-Zakeri){target="_blank"}  
+| [:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/mortazazakeri/){target="_blank"}  
 { .card }
 
 </div>
@@ -43,13 +40,11 @@
 <br/>  
 - Research Areas:  
 **Software Testing, Deep Learning, Software Security**  
-<br/>  
-<br/>  
-[:fontawesome-brands-google-scholar:](#)  
-|  
-[:simple-researchgate:](#)  
-|  
-[:fontawesome-brands-linkedin-in:](#)  
+<br/>
+<br/>
+[:fontawesome-brands-google-scholar:](#) |
+[:simple-researchgate:](#) |
+[:fontawesome-brands-linkedin-in:](#)
 { .card }
 
 <!-- Card 2 -->
@@ -66,11 +61,9 @@ Research Areas:
 **Software Testing, Deep Learning, Software Security**  
 <br/>  
 <br/>  
-[:fontawesome-brands-google-scholar:](#)  
-|  
-[:simple-researchgate:](#)  
-|  
-[:fontawesome-brands-linkedin-in:](#)  
+[:fontawesome-brands-google-scholar:](#) |
+[:simple-researchgate:](#) |
+[:fontawesome-brands-linkedin-in:](#)
 { .card }
 
 </div>
@@ -87,19 +80,17 @@ Research Areas:
 <br/>  
 - Major:  
 **Computer Engineering**  
-<br/>  
+<br/>
 - Specialization:  
 **Software**  
-<br/>  
+<br/>
 - Research Areas:  
 **Software Testing, Deep Learning, Software Security**  
-<br/>  
-<br/>  
-[:fontawesome-brands-google-scholar:](#)  
-|  
-[:simple-researchgate:](#)  
-|  
-[:fontawesome-brands-linkedin-in:](#)  
+<br/>
+<br/>
+[:fontawesome-brands-google-scholar:](#) |
+[:simple-researchgate:](#) |
+[:fontawesome-brands-linkedin-in:](#)
 { .card }
 
 <!-- Card 2 -->
@@ -116,13 +107,9 @@ Research Areas:
 **Software Testing, Deep Learning, Software Security**  
 <br/>  
 <br/>  
-[:fontawesome-brands-google-scholar:](#)  
-|  
-[:simple-researchgate:](#)  
-|  
-[:fontawesome-brands-linkedin-in:](#)  
+[:fontawesome-brands-google-scholar:](#)
+| [:simple-researchgate:](#)
+| [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
 </div>
-
-
