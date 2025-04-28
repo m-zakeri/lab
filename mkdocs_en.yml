@@ -101,9 +101,9 @@ markdown_extensions:
 
 nav:
     - Home: index.md
-    - Services: services.md
-    - Products: products.md
-    - People: people.md
+    - Services: index.md
+    - Products: index.md
+    - People: index.md
     - Checklists: checklist/index.md
     - Blog:
         - blog/index.md

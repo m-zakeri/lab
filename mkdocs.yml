@@ -99,10 +99,16 @@ markdown_extensions:
 
 nav:
     - خانه: index.md
-    - خدمات: services.md
-    - محصولات: products.md
-    - افراد: people.md
-    - دوره های آموزشی: courses.md
+    - خدمات:
+        - services/index.md
+    - محصولات:
+        - products/index.md
+    - پژوهش و توسعه:
+        - research/index.md
+    - دوره‌های آموزشی:
+        - courses/index.md
+    - افراد:
+        - people/index.md
     - بلاگ:
         - blog/index.md
     - گزارش خطا: 'https://github.com/m-zakeri/lab/issues'

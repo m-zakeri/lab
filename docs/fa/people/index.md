@@ -4,7 +4,7 @@
 <div class="grid" markdown>
 
 :material-account-tie: __دکتر مرتضی ذاکری__
-![Morteza Zakeri](images/people/zakeri.jpg){ width="325"  align=left loading=lazy .circle-image}
+![Morteza Zakeri](figs/zakeri.jpg){ width="175"  align=left loading=lazy .circle-image}
 <br/>
 **دکتری مهندسی کامپیوتر**
 <br/>
@@ -28,7 +28,7 @@
 <div class="grid cards" markdown>
 
 :material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 - رشته:
 **مهندسی کامپیوتر**
@@ -48,8 +48,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){  width="150"  align=left loading=lazy }
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){  width="150"  align=left loading=lazy }
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -73,8 +73,8 @@
 ## دانشجویان کارشناسی ارشد
 <div class="grid" markdown>
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -93,8 +93,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -118,8 +118,8 @@
 ## دانشجویان کارشناسی
 <div class="grid" markdown>
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -138,8 +138,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -166,8 +166,8 @@
 
 <div class="grid" markdown>
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -186,8 +186,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -206,8 +206,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -226,8 +226,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-:material-account-tie: __مرتضی ذاکری__
-![Morteza Zakeri](images/people/account.png){ width="150"  align=left loading=lazy}
+:material-account-tie: __نام و نام خانوادگی__
+![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
