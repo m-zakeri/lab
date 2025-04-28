@@ -102,12 +102,16 @@ markdown_extensions:
 nav:
     - Home: index.md
     - Services: services.md
-    - Products: product.md
+    - Products: products.md
     - People: people.md
     - Checklists:
         - checklist/index.md
+        - PhD Dissertation: checklist/phd_dissertation.md
+        - MSc Thesis: checklist/mcs_thesis.md
+        - BSc Project: checklist/bsc_project.md
     - Blog:
         - blog/index.md
+    - FAQ: faq.md
     - Issues: 'https://github.com/m-zakeri/lab/issues'
 
 
