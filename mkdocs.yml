@@ -1,67 +1,65 @@
 #  mkdocs serve -f mkdocs.yml --dev-addr=127.0.0.1:8000
-site_name:  آزمایشگاه مهندسی نرم افزار هوشمند
+site_name: آزمایشگاه مهندسی نرم افزار هوشمند
 site_url: https://m-zakeri.github.io/lab/
 
 site_description: آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)
 site_author: مرتضی ذاکری
-copyright: ۲۰۲۵ - ۲۰۲۴ &copy; 
-  تمامی حقوق محفوظ است.   
+copyright: ۲۰۲۵ - ۲۰۲۴ &copy;
+  تمامی حقوق محفوظ است.
   آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)
 
-site_dir: 'site/'
+site_dir: "site/"
 docs_dir: docs/fa/
 #use_directory_urls: false
 
-
 theme:
-    name: material
-    language: fa
-    font:
-        text: Vazirmatn
-    logo: assets/ceaut.png
-    # favicon: images/favicon.png
+  name: material
+  language: fa
+  font:
+    text: Vazirmatn
+  logo: assets/ceaut.png
+  # favicon: images/favicon.png
 
-    features:
-      - content.tooltips
-      # Navigation features
-      - navigation.indexes
-      - navigation.instant
-      - navigation.instant.progress
-      - navigation.instant.preview
-      - navigation.tracking
-      - navigation.tabs
-      - navigation.tabs.sticky
-#      - navigation.sections
-      - navigation.top
-      - navigation.path
-      - navigation.footer
-      - toc.follow
-#      - toc.integrate
-      # setup the search -----------------------------------------
-      - search.suggest # search suggest completion
-      - search.highlight # search highlight
-      - search.share # deep linking
+  features:
+    - content.tooltips
+    # Navigation features
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #      - navigation.sections
+    - navigation.top
+    - navigation.path
+    - navigation.footer
+    - toc.follow
+    #      - toc.integrate
+    # setup the search -----------------------------------------
+    - search.suggest # search suggest completion
+    - search.highlight # search highlight
+    - search.share # deep linking
 
-      # setup header ---------------------------------------------
-      # - header.autohide # autohide header
-      # - announce.dismiss
-      - content.footnote.tooltips
+    # setup header ---------------------------------------------
+    # - header.autohide # autohide header
+    # - announce.dismiss
+    - content.footnote.tooltips
 
   # Palette toggle for light mode
-    palette:
-      - scheme: default
-        toggle:
-            icon: material/brightness-7
-            name: Switch to dark mode
-   # Palette toggle for dark mode
-      - scheme: slate
-        toggle:
-           icon: material/brightness-4
-           name: Switch to light mode
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
-    icon:
-      annotation: material/arrow-right-circle
-
+  icon:
+    annotation: material/arrow-right-circle
 
 markdown_extensions:
   - abbr
@@ -90,37 +88,40 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  #- pymdownx.blocks.caption
+      emoji_generator:
+        !!python/name:material.extensions.emoji.to_svg #- pymdownx.blocks.caption
+
   - toc:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
 
-
 nav:
-    - خانه: index.md
-    - خدمات:
-        - services/index.md
-    - محصولات:
-        - products/index.md
-    - پژوهش و توسعه:
-        - research/index.md
-    - دوره‌های آموزشی:
-        - courses/index.md
-    - افراد:
-        - people/index.md
-        - استاد راهبر: people/director.md
-        - دانشجویان دکتری: people/phd.md
-        - دانشجویان کارشناسی ارشد: people/msc.md
-        - دانشجویان کارشناسی: people/bsc.md
-        - اعضای سابق: people/alumni.md
-    - بلاگ:
-        - blog/index.md
-    - پرسش‌های متداول: faq.md
-    - گزارش خطا: 'https://github.com/m-zakeri/lab/issues'
-
-
+  - خانه: index.md
+  - خدمات:
+      - services/index.md
+  - محصولات:
+      - products/index.md
+  - پژوهش و توسعه:
+      - research/index.md
+  - دوره‌های آموزشی:
+      - courses/index.md
+  - افراد:
+      - people/index.md
+      - استاد راهبر: people/director.md
+      - دانشجویان دکتری: people/phd.md
+      - دانشجویان کارشناسی ارشد: people/msc.md
+      - دانشجویان کارشناسی: people/bsc.md
+      - اعضای سابق: people/alumni.md
+  - پروژه‌ها:
+      - project/index.md
+      - دانشجویان دکتری: project/phd.md
+      - دانشجویان کارشناسی ارشد: project/msc.md
+      - دانشجویان کارشناسی: project/bsc.md
+  - بلاگ:
+      - blog/index.md
+  - پرسش‌های متداول: faq.md
+  - گزارش خطا: "https://github.com/m-zakeri/lab/issues"
 
 plugins:
   - blog:
@@ -132,12 +133,11 @@ plugins:
       pagination_per_page: 10
 
   - search:
-      lang: ['ar', 'en']
-#      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      lang: ["ar", "en"]
+  #      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
 
   - social:
       enabled: !ENV [CI, false]
-
 
   - glightbox:
       touchNavigation: true
@@ -155,7 +155,6 @@ plugins:
       background: white
       shadow: true
       manual: false
-
 
 extra:
   alternate:
@@ -175,10 +174,8 @@ extra:
     - icon: fontawesome/brands/telegram
       link: https://t.me/mztel
 
-
 extra_css:
-    - assets/styles.css
+  - assets/styles.css
 
 watch:
   - docs
-
