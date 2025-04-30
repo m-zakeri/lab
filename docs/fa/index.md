@@ -41,13 +41,15 @@
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-sync-alt: [__موتور بازآرایی خودکار__](https://www.m-zakeri.ir/CodART/){target="_blank"}
+- :simple-litiengine: [__موتور بازآرایی خودکار__](https://www.m-zakeri.ir/CodART/){target="_blank"}
   ابزار پیشرفته برای بازآرایی کد به‌صورت خودکار، بهینه‌سازی معماری نرم‌افزار و بهبود خوانایی و قابلیت نگهداری کد.  
 
 - :fontawesome-solid-shield-virus: [__ضدویروس هوشمند__](products/index.md){target="_blank"} 
   سیستم تشخیص تهدیدات سایبری با استفاده از یادگیری ماشین برای شناسایی بدافزارهای پیچیده و حملات سایبری به‌صورت بلادرنگ.  
 
 </div>
+
+
 
 ### فعالیت های آموزشی
 
@@ -80,6 +82,6 @@
 برای ارتباط با ما از طریق پیوند زیر اقدام نمایید. 
 
 
-[ارتباط با ما](contact.md){target="_blank" .md-button .md-button--primary } | [ارتباط با مدیریت آزمایشگاه](https://www.m-zakeri.ir/pages/contact-me.html){target="_blank" .md-button .md-button--primary }
+[ارتباط با ما](contact.md){target="_blank" .md-button .md-button--primary }  |  [ارتباط با مدیریت آزمایشگاه](https://www.m-zakeri.ir/pages/contact-me.html){target="_blank" .md-button .md-button--primary }
 
 
