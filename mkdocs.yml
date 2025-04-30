@@ -104,6 +104,7 @@ nav:
       - products/index.md
   - پژوهش و توسعه:
       - research/index.md
+      - موضوعات پیشنهادی: research/research_rfps.md
   - دوره‌های آموزشی:
       - courses/index.md
   - افراد:
