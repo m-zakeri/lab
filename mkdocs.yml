@@ -114,10 +114,10 @@ nav:
       - دانشجویان کارشناسی: people/bsc.md
       - اعضای سابق: people/alumni.md
   - پروژه‌ها:
-      - project/index.md
-      - دانشجویان دکتری: project/phd.md
-      - دانشجویان کارشناسی ارشد: project/msc.md
-      - دانشجویان کارشناسی: project/bsc.md
+      - projects/index.md
+      - دانشجویان دکتری: projects/phd.md
+      - دانشجویان کارشناسی ارشد: projects/msc.md
+      - دانشجویان کارشناسی: projects/bsc.md
   - بلاگ:
       - blog/index.md
   - پرسش‌های متداول: faq.md

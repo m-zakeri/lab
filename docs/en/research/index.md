@@ -1,7 +1,12 @@
 # Research
 
+The **Intelligent Software Engineering Research Laboratory (ISERL)** hosts research and development projects in the fields of software engineering, software optimization, intelligent systems architecture, data analysis, and artificial intelligence.
+The results of these projects are primarily published in the most prestigious journals and conferences in the computer science and engineering.
+
+
 ## Research and Educational Groups
 ISERL's research is organized into three specialized groups: the **Software Testing and Debugging Group**, which enhances software reliability through automated testing, fault localization, and security analysis; the **Software Design and Architecture Group**, which focuses on refactoring, reengineering, and quality assessment to improve software maintainability; and the **Software Methodologies and Requirements Engineering Group**, which advances agile practices, requirements traceability, and conceptual modeling to refine development processes. Together, these groups drive innovation in software engineering, ensuring high-quality, efficient, and scalable systems.
+
 
 ### Software Testing and Debugging Group
 - Automated test data and oracle generation, input fuzzing, input domain analysis, GUI testing, symbolic and concolic execution, security testing, metamorphic testing, in-vivo testing, test suit minimization, test case prioritization and selection, and test set amplification.
