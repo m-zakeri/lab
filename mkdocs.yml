@@ -97,7 +97,9 @@ markdown_extensions:
           case: lower
 
 nav:
-  - خانه: index.md
+  - خانه:
+      - index.md
+      - گزارش خطا: "https://github.com/m-zakeri/lab/issues"
   - خدمات:
       - services/index.md
   - محصولات:
@@ -125,7 +127,7 @@ nav:
       - blog/index.md
   - پرسش‌های متداول: faq.md
   - ارتباط با ما: contact.md
-  - گزارش خطا: "https://github.com/m-zakeri/lab/issues"
+
 
 
 plugins:
