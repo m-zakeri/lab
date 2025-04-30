@@ -121,7 +121,9 @@ nav:
   - بلاگ:
       - blog/index.md
   - پرسش‌های متداول: faq.md
+  - ارتباط با ما: contact.md
   - گزارش خطا: "https://github.com/m-zakeri/lab/issues"
+
 
 plugins:
   - blog:
