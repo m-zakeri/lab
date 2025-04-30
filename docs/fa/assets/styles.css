@@ -1,7 +1,7 @@
 
 .circle-image {
-    width: 250px; /* Adjust size as needed */
-    height: 250px; /* Adjust size as needed */
+    width: 175px; /* Adjust size as needed */
+    height: 175px; /* Adjust size as needed */
     border-radius: 50%;
     object-fit: cover;
 }
