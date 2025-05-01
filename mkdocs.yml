@@ -117,6 +117,7 @@ nav:
       - برنامه‌نویسی ساخت‌یافته در C: courses/c_programming.md
       - مهندسی نرم‌افزار پیشرفته: courses/software_engineering_advanced.md
       - آزمون و تحلیل نرم‌افزار پیشرفته: courses/software_testing_advanced.md
+      - اصول و الگوها در مهندسی نرم‌افزار: courses/software_engineering_patterns.md
   - افراد:
       - people/index.md
       - استاد راهبر: people/director.md
