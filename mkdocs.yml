@@ -112,6 +112,7 @@ nav:
       - چک لیست: https://www.m-zakeri.ir/lab/en/checklist/
   - دوره‌های آموزشی:
       - courses/index.md
+      -  مهندسی کامپایلر: courses/compiler_engineering.md
   - افراد:
       - people/index.md
       - استاد راهبر: people/director.md
