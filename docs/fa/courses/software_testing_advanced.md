@@ -77,7 +77,7 @@
 - **ابزارهای تجزیه و تحلیل کد**: ANTLR, Roslyn
 - **ابزارهای سنجش پوشش کد**: LCov, JCov, JaCoCo, Colver
 - **ابزارهای تولید تست**: EvoSuite, Randoop
-- **ابزارهای تحلیل پویایی**: DART, JDART, KLEE, CROWN, JSlice
+- **ابزارهای تحلیل پویا**: DART, JDART, KLEE, CROWN, JSlice
 - **ابزارهای آزمون فازی**: AFL, Peach, SPIKE, DeepFuzz
 - **سایر ابزارها**: ADAFEST
 
