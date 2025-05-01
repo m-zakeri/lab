@@ -113,6 +113,8 @@ nav:
   - دوره‌های آموزشی:
       - courses/index.md
       -  مهندسی کامپایلر: courses/compiler_engineering.md
+      -  آزمون نرم‌افزار: courses/software_testing.md
+      -  آزمون و تحلیل نرم‌افزار پیشرفته: courses/software_testing_advanced.md
   - افراد:
       - people/index.md
       - استاد راهبر: people/director.md
