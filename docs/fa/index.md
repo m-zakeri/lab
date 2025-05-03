@@ -84,6 +84,5 @@
 برای ارتباط با ما از طریق پیوند زیر اقدام نمایید. 
 
 
-[ارتباط با ما](contact.md){target="_blank" .md-button .md-button--primary }  |  [ارتباط با مدیریت آزمایشگاه](https://www.m-zakeri.ir/pages/contact-me.html){target="_blank" .md-button .md-button--primary }
-
+[ارتباط با ما](contact.md){target="_blank" .md-button .md-button--primary } 
 
