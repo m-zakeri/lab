@@ -60,16 +60,16 @@
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-code: [__مهندسی کامپایلر__](https://m-zakeri.github.io/Compilers){target="_blank"}  
+- :fontawesome-solid-code: [__مهندسی کامپایلر__](courses/compiler_engineering.md){target="_blank"}  
   بررسی اصول طراحی و پیاده‌سازی کامپایلرها، تحلیل واژگانی و نحوی، و بهینه‌سازی کد.  
 
-- :fontawesome-solid-vial: [__آزمون نرم‌افزار__](https://m-zakeri.github.io/Compilers){target="_blank"}  
+- :fontawesome-solid-vial: [__آزمون نرم‌افزار__](courses/software_testing.md){target="_blank"}  
   معرفی روش‌های آزمون نرم‌افزار، تست سیاه‌جعبه و سفید‌جعبه، خودکارسازی تست و تحلیل خطاها.  
 
-- :fontawesome-solid-laptop-code: [__مهندسی نرم‌افزار پیشرفته__](https://m-zakeri.github.io/advanced-software-engineering.html){target="_blank"}  
+- :fontawesome-solid-laptop-code: [__مهندسی نرم‌افزار پیشرفته__](courses/software_engineering_advanced.md){target="_blank"}  
   بررسی معماری نرم‌افزار، متدولوژی‌های توسعه، مهندسی نیازمندی‌ها و تضمین کیفیت.  
 
-- :fontawesome-solid-bug: [__آزمون نرم‌افزار پیشرفته__](https://m-zakeri.github.io/advanced-software-testing.html){target="_blank"}  
+- :fontawesome-solid-bug: [__آزمون نرم‌افزار پیشرفته__](courses/software_testing_advanced.md){target="_blank"}  
   تحلیل مدل‌های پیشرفته آزمون نرم‌افزار، تکنیک‌های تست امنیتی، تست عملکردی و قابلیت اطمینان.  
 
 </div>
