@@ -42,4 +42,19 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
+<!-- 3 -->
+:material-account-tie: __حامد فلاحی__
+![Hamed Fallahi](figs/Fallahi.jpg){ width="150" align=left loading=lazy }
+<br/>
+رشته:
+**مهندسی کامپیوتر**
+<br/>
+گرایش:
+**نرم افزار**
+<br/>
+زمینه های پژوهشی:
+**آزمون نرم‌افزار ،یادگیری ماشین، کامپایلر**
+<br/>
+{ .card }
+
 </div>
