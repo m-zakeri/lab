@@ -44,7 +44,7 @@
 
 <!-- 3 -->
 :material-account-tie: __حامد فلاحی__
-![Hamed Fallahi](figs/Fallahi.jpg){ width="150" align=left loading=lazy }
+![Hamed Fallahi](figs/Fallahi.jpg){ width="120" align=left loading=lazy }
 <br/>
 رشته:
 **مهندسی کامپیوتر**
