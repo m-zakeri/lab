@@ -119,9 +119,10 @@ nav:
       - مهندسی نرم‌افزار پیشرفته: courses/software_engineering_advanced.md
       - آزمون و تحلیل نرم‌افزار پیشرفته: courses/software_testing_advanced.md
       - اصول و الگوها در مهندسی نرم‌افزار: courses/software_engineering_patterns.md
+      - طراحی و توسعه امن نرم‌افزار : courses/secure_software_development.md
   - افراد:
       - people/index.md
-      - استاد راهبر: people/director.md
+      - اساتید: people/director.md
       - دانشجویان دکتری: people/phd.md
       - دانشجویان کارشناسی ارشد: people/msc.md
       - دانشجویان کارشناسی: people/bsc.md
