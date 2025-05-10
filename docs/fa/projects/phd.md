@@ -17,6 +17,10 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
+
+
+---
+
 <!-- 2 -->
 :material-file-document: __پروژه: آزمون خودکار نرم‌افزار__
 <br/>
@@ -31,5 +35,9 @@
 |
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
+
+
+---
+
 
 </div>
