@@ -31,8 +31,8 @@
 
 <div class="grid cards" markdown>
 
-- :simple-litiengine: [__خدمات__](services.md){target="_blank" .md-button }
+-  [__خدمات__](services.md){target="_blank" .md-button }
 
-- :fontawesome-solid-shield-virus: [__محصولات__](products.md){target="_blank" .md-button }
+-  [__محصولات__](products.md){target="_blank" .md-button }
 
 </div>
