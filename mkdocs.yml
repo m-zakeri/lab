@@ -101,18 +101,18 @@ nav:
       - index.md
       - درخواست بروزرسانی سایت: "https://github.com/m-zakeri/lab/issues"
       - ارتباط با مدیریت آزمایشگاه: "https://www.m-zakeri.ir/pages/contact-me.html"
-  - خدمات:
-      - services/index.md
-  - محصولات:
-      - products/index.md
-  - پژوهش و توسعه:
+  - پژوهش:
       - research/index.md
       - موضوعات پیشنهادی: research/research_rfps.md
       - پژوهش‌های بین‌رشته‌ای: research/interdisciplinary_research.md
       - پژوهش‌های کاربردی: research/applied_research.md
       - انتشارات: research/publications.md
       - چک لیست: https://www.m-zakeri.ir/lab/en/checklist/
-  - دوره‌های آموزشی:
+  - صنعت:
+      - industry/index.md
+      - خدمات: industry/services.md
+      - محصولات: industry/products.md
+  - آموزش:
       - courses/index.md
       - مهندسی کامپایلر: courses/compiler_engineering.md
       - آزمون نرم‌افزار: courses/software_testing.md

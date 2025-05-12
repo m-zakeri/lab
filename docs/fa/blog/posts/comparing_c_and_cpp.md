@@ -6,6 +6,8 @@ categories:
   - بلاگ
 
 date: 2025-04-28
+links:
+  - courses/c_programming.md
 ---
 
 

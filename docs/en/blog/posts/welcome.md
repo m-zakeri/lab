@@ -8,7 +8,7 @@ categories:
 date: 2025-04-28
 links:
   - people.md
-  - products.md
+  - industry.md
 ---
 
 
