@@ -99,8 +99,9 @@ markdown_extensions:
 nav:
   - خانه:
       - index.md
-      - درخواست بروزرسانی سایت: "https://github.com/m-zakeri/lab/issues"
+      - دسترسی سریع به خدمات: industry/services.md
       - ارتباط با مدیریت آزمایشگاه: "https://www.m-zakeri.ir/pages/contact-me.html"
+      - درخواست بروزرسانی سایت: "https://github.com/m-zakeri/lab/issues"
   - پژوهش:
       - research/index.md
       - موضوعات پیشنهادی: research/research_rfps.md
