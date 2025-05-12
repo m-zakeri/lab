@@ -31,8 +31,8 @@
 
 <div class="grid cards" markdown>
 
--  [__خدمات__](services.md){target="_blank" .md-button }
+-  [**خدمات**](services.md){target="_blank" .md-button }
 
--  [__محصولات__](products.md){target="_blank" .md-button }
+-  [**محصولات**](products.md){target="_blank" .md-button }
 
 </div>
