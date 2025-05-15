@@ -62,7 +62,7 @@ This guide explains how to update the Intelligent Software Engineering laborator
    ```
 3. **Navigate to the Repository Directory:**
    ```bash
-   cd lab-website
+   cd lab
    ```
 
 ---
