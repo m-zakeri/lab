@@ -170,5 +170,4 @@ This command generates a `site` directory containing the updated site.
 ---
 
 Thank you for contributing to the Intelligent Software Engineering website. Happy updating!
-```
 
