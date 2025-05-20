@@ -3,6 +3,7 @@ authors:
   - zakeri
 
 categories:
+  - اخبار
   - بلاگ
 
 date: 2025-04-28
