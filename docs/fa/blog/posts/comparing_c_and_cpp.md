@@ -3,6 +3,7 @@ authors:
   - zakeri
 
 categories:
+  - درسنامه
   - بلاگ
 
 date: 2025-04-28
