@@ -54,6 +54,8 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
+---
+
 <!-- 4 -->
 :material-file-document: __متوازن‌سازی خودکار آیتم‌ها در بازی‌های دیجیتال با مدل‌های زبانی بزرگ__
 <br/>
