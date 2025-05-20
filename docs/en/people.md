@@ -68,28 +68,6 @@ Research Areas:
 <div class="grid cards" markdown>
 
 <!-- Card 1 -->
-:material-account-tie: __Alireza Paksaz__  
-![Alireza Paksaz](figs/account.png){ width="150"  align=left loading=lazy }  
-<br/>
-Field of Study:  
-**Computer Engineering**  
-<br/>
-Specialization:  
-**Software**  
-<br/>
-Research Areas:  
-**Games, Game Development, Large Language Models**  
-<br/>
-<br/>
-[:fontawesome-brands-google-scholar:](#)  
-|  
-[:simple-researchgate:](#)  
-|  
-[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/alireza-paksaz/)  
-{ .card }
-
-
-<!-- Card 2 -->
 :material-account-tie: __Full Name__  
 ![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
 <br/>  
@@ -111,7 +89,33 @@ Research Areas:
 
 ## B.Sc. Students
 
+<div class="grid cards" markdown>
 
+<!-- Card 1 -->
+:material-account-tie: __Alireza Paksaz__  
+![Alireza Paksaz](images/people/account.png){ width="150"  align=left loading=lazy }  
+<br/>
+Field of Study:  
+**Computer Engineering**  
+<br/>
+Specialization:  
+**Software**  
+<br/>
+Research Areas:  
+**Games, Game Development, Large Language Models**  
+<br/>
+<br/>
+[:fontawesome-brands-google-scholar:](#)  
+|  
+[:simple-researchgate:](#)  
+|  
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/alireza-paksaz/)  
+{ .card }
+
+
+<!-- Card 2 -->
+
+</div>
 
 ## Alumni
 
