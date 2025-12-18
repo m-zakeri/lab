@@ -3,7 +3,7 @@
 
 <div class="grid" markdown>
 
-<!-- 2 -->
+<!-- 1 -->
 :material-account-tie: __جواد بشارتی‌فر__
 ![Morteza Zakeri](figs/javad.png){ width="150"  align=left loading=lazy}
 <br/>
@@ -24,25 +24,24 @@
 [:fontawesome-brands-linkedin-in:](#)
 { .card }
 
-<!-- 1 -->
-:material-account-tie: __نام و نام خانوادگی__
+<!-- 2 -->
+:material-account-tie: __رومینا فیروزی__
 ![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
-**مهندسی کامپیوتر**
+**مهندسی فناوری اطلاعات**
 <br/>
 گرایش:
-**نرم افزار**
+**فناوری اطلاعات**
 <br/>
 زمینه های پژوهشی:
-**آزمون نرم افزار، یادگیری ژرف، امنیت نرم افزار**
+**آزمون نرم افزار، کشف آسیب پذیری‌های نرم افزار**
 <br/>
 <br/>
 [:fontawesome-brands-google-scholar:](#)
 |
 [:simple-researchgate:](#)
 |
-[:fontawesome-brands-linkedin-in:](#)
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/romina-firoozi-b054311b7/)
 { .card }
-
 </div>
