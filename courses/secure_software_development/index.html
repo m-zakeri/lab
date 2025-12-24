@@ -1,0 +1,3252 @@
+<!DOCTYPE html><html lang="fa" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)">
+      
+      
+        <meta name="author" content="مرتضی ذاکری">
+      
+      
+        <link rel="canonical" href="https://m-zakeri.github.io/lab/courses/secure_software_development/">
+      
+      
+        <link rel="prev" href="../software_engineering_patterns/">
+      
+      
+        <link rel="next" href="../computational_and_intelligent_material_design/">
+      
+      
+        
+          <link rel="alternate" href="/lab/en/" hreflang="en">
+        
+          <link rel="alternate" href="/lab/" hreflang="fa">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>طراحی و توسعه امن نرم‌افزار - آزمایشگاه مهندسی نرم افزار هوشمند</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010M6%2013h8l-3.5%203.5%201.42%201.42L17.84%2012l-5.92-5.92L10.5%207.5%2014%2011H6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vazirmatn:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Vazirmatn";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="طراحی و توسعه امن نرم‌افزار - آزمایشگاه مهندسی نرم افزار هوشمند">
+<meta property="og:description" content="آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)">
+<meta property="og:image" content="https://m-zakeri.github.io/lab/assets/images/social/courses/secure_software_development.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://m-zakeri.github.io/lab/courses/secure_software_development/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="طراحی و توسعه امن نرم‌افزار - آزمایشگاه مهندسی نرم افزار هوشمند">
+<meta property="twitter:description" content="آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)">
+<meta property="twitter:image" content="https://m-zakeri.github.io/lab/assets/images/social/courses/secure_software_development.png">
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#طراحی-و-توسعه-امن-نرمافزار" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="سرتیتر">
+    <a href="../.." title="آزمایشگاه مهندسی نرم افزار هوشمند" class="md-header__button md-logo" aria-label="آزمایشگاه مهندسی نرم افزار هوشمند" data-md-component="logo">
+      
+  <img src="../../assets/ceaut.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            آزمایشگاه مهندسی نرم افزار هوشمند
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              طراحی و توسعه امن نرم‌افزار
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="انتخاب زبان">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/lab/en/" hreflang="en" class="md-select__link">
+              EN
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/lab/" hreflang="fa" class="md-select__link">
+              FA
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="جستجو">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="هم‌رسانی" aria-label="هم‌رسانی" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="بازنشانی" aria-label="بازنشانی" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            راه‌اندازی جستجو
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="زبانه‌ها" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  خانه
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  پژوهش
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../industry/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  صنعت
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  آموزش
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../people/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  افراد
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  پروژه‌ها
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  بلاگ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  پرسش‌های متداول
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ارتباط با ما
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="هدایت" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="آزمایشگاه مهندسی نرم افزار هوشمند" class="md-nav__button md-logo" aria-label="آزمایشگاه مهندسی نرم افزار هوشمند" data-md-component="logo">
+      
+  <img src="../../assets/ceaut.png" alt="logo">
+
+    </a>
+    آزمایشگاه مهندسی نرم افزار هوشمند
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    خانه
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    خانه
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../industry/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دسترسی سریع به خدمات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.m-zakeri.ir/pages/contact-me.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ارتباط با مدیریت آزمایشگاه
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/m-zakeri/lab/issues" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    درخواست بروزرسانی سایت
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../research/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    پژوهش
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/research_rfps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    موضوعات پیشنهادی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/interdisciplinary_research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش‌های بین‌رشته‌ای
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/applied_research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش‌های کاربردی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    انتشارات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.m-zakeri.ir/lab/en/checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    چک لیست
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../industry/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    صنعت
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    صنعت
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../industry/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دسترسی سریع به خدمات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../industry/products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    محصولات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    آموزش
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    آموزش
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiler_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مهندسی کامپایلر
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    آزمون نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    برنامه‌نویسی ساخت‌یافته در C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_engineering_advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مهندسی نرم‌افزار پیشرفته
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_testing_advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    آزمون و تحلیل نرم‌افزار پیشرفته
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_engineering_patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اصول و الگوها در مهندسی نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    طراحی و توسعه امن نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    طراحی و توسعه امن نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#اطلاعات-کلی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        اطلاعات کلی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#توضیح-کوتاه-درس" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        توضیح کوتاه درس
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#اهداف-و-نتایج-درس" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        اهداف و نتایج درس
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#مخاطبین" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        مخاطبین
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#سطح-دوره" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سطح دوره
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#طول-و-زمانبندی-دوره" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        طول و زمان‌بندی دوره
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#شیوه-برگزاری" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        شیوه برگزاری
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#سرفصلها-و-مباحث" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سرفصل‌ها و مباحث
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="سرفصل‌ها و مباحث">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#بخش-1-طراحی-و-معماری-امن-مستقل-از-زبان-برنامهنویسی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 1. طراحی و معماری امن (مستقل از زبان برنامه‌نویسی)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-2-کدنویسی-امن-در-c-و-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 2. کدنویسی امن در C و C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-3-کدنویسی-امن-در-جاوا" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 3. کدنویسی امن در جاوا
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-4-امنیت-سیستم-و-برنامههای-کاربردی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 4. امنیت سیستم و برنامه‌های کاربردی
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-5-آزمون-و-استقرار-امن" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 5. آزمون و استقرار امن
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#نرمافزارها-و-ابزارهای-مورد-بحث" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        نرم‌افزارها و ابزارهای مورد بحث
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#تکالیف-و-ارزیابی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        تکالیف و ارزیابی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#کتب-مرجع" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        کتب مرجع
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="کتب مرجع">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#کتب-مرجع-اصلی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        کتب مرجع اصلی
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#کتب-مرجع-تکمیلی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        کتب مرجع تکمیلی
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#مقالات-مرجع" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        مقالات مرجع
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#وبسایتهای-مرتبط" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        وب‌سایت‌های مرتبط
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#سرفصلهای-مصوب-وزارت-علوم" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سرفصل‌های مصوب وزارت علوم
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#دروس-مرتبط" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        دروس مرتبط
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#تهیهکننده" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        تهیه‌کننده
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#سفارش" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سفارش
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../computational_and_intelligent_material_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    طراحی رایانشی و هوشمند مواد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../science_research_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش علمی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../people/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    افراد
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    افراد
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../people/director/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اساتید
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../people/phd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان دکتری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../people/msc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی ارشد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../people/bsc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../people/alumni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اعضای سابق
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../projects/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پروژه‌ها
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    پروژه‌ها
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/phd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان دکتری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/msc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی ارشد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/bsc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/peer_reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    داوری‌ها
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    بلاگ
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    بلاگ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    بایگانی
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    بایگانی
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3">
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دسته‌بندی‌ها
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    دسته‌بندی‌ها
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اخبار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/%D8%A8%D9%84%D8%A7%DA%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    بلاگ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/%D8%AF%D8%B1%D8%B3%D9%86%D8%A7%D9%85%D9%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    درسنامه
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    هوش مصنوعی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    هوشمندسازی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پرسش‌های متداول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ارتباط با ما
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#اطلاعات-کلی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        اطلاعات کلی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#توضیح-کوتاه-درس" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        توضیح کوتاه درس
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#اهداف-و-نتایج-درس" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        اهداف و نتایج درس
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#مخاطبین" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        مخاطبین
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#سطح-دوره" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سطح دوره
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#طول-و-زمانبندی-دوره" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        طول و زمان‌بندی دوره
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#شیوه-برگزاری" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        شیوه برگزاری
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#سرفصلها-و-مباحث" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سرفصل‌ها و مباحث
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="سرفصل‌ها و مباحث">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#بخش-1-طراحی-و-معماری-امن-مستقل-از-زبان-برنامهنویسی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 1. طراحی و معماری امن (مستقل از زبان برنامه‌نویسی)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-2-کدنویسی-امن-در-c-و-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 2. کدنویسی امن در C و C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-3-کدنویسی-امن-در-جاوا" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 3. کدنویسی امن در جاوا
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-4-امنیت-سیستم-و-برنامههای-کاربردی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 4. امنیت سیستم و برنامه‌های کاربردی
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#بخش-5-آزمون-و-استقرار-امن" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        بخش 5. آزمون و استقرار امن
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#نرمافزارها-و-ابزارهای-مورد-بحث" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        نرم‌افزارها و ابزارهای مورد بحث
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#تکالیف-و-ارزیابی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        تکالیف و ارزیابی
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#کتب-مرجع" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        کتب مرجع
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="کتب مرجع">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#کتب-مرجع-اصلی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        کتب مرجع اصلی
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#کتب-مرجع-تکمیلی" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        کتب مرجع تکمیلی
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#مقالات-مرجع" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        مقالات مرجع
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#وبسایتهای-مرتبط" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        وب‌سایت‌های مرتبط
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#سرفصلهای-مصوب-وزارت-علوم" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سرفصل‌های مصوب وزارت علوم
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#دروس-مرتبط" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        دروس مرتبط
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#تهیهکننده" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        تهیه‌کننده
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#سفارش" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        سفارش
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="طراحی-و-توسعه-امن-نرمافزار">طراحی و توسعه امن نرم‌افزار</h1>
+<h2 id="اطلاعات-کلی">اطلاعات کلی</h2>
+<ul>
+<li><strong>نام درس به فارسی</strong>: طراحی و توسعه امن نرم‌افزار  </li>
+<li><strong>نام درس به انگلیسی</strong>: Secure Software Design and Development  </li>
+<li><strong>نام‌های مشابه</strong>: کدنویسی امن، برنامه‌نویسی امن، توسعه امن نرم‌افزار، امنیت سیستم‌های نرم‌افزاری، برنامه‌نویسی تدافعی  </li>
+<li><strong>رشته، گرایش، نوع و واحد درس</strong>:  </li>
+<li>کارشناسی: مهندسی کامپیوتر  </li>
+<li>تحصیلات تکمیلی: مهندسی کامپیوتر – نرم‌افزار / مهندسي کامپيوتر – رایانش امن  </li>
+<li><strong>نوع درس</strong>: اختصاصی  </li>
+<li><strong>واحد درس</strong>: 3 واحد  </li>
+<li><strong>مقطع</strong>: کارشناسی و کارشناسی ارشد  </li>
+<li><strong>پیش نیازها</strong>: برنامه‌نویسی شی‌گرا  </li>
+<li><strong>هم نیازها</strong>: مهندسی نرم‌افزار  </li>
+<li><strong>مطالب پیش نیاز</strong>: مفاهیم پایه مهندسی نرم‌افزار و برنامه‌نویسی  </li>
+</ul>
+<h2 id="توضیح-کوتاه-درس">توضیح کوتاه درس</h2>
+<p>این دوره شرکت‌کنندگان را با چالش‌ها و رویکردهای طراحی و پیاده‌سازی سیستم‌های نرم‌افزاری امن آشنا می‌کند. مباحث شامل اهمیت امنیت، بررسی آسیب‌پذیری‌ها و حملات، تحلیل نیازمندی‌های امنیتی، مدل‌سازی تهدید و توسعه امن برنامه، و نیز تکنیک‌های کدنویسی امن در زبان‌های C/C++ و جاوا، بخش‌های امنیت سیستم و برنامه‌های کاربردی، آزمون و استقرار امن و مدیریت محیط‌های امن می‌باشد. علاوه بر آن، ابزارهای تشخیص آسیب‌پذیری و تکنیک‌های مقابله با تهدیدات از دیگر موضوعات مورد بررسی هستند.<br>
+ مفهوم نرم‌افزار یا سیستم 2.0 که اخیراً قابلیت استفاده از آن محقق شده، نیز نیازمند به رعایت اصول معماری، طراحی و توسعه نرم‌افزار امن است که در این درس سعی می‌شود به آن پرداخته شود. </p>
+<h2 id="اهداف-و-نتایج-درس">اهداف و نتایج درس</h2>
+<ul>
+<li>آشنایی با مفاهیم پایه‌ای امنیت نرم‌افزار  </li>
+<li>شناخت آسیب‌پذیری‌ها، حملات و تکنیک‌های Exploit نویسی  </li>
+<li>فراگیری اصول طراحی و معماری امن نرم‌افزار  </li>
+<li>دریافت آگاهی از قواعد و راهنماهای امنیتی در برنامه‌نویسی به‌ویژه در زبان‌های جاوا و C/C++  </li>
+<li>توانمندی در تحلیل، مدل‌سازی و مدیریت نیازمندی‌های امنیتی  </li>
+</ul>
+<h2 id="مخاطبین">مخاطبین</h2>
+<ul>
+<li>دانشجویان مهندسی و علوم کامپیوتر  </li>
+<li>مهندسین نرم‌افزار و برنامه‌نویسان صنعتی  </li>
+<li>متقاضیان کار در زمینه امنیت نرم‌افزار  </li>
+<li>علاقه‌مندان به پژوهش در حوزه امنیت نرم‌افزار  </li>
+</ul>
+<h2 id="سطح-دوره">سطح دوره</h2>
+<ul>
+<li>متوسط و پیشرفته</li>
+</ul>
+<h2 id="طول-و-زمانبندی-دوره">طول و زمان‌بندی دوره</h2>
+<ul>
+<li><strong>مدت دوره</strong>: 4 ماه (16 هفته)  </li>
+<li><strong>جلسات کلاس</strong>: 15 هفته (45 ساعت – 30 جلسه)  </li>
+<li><strong>جلسه ارزیابی</strong>: 1 هفته  </li>
+</ul>
+<h2 id="شیوه-برگزاری">شیوه برگزاری</h2>
+<ul>
+<li>حضوری</li>
+</ul>
+<h2 id="سرفصلها-و-مباحث">سرفصل‌ها و مباحث</h2>
+<h3 id="بخش-1-طراحی-و-معماری-امن-مستقل-از-زبان-برنامهنویسی">بخش 1. طراحی و معماری امن (مستقل از زبان برنامه‌نویسی)</h3>
+<ol>
+<li><strong>مقدمه</strong> (2 جلسه)  <ul>
+<li>درک مفاهیم، واژگان و صفات امنیت نرم‌افزار (مطابق فصل 1 مرجع A5، فصل 1 مرجع A1، فصل 2 مرجع A4)  </li>
+<li>انواع تهدیدها و حملات و Exploit نویسی برای آن‌ها (فصل 1 مرجع A1)</li>
+</ul>
+</li>
+<li><strong>جمع‌آوری الزامات امنیتی</strong> (2 جلسه)  <ul>
+<li>تحلیل نیازمندی‌های امنیتی (فصل 2 مرجع A1)  </li>
+<li>مدل‌سازی تهدید (فصل 12 مرجع A2)</li>
+</ul>
+</li>
+<li><strong>توسعه امن برنامه</strong> (2 جلسه)  <ul>
+<li>طراحی و معماری امن (فصل 2 مرجع A1)  </li>
+<li>پیاده‌سازی امن (فصل 2 مرجع A1)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="بخش-2-کدنویسی-امن-در-c-و-c">بخش 2. کدنویسی امن در C و C++</h3>
+<ol>
+<li><strong>کدنویسی امن برای داده‌ها و عبارت‌ها</strong> (3 جلسه)  <ul>
+<li>اعتبارسنجی ورودی و پاک‌سازی داده‌ها (فصل 3 مرجع A6)  </li>
+<li>رشته‌ها (فصل 2 مرجع A5)  </li>
+<li>اشاره‌گرها (فصل 3 مرجع A5)  </li>
+<li>اعداد صحیح (فصل 5 مرجع A5)</li>
+</ul>
+</li>
+<li><strong>مدیریت امن حافظه پویا</strong> (2 جلسه)  <ul>
+<li>جلوگیری از سرریز و درهم شکستن پشته (فصل 4 مرجع A5)  </li>
+<li>جلوگیری از سرریز و درهم شکستن هرم (فصل 4 مرجع A5)</li>
+</ul>
+</li>
+<li><strong>مدیریت امن خروجی</strong> (2 جلسه)  <ul>
+<li>خروجی قالب‌بندی شده (فصل 6 مرجع A5)  </li>
+<li>خواندن و نوشتن فایل (فصل 8 مرجع A5)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="بخش-3-کدنویسی-امن-در-جاوا">بخش 3. کدنویسی امن در جاوا</h3>
+<ol>
+<li><strong>کدنویسی امن برای داده‌ها</strong> (2 جلسه)  <ul>
+<li>اعتبارسنجی ورودی و پاک‌سازی داده‌ها (فصل 2 مرجع A3)  </li>
+<li>اعلانات و مقداردهی اولیه (فصل 3 مرجع A3)</li>
+</ul>
+</li>
+<li><strong>کدنویسی امن برای عبارات، محاسبات و مدیریت خطاها</strong> (3 جلسه)  <ul>
+<li>عبارات (فصل 4 مرجع A3)  </li>
+<li>انواع داده عددی و عملگرها (فصل 5 مرجع A3)  </li>
+<li>انواع داده انتزاعی و متدها (فصل 6 و 7 مرجع A3)  </li>
+<li>رفتارهای استثنا (فصل 8 مرجع A3)</li>
+</ul>
+</li>
+<li><strong>کدنویسی امن برای رمزنگاری</strong> (2 جلسه)  <ul>
+<li>درهم‌سازی (فصل 8 مرجع A4)  </li>
+<li>رمزنگاری متقارن و نامتقارن (فصل 8 مرجع A4)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="بخش-4-امنیت-سیستم-و-برنامههای-کاربردی">بخش 4. امنیت سیستم و برنامه‌های کاربردی</h3>
+<ol>
+<li><strong>امنیت وب و موبایل</strong> (2 جلسه)  <ul>
+<li>آسیب‌پذیری‌های وب (فصل 7 و 8 مرجع A1)  </li>
+<li>مدل‌سازی تهدید برای برنامه‌های وب (فصل 7 و 8 مرجع A1)  </li>
+<li>چرخه حیات امن برنامه‌های وب (فصل 7 و 8 مرجع A1)  </li>
+<li>ارتباط امن و پروتکل‌های حفاظت از داده‌ها (HTTPS، SSL، TLS)</li>
+</ul>
+</li>
+<li><strong>کدنویسی امن برای کنترل دسترسی</strong> (2 جلسه)  <ul>
+<li>سطوح دسترسی در ویندوز و لینوکس (فصل 1 و 2 مرجع A6)  </li>
+<li>تأیید هویت و اجازه دسترسی (فصل 7 مرجع A4)  </li>
+<li>مدیریت جلسه (فصل 7 مرجع A4 و فصل 8 مرجع A1)</li>
+</ul>
+</li>
+<li><strong>مرور چک لیست‌ها، گواهی‌نامه‌ها و کاتالوگ‌های امنیتی</strong> (1 جلسه)  <ul>
+<li>OWASP Top 10، OWASP Mobile Top 10، WASC (وب‌سایت‌های رسمی)  </li>
+<li>CVE، CWE، CVSS (وب‌سایت‌های رسمی)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="بخش-5-آزمون-و-استقرار-امن">بخش 5. آزمون و استقرار امن</h3>
+<ol>
+<li><strong>آزمون امنیت و نفوذ</strong> (3 جلسه)  <ul>
+<li>آزمون ایستا (SAST): تحلیل ایستا و ابزارهای خودکار شناسایی آسیب‌پذیری‌ها (فصل 9 مرجع A5 و فصل 4 مرجع B2)  </li>
+<li>آزمون پویا (DAST): آزمون فاز (فصل 9 مرجع A5) و آزمون نفوذ و تزریق خرابی (فصل 11 و 12 مرجع A4)</li>
+</ul>
+</li>
+<li><strong>استقرار و نگهداری امن برنامه</strong> (1 جلسه)  <ul>
+<li>امنیت سکوهای توسعه (فصل 16 مرجع A3)  </li>
+<li>امنیت محیط اجرا (فصل 17 مرجع A3 و فصل 6 مرجع A1)</li>
+</ul>
+</li>
+<li><strong>مباحث پیشرفته</strong> (1 جلسه)  <ul>
+<li>امنیت در سامانه‌های مبتنی بر هوش مصنوعی (سیستم 2.0) – مبتنی بر مقاله‌ها  </li>
+<li>برنامه‌نویسی بازگشت محور (Return-oriented programming) و Exploit نویسی – مبتنی بر مقاله‌ها</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="نرمافزارها-و-ابزارهای-مورد-بحث">نرم‌افزارها و ابزارهای مورد بحث</h2>
+<ul>
+<li><strong>Static Analyzers</strong>:  <ul>
+<li>SourceMeter: <a href="https://sourcemeter.com/">https://sourcemeter.com/</a>  </li>
+<li>SonarQube: <a href="https://www.sonarsource.com/products/sonarqube/">https://www.sonarsource.com/products/sonarqube/</a></li>
+</ul>
+</li>
+<li><strong>Fuzzers</strong>:  <ul>
+<li>AFL: <a href="https://lcamtuf.coredump.cx/afl/">https://lcamtuf.coredump.cx/afl/</a>  </li>
+<li>Peach Fuzzer: <a href="https://peachtech.gitlab.io/peach-fuzzer-community/">https://peachtech.gitlab.io/peach-fuzzer-community/</a>  </li>
+<li>DeepFuzz: <a href="https://www.m-zakeri.ir/iust_deep_fuzz/">https://www.m-zakeri.ir/iust_deep_fuzz/</a></li>
+</ul>
+</li>
+<li><strong>Web Penetration Testing</strong>:  <ul>
+<li>Burp Suite: <a href="https://portswigger.net/burp">https://portswigger.net/burp</a>  </li>
+<li>Acunetix: <a href="https://www.acunetix.com">https://www.acunetix.com</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="تکالیف-و-ارزیابی">تکالیف و ارزیابی</h2>
+<ul>
+<li><strong>تعداد تکالیف پیشنهادی</strong>: 5 تکلیف  </li>
+<li><strong>ارزیابی به شرح زیر</strong>:<ul>
+<li>تکالیف تئوری: 20% (دو تمرین تئوری)</li>
+<li>تکالیف عملی: 30% (سه تمرین عملی)</li>
+<li>آزمون‌های پایان ترم: 50% (آزمون پایان ترم مبتنی بر پرسش‌های چندگزینه‌ای و تشریحی)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="کتب-مرجع">کتب مرجع</h2>
+<h3 id="کتب-مرجع-اصلی">کتب مرجع اصلی</h3>
+<ol>
+<li><strong>[A1]</strong> A. K. Talukder, and M. Chaitanya. <em>Architecting Secure Software Systems.</em> CRC Press, 2009.</li>
+<li><strong>[A2]</strong> A. Shostack. <em>Threat Modeling: Designing for Security.</em> Wiley, 2014.</li>
+<li><strong>[A3]</strong> Fred Long et al. <em>The CERT Oracle Secure Coding Standard for Java.</em> Pearson Education, 2011.</li>
+<li><strong>[A4]</strong> Abhay Bhargav, and B. V. Kumar. <em>Secure Java: For Web Application Development.</em> CRC Press, 2010.</li>
+<li><strong>[A5]</strong> Robert C. Seacord. <em>Secure Coding in C and C++.</em> Addison-Wesley, 2013.</li>
+<li><strong>[A6]</strong> John Viega, Matt Messier. <em>Secure Programming Cookbook for C and C++: Recipes for Cryptography, Authentication, Input Validation &amp; More.</em> O'Reilly Media, 2009.</li>
+</ol>
+<h3 id="کتب-مرجع-تکمیلی">کتب مرجع تکمیلی</h3>
+<ol>
+<li><strong>[B1]</strong> John Viega, and Gary McGraw. <em>Building Secure Software.</em> Addison-Wesley, 2001.</li>
+<li><strong>[B2]</strong> G. McGraw. <em>Software Security: Building Security In.</em> Addison-Wesley, 2006.</li>
+<li><strong>[B3]</strong> M. Dowd, J. McDonald, and J. Schuh. <em>The Art of Software Security Assessment: Identifying and Preventing Software Vulnerabilities.</em> Addison-Wesley, 2006.</li>
+<li><strong>[B4]</strong> M. Howard, D. LeBlanc, J. Viega. <em>24 Deadly Signs of Software Security: Programming Flaws and How to Fix Them.</em> McGraw-Hill, 2009.</li>
+<li><strong>[B5]</strong> M. S. Merkow, and L. Raghavan. <em>Secure and Resilient Software Development.</em> CRC Press, 2010.</li>
+<li><strong>[B6]</strong> Nancy R. Mead, Julia H. Allen, Sean Barnum, Robert J. Ellison, Gary R. McGraw. <em>Software Security Engineering: A Guide for Project Managers.</em> Addison-Wesley Professional, 2004.</li>
+<li><strong>[B7]</strong> Michael Howard, David LeBlanc. <em>Writing Secure Code.</em> Microsoft Press, 2002.</li>
+<li><strong>[B8]</strong> Fred Long et al. <em>Java Coding Guidelines: 75 Recommendations for Reliable and Secure Programs.</em> Pearson Education, 2013.</li>
+</ol>
+<h3 id="مقالات-مرجع">مقالات مرجع</h3>
+<ol>
+<li><strong>[P1]</strong> Zakeri Nasrabadi, M., Parsa, S. &amp; Kalaee, A. “Format-aware learn&amp;fuzz: deep test data generation for efficient fuzzing.” <em>Neural Comput &amp; Applic</em>, 33, 1497–1513 (2021). <a href="https://doi.org/10.1007/s00521-020-05039-7">doi:10.1007/s00521-020-05039-7</a></li>
+<li><strong>[P2]</strong> Zakeri-Nasrabadi, M., Parsa, S., Ramezani, M., Roy, C., &amp; Ekhtiarzadeh, M. “A systematic literature review on source code similarity measurement and clone detection: Techniques, applications, and challenges.” <em>Journal of Systems and Software</em>, 204 (2023): 111796.</li>
+<li><strong>[P3]</strong> S. Chakraborty, R. Krishna, Y. Ding and B. Ray, “Deep Learning Based Vulnerability Detection: Are We There Yet?,” in <em>IEEE Transactions on Software Engineering</em>, vol. 48, no. 9, pp. 3280-3296, 1 Sept. 2022, <a href="https://doi.org/10.1109/TSE.2021.3087402">doi:10.1109/TSE.2021.3087402</a>.</li>
+<li><strong>[P4]</strong> Ryan Roemer, Erik Buchanan, Hovav Shacham, and Stefan Savage. “Return-Oriented Programming: Systems, Languages, and Applications.” <em>ACM Trans. Inf. Syst. Secur.</em>, 15, 1, Article 2 (March 2012): 34 pages. <a href="https://doi.org/10.1145/2133375.2133377">doi:10.1145/2133375.2133377</a></li>
+</ol>
+<h3 id="وبسایتهای-مرتبط">وب‌سایت‌های مرتبط</h3>
+<ol>
+<li><strong>[W1]</strong> The WASC Threat Classification v2.0: <a href="http://projects.webappsec.org/">http://projects.webappsec.org/</a></li>
+<li><strong>[W2]</strong> OWASP TOP 10: <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a></li>
+<li><strong>[W3]</strong> OWASP Mobile Top 10: <a href="https://owasp.org/www-project-mobile-top-ten/">https://owasp.org/www-project-mobile-top-ten/</a></li>
+<li><strong>[W4]</strong> Common Weakness Enumeration (CWE™): <a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a></li>
+<li><strong>[W5]</strong> Common Vulnerabilities and Exposures (CVE): <a href="https://www.cve.org/">https://www.cve.org/</a></li>
+<li><strong>[W6]</strong> Common Vulnerability Scoring System: <a href="https://www.first.org/cvss/">https://www.first.org/cvss/</a></li>
+<li><strong>[W8]</strong> SEI CERT Coding Standards: <a href="https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards">https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards</a></li>
+<li><strong>[W9]</strong> Oracle Java Security: <a href="https://www.oracle.com/java/technologies/javase/seccodeguide.html">https://www.oracle.com/java/technologies/javase/seccodeguide.html</a></li>
+</ol>
+<h3 id="سرفصلهای-مصوب-وزارت-علوم">سرفصل‌های مصوب وزارت علوم</h3>
+<ul>
+<li><strong>[MSRT1]</strong> Software Systems Security: <a href="https://www.syllab.ir/course/u18">https://www.syllab.ir/course/u18</a></li>
+<li><strong>[MSRT2]</strong> Secure Software Development: <a href="https://www.syllab.ir/course/u42">https://www.syllab.ir/course/u42</a></li>
+</ul>
+<h3 id="دروس-مرتبط">دروس مرتبط</h3>
+<ul>
+<li>[C1] <a href="https://web.cs.hacettepe.edu.tr/~abc/teaching/bbm461/index.php">https://web.cs.hacettepe.edu.tr/~abc/teaching/bbm461/index.php</a></li>
+<li>[C2] <a href="https://www.sei.cmu.edu/education-outreach/courses/course.cfm?coursecode=V35">https://www.sei.cmu.edu/education-outreach/courses/course.cfm?coursecode=V35</a></li>
+<li>[C3] <a href="https://www.cs.uwyo.edu/~seker/courses/2030/?go=lec">https://www.cs.uwyo.edu/~seker/courses/2030/?go=lec</a></li>
+<li>[C4] <a href="http://www.sis.pitt.edu/jjoshi/courses/IS2620/Fall17/Lectures.html">http://www.sis.pitt.edu/jjoshi/courses/IS2620/Fall17/Lectures.html</a></li>
+<li>[C5] <a href="https://www.cs.columbia.edu/~suman/COMS_w4181_2024.html">https://www.cs.columbia.edu/~suman/COMS_w4181_2024.html</a></li>
+</ul>
+<hr>
+<h2 id="تهیهکننده">تهیه‌کننده</h2>
+<ul>
+<li><strong>نام</strong>: مرتضی ذاکری  </li>
+<li><strong>نگارش</strong>: 3.0  </li>
+<li><strong>آخرین بروزرسانی</strong>: 15/12/1403</li>
+</ul>
+<h2 id="سفارش">سفارش</h2>
+<p><a class="md-button md-button--primary" href="../../contact/" target="_blank">ارتباط با ما</a> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  برگشت به بالا
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="پاورقی">
+        
+          
+          <a href="../software_engineering_patterns/" class="md-footer__link md-footer__link--prev" aria-label="قبلی: اصول و الگوها در مهندسی نرم‌افزار">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                قبلی
+              </span>
+              <div class="md-ellipsis">
+                اصول و الگوها در مهندسی نرم‌افزار
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../computational_and_intelligent_material_design/" class="md-footer__link md-footer__link--next" aria-label="بعدی: طراحی رایانشی و هوشمند مواد">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                بعدی
+              </span>
+              <div class="md-ellipsis">
+                طراحی رایانشی و هوشمند مواد
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ۲۰۲۵ - ۲۰۲۴ © تمامی حقوق محفوظ است. آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="tel:+98(21)64545108" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25 1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mortazazakeri" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/mztel" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "search.result.more.one": "1 \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.more.other": "# \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.term.missing": "\u0645\u0648\u062c\u0648\u062f \u0646\u06cc\u0633\u062a", "select.version": "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0631\u0627\u06cc\u0634"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,202 @@
+#  mkdocs serve -f mkdocs.yml --dev-addr=127.0.0.1:8000
+site_name: آزمایشگاه مهندسی نرم افزار هوشمند
+site_url: https://m-zakeri.github.io/lab/
+
+site_description: آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)
+site_author: مرتضی ذاکری
+copyright: ۲۰۲۵ - ۲۰۲۴ &copy;
+  تمامی حقوق محفوظ است.
+  آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)
+
+site_dir: "site/"
+docs_dir: docs/fa/
+#use_directory_urls: false
+
+theme:
+  name: material
+  language: fa
+  font:
+    text: Vazirmatn
+  logo: assets/ceaut.png
+  # favicon: images/favicon.png
+
+  features:
+    - content.tooltips
+    # Navigation features
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #      - navigation.sections
+    - navigation.top
+    - navigation.path
+    - navigation.footer
+    - toc.follow
+    #      - toc.integrate
+    # setup the search -----------------------------------------
+    - search.suggest # search suggest completion
+    - search.highlight # search highlight
+    - search.share # deep linking
+
+    # setup header ---------------------------------------------
+    # - header.autohide # autohide header
+    # - announce.dismiss
+    - content.footnote.tooltips
+
+  # Palette toggle for light mode
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  icon:
+    annotation: material/arrow-right-circle
+
+markdown_extensions:
+  - abbr
+  - admonition # support for admonitions ---> use this in markdown like this : !!! note "Note" or ??? warning "Warning"
+  - pymdownx.details # support for admonitions with collapse
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - footnotes
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator:
+        !!python/name:material.extensions.emoji.to_svg #- pymdownx.blocks.caption
+
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+nav:
+  - خانه:
+      - index.md
+      - دسترسی سریع به خدمات: industry/services.md
+      - ارتباط با مدیریت آزمایشگاه: "https://www.m-zakeri.ir/pages/contact-me.html"
+      - درخواست بروزرسانی سایت: "https://github.com/m-zakeri/lab/issues"
+  - پژوهش:
+      - research/index.md
+      - موضوعات پیشنهادی: research/research_rfps.md
+      - پژوهش‌های بین‌رشته‌ای: research/interdisciplinary_research.md
+      - پژوهش‌های کاربردی: research/applied_research.md
+      - انتشارات: research/publications.md
+      - چک لیست: https://www.m-zakeri.ir/lab/en/checklist/
+  - صنعت:
+      - industry/index.md
+      - خدمات: industry/services.md
+      - محصولات: industry/products.md
+  - آموزش:
+      - courses/index.md
+      - مهندسی کامپایلر: courses/compiler_engineering.md
+      - آزمون نرم‌افزار: courses/software_testing.md
+      - برنامه‌نویسی ساخت‌یافته در C: courses/c_programming.md
+      - مهندسی نرم‌افزار پیشرفته: courses/software_engineering_advanced.md
+      - آزمون و تحلیل نرم‌افزار پیشرفته: courses/software_testing_advanced.md
+      - اصول و الگوها در مهندسی نرم‌افزار: courses/software_engineering_patterns.md
+      - طراحی و توسعه امن نرم‌افزار : courses/secure_software_development.md
+      - طراحی رایانشی و هوشمند مواد: courses/computational_and_intelligent_material_design.md
+      - پژوهش علمی: courses/science_research_workshop.md
+  - افراد:
+      - people/index.md
+      - اساتید: people/director.md
+      - دانشجویان دکتری: people/phd.md
+      - دانشجویان کارشناسی ارشد: people/msc.md
+      - دانشجویان کارشناسی: people/bsc.md
+      - اعضای سابق: people/alumni.md
+  - پروژه‌ها:
+      - projects/index.md
+      - دانشجویان دکتری: projects/phd.md
+      - دانشجویان کارشناسی ارشد: projects/msc.md
+      - دانشجویان کارشناسی: projects/bsc.md
+      - داوری‌ها: projects/peer_reviews.md
+  - بلاگ:
+      - blog/index.md
+  - پرسش‌های متداول: faq.md
+  - ارتباط با ما: contact.md
+
+
+
+plugins:
+  - blog:
+      enabled: true
+      blog_dir: blog
+      blog_toc: true
+      post_date_format: full
+      pagination: true
+      pagination_per_page: 10
+
+  - search:
+      lang: ["ar", "en"]
+  #      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+
+  - social:
+      enabled: !ENV [CI, false]
+
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: false
+      caption_position: bottom
+      background: white
+      shadow: true
+      manual: false
+
+extra:
+  alternate:
+    - name: EN
+      link: /lab/en/
+      lang: en
+    - name: FA
+      link: /lab/
+      lang: fa
+
+  generator: false
+  social:
+    - icon: material/phone
+      link: "tel:+98(21)64545108"
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mortazazakeri
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/mztel
+
+extra_css:
+  - assets/styles.css
+
+watch:
+  - docs

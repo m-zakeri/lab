@@ -1,0 +1,9 @@
+
+.circle-image {
+    width: 250px; /* Adjust size as needed */
+    height: 250px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+

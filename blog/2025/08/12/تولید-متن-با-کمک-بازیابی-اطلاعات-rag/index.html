@@ -1,0 +1,2666 @@
+<!DOCTYPE html><html lang="fa" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)">
+      
+      
+        <meta name="author" content="مرتضی ذاکری">
+      
+      
+        <link rel="canonical" href="https://m-zakeri.github.io/lab/blog/2025/08/12/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%85%D8%AA%D9%86-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-%D8%A8%D8%A7%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-rag/">
+      
+      
+        <link rel="prev" href="../../../05/12/%D8%A8%D8%A7%D9%86%DA%A9%D8%AF%D8%A7%D8%B1%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF-%D9%85%D9%87%D9%86%D8%AF%D8%B3%DB%8C-%D9%86%D8%B1%D9%85%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%88-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%AF%D8%B1-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D9%85%D8%A7%D9%84%DB%8C-%D9%85%D8%AF%D8%B1%D9%86/">
+      
+      
+      
+        
+          <link rel="alternate" href="/lab/en/" hreflang="en">
+        
+          <link rel="alternate" href="/lab/" hreflang="fa">
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>تولید متن با کمک بازیابی اطلاعات (RAG) - آزمایشگاه مهندسی نرم افزار هوشمند</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010M6%2013h8l-3.5%203.5%201.42%201.42L17.84%2012l-5.92-5.92L10.5%207.5%2014%2011H6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vazirmatn:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Vazirmatn";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="تولید متن با کمک بازیابی اطلاعات (RAG) - آزمایشگاه مهندسی نرم افزار هوشمند">
+<meta property="og:description" content="آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)">
+<meta property="og:image" content="https://m-zakeri.github.io/lab/assets/images/social/blog/2025/08/12/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%85%D8%AA%D9%86-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-%D8%A8%D8%A7%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-rag.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://m-zakeri.github.io/lab/blog/2025/08/12/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%85%D8%AA%D9%86-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-%D8%A8%D8%A7%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-rag/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="تولید متن با کمک بازیابی اطلاعات (RAG) - آزمایشگاه مهندسی نرم افزار هوشمند">
+<meta property="twitter:description" content="آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)">
+<meta property="twitter:image" content="https://m-zakeri.github.io/lab/assets/images/social/blog/2025/08/12/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%85%D8%AA%D9%86-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-%D8%A8%D8%A7%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-rag.png">
+<link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#تولید-متن-با-کمک-بازیابی-اطلاعات-rag" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="سرتیتر">
+    <a href="../../../../.." title="آزمایشگاه مهندسی نرم افزار هوشمند" class="md-header__button md-logo" aria-label="آزمایشگاه مهندسی نرم افزار هوشمند" data-md-component="logo">
+      
+  <img src="../../../../../assets/ceaut.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            آزمایشگاه مهندسی نرم افزار هوشمند
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              تولید متن با کمک بازیابی اطلاعات (RAG)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="انتخاب زبان">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/lab/en/" hreflang="en" class="md-select__link">
+              EN
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/lab/" hreflang="fa" class="md-select__link">
+              FA
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="جستجو">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="هم‌رسانی" aria-label="هم‌رسانی" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="بازنشانی" aria-label="بازنشانی" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            راه‌اندازی جستجو
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="زبانه‌ها" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  خانه
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  پژوهش
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../industry/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  صنعت
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../courses/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  آموزش
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../people/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  افراد
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../projects/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  پروژه‌ها
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  بلاگ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  پرسش‌های متداول
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ارتباط با ما
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="هدایت" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="آزمایشگاه مهندسی نرم افزار هوشمند" class="md-nav__button md-logo" aria-label="آزمایشگاه مهندسی نرم افزار هوشمند" data-md-component="logo">
+      
+  <img src="../../../../../assets/ceaut.png" alt="logo">
+
+    </a>
+    آزمایشگاه مهندسی نرم افزار هوشمند
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    خانه
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    خانه
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../industry/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دسترسی سریع به خدمات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.m-zakeri.ir/pages/contact-me.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ارتباط با مدیریت آزمایشگاه
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/m-zakeri/lab/issues" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    درخواست بروزرسانی سایت
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../research/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    پژوهش
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/research_rfps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    موضوعات پیشنهادی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/interdisciplinary_research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش‌های بین‌رشته‌ای
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/applied_research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش‌های کاربردی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../research/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    انتشارات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.m-zakeri.ir/lab/en/checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    چک لیست
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../industry/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    صنعت
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    صنعت
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../industry/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دسترسی سریع به خدمات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../industry/products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    محصولات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    آموزش
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    آموزش
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/compiler_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مهندسی کامپایلر
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/software_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    آزمون نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/c_programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    برنامه‌نویسی ساخت‌یافته در C
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/software_engineering_advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مهندسی نرم‌افزار پیشرفته
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/software_testing_advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    آزمون و تحلیل نرم‌افزار پیشرفته
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/software_engineering_patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اصول و الگوها در مهندسی نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/secure_software_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    طراحی و توسعه امن نرم‌افزار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/computational_and_intelligent_material_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    طراحی رایانشی و هوشمند مواد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../courses/science_research_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پژوهش علمی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../people/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    افراد
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    افراد
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../people/director/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اساتید
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../people/phd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان دکتری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../people/msc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی ارشد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../people/bsc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../people/alumni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اعضای سابق
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../projects/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پروژه‌ها
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    پروژه‌ها
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/phd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان دکتری
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/msc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی ارشد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/bsc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دانشجویان کارشناسی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/peer_reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    داوری‌ها
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    بلاگ
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    بلاگ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    بایگانی
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    بایگانی
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3">
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    دسته‌بندی‌ها
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    دسته‌بندی‌ها
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    اخبار
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%D8%A8%D9%84%D8%A7%DA%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    بلاگ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%D8%AF%D8%B1%D8%B3%D9%86%D8%A7%D9%85%D9%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    درسنامه
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    هوش مصنوعی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    هوشمندسازی
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    پرسش‌های متداول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ارتباط با ما
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+                  <span class="md-ellipsis">
+                    برگشت به فهرست
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/alireza-paksaz24" alt="Alireza Paksaz">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/Alireza-Paksaz24">Alireza Paksaz</a>
+                        
+                      </strong>
+                      <br>
+                      Creator
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    فراداده
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"></path></svg>
+                        <time datetime="2025-08-12 00:00:00+00:00" class="md-ellipsis">سه‌شنبه 12 اوت 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"></path></svg>
+                          <span class="md-ellipsis">
+                            در
+                            
+                              <a href="../../../../category/%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C/">هوش مصنوعی</a>, 
+                              <a href="../../../../category/%D8%A8%D9%84%D8%A7%DA%AF/">بلاگ</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
+                          <span class="md-ellipsis">
+                            
+                              11 دقیقه زمان خواندن
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="تولید-متن-با-کمک-بازیابی-اطلاعات-rag">تولید متن با کمک بازیابی اطلاعات (RAG)</h1>
+<p>Retrieval-Augmented Generation (RAG) به‌عنوان یک رویکرد نوین در حوزه پردازش زبان طبیعی (NLP) معرفی شده است که به‌منظور بهبود کیفیت و دقت تولید متن توسط مدل‌های زبانی بزرگ (LLM) توسعه‌یافته است. در این روش، فرایند تولید متن با یک مرحله بازیابی اطلاعات ترکیب می‌شود؛ به این معنی که پیش از تولید پاسخ، مدل به جستجو و بازیابی داده‌های مرتبط از منابع خارجی می‌پردازد و سپس با بهره‌گیری از این اطلاعات، پاسخ دقیق‌تر و مستندتری تولید می‌کند.</p>
+<p>اهمیت RAG در مواجهه با محدودیت‌های ذاتی مدل‌های زبانی معمولی نهفته است. مدل‌های زبانی معمولی مانند GPT صرفاً بر اساس دانش ذخیره شده در پارامترهای خود عمل می‌کنند که این دانش معمولاً تا تاریخ خاصی محدود است و به‌روزرسانی آن مستلزم آموزش مجدد و پرهزینه مدل است. در مقابل، RAG امکان به‌روزرسانی سریع دانش مدل را فراهم می‌آورد؛ چرا که مدل می‌تواند در زمان پاسخگویی، از منابع داده به‌روز و پویا استفاده نماید. این ویژگی، علاوه بر افزایش دقت، ریسک تولید اطلاعات نادرست یا «هالوسینیشن» را به شکل قابل‌توجهی کاهش می‌دهد.</p>
+<p>از سوی دیگر، RAG قابلیت انطباق بالایی با داده‌های خاص سازمانی و زمینه‌های تخصصی دارد، چرا که می‌تواند پیش از تولید پاسخ، صرفاً بر اساس پایگاه‌داده‌های سازمانی یا اسناد تخصصی مربوطه به جستجو بپردازد. این ویژگی، RAG را به ابزاری مناسب برای کاربردهای تجاری و علمی تبدیل کرده است که نیازمند پاسخ‌های دقیق، به‌روز و قابل استناد هستند.</p>
+<p>به طور خلاصه، تفاوت اساسی RAG با مدل‌های مولد سنتی در نحوه به‌کارگیری داده‌ها است. مدل‌های مولد معمولی صرفاً بر دانش ضمنی ذخیره‌شده در پارامترهای خود تکیه دارند و به‌روزرسانی آن‌ها دشوار و زمان‌بر است، درحالی‌که RAG با تلفیق فرایند بازیابی اطلاعات و تولید متن، امکان استفاده از منابع داده پویا و متنوع را در زمان واقعی فراهم می‌آورد. این امر موجب افزایش دقت، به‌روزرسانی سریع‌تر دانش و قابلیت اطمینان بالاتر در تولید پاسخ‌های متنی می‌شود.</p>
+<!-- more -->
+
+<h1 id="مکانیزم-داخلی-rag">مکانیزم داخلی RAG</h1>
+<h2 id="1-روشهای-جستجو-retrieval">1) روش‌های جستجو (Retrieval)</h2>
+<p>در مدل‌های RAG، مرحله نخست به بازیابی اطلاعات مرتبط از یک منبع داده بیرونی اختصاص دارد. این منابع می‌توانند شامل پایگاه‌های داده ساخت‌یافته، مجموعه‌های اسناد بدون ساختار، یا بانک‌های دانش باشند.</p>
+<p>روش‌های متداول بازیابی اطلاعات در RAG معمولاً بر پایه نمایه‌سازی برداری (vector indexing) استوار است. در این رویکرد، ابتدا اسناد موجود به بردارهای عددی در فضای برداری تبدیل می‌شوند (مثلاً با استفاده از مدل‌های تعبیه (embedding) مانند BERT یا Sentence Transformers) سپس پرسش کاربر نیز به بردار تبدیل شده و شباهت برداری بین پرسش و اسناد اندازه‌گیری می‌شود تا اسناد مرتبط‌تر استخراج گردند.</p>
+<p>روش‌های کلاسیک دیگری نیز وجود دارند که بر اساس جستجوی متنی (textual search) و شاخص‌سازی کلیدواژه‌ای انجام می‌شوند، اما رویکرد مبتنی بر بردار به دلیل توانایی مدل در درک معنایی عمیق‌تر، در کاربردهای RAG محبوب‌تر است.</p>
+<p>در نهایت، یک مجموعه محدود از اسناد یا قطعات متنی مرتبط به‌عنوان ورودی به مرحله بعدی تحویل داده می‌شود.</p>
+<h2 id="2-مولد-بودن-generation">2) مولد بودن (Generation)</h2>
+<p>پس از بازیابی اطلاعات مرتبط، مرحله تولید متن آغاز می‌شود. در این مرحله، مدل زبانی مولد که معمولاً از معماری Transformer بهره می‌برد، ورودی ترکیبی شامل پرسش کاربر و متون بازیابی شده را دریافت می‌کند.</p>
+<p>مدل باتوجه‌به اطلاعات استخراج شده، پاسخ دقیق و مرتبطی را تولید می‌کند که مبتنی بر داده‌های واقعی است و از حدس‌های صرف صرفاً بر پایه دانش ضمنی مدل پرهیز می‌کند.</p>
+<p>به‌عبارت‌دیگر، فرایند تولید متن در RAG تفاوت اصلی با مدل‌های زبانی معمولی دارد، زیرا علاوه بر دانش ذخیره شده در پارامترها، اطلاعات به‌روز و خاص زمینه‌ای را نیز در اختیار دارد و به‌گونه‌ای پاسخ می‌دهد که کاملاً مستند و مرتبط با داده‌های بازیابی شده باشد.</p>
+<h2 id="3-استفاده-از-مدلهای-transformer-برای-ترکیب-جستجو-و-تولید">3) استفاده از مدل‌های Transformer برای ترکیب جستجو و تولید</h2>
+<p>معماری RAG غالباً بر پایه مدل‌های Transformer ساخته شده است که توانایی بالایی در درک متن و تولید پاسخ دارند. در این ساختار، ترکیب بین جستجو و تولید به‌صورت هم‌زمان یا مرحله‌ای انجام می‌شود.</p>
+<p>یکی از معماری‌های معمول، استفاده از دو مدل مجزا است:
+- <strong>Encoder:</strong> برای کدگذاری اسناد بازیابی شده و پرسش کاربر به نمایش برداری (embedding)
+- <strong>Decoder:</strong> برای تولید متن پاسخ بر اساس این نمایش‌های برداری</p>
+<p>در برخی پیاده‌سازی‌ها، مدل‌های RAG به‌صورت end-to-end آموزش داده می‌شوند تا بهترین نحوه بازیابی و تولید به‌صورت هماهنگ یاد گرفته شود. این آموزش مشترک به مدل امکان می‌دهد تا به طور بهینه منابع مرتبط را بازیابی کرده و پاسخ‌هایی باکیفیت بالاتر تولید کند.</p>
+<hr>
+<h1 id="کاربردها-rag">کاربردها RAG</h1>
+<h2 id="1-پاسخ-به-سؤالات-question-answering">1) پاسخ به سؤالات  (Question Answering)</h2>
+<p>یکی از مهم‌ترین کاربردهای RAG در بهبود سامانه‌های پرسش و پاسخ است. مدل‌های زبانی سنتی تنها بر دانش ذخیره شده در پارامترهای خود تکیه دارند و این محدودیت باعث کاهش دقت پاسخ‌ها به‌ویژه در سؤالات تخصصی یا داده‌های به‌روز می‌شود.</p>
+<p>با بهره‌گیری از  RAG، سیستم پیش از تولید پاسخ، اسناد مرتبط را از پایگاه‌های داده یا مجموعه‌های بزرگ متنی بازیابی می‌کند. این اطلاعات به مدل کمک می‌کند تا پاسخ‌هایی دقیق‌تر، مستند و به‌روز ارائه دهد. نتیجه این رویکرد، کاهش خطاهای تولید اطلاعات نادرست (hallucination) و افزایش اعتمادپذیری پاسخ‌ها است.</p>
+<h2 id="2-دستیارهای-هوشمند-intelligent-assistants">2) دستیارهای هوشمند  (Intelligent Assistants)</h2>
+<p>دستیارهای مجازی و هوشمند، مانند چت‌بات‌های پیشرفته، نیازمند دسترسی به حجم وسیعی از داده‌های متنوع و به‌روز هستند تا بتوانند به سؤالات و درخواست‌های کاربران پاسخ دهند.</p>
+<p>استفاده از RAG به این دستیارها امکان می‌دهد علاوه بر دانش داخلی، به پایگاه‌های داده سازمانی، مستندات، و منابع خارجی متصل شوند و پاسخ‌های دقیق و مرتبط‌تری ارائه کنند. این ویژگی به‌ویژه در محیط‌های تخصصی مانند خدمات مشتری، پزشکی، حقوق و آموزش، اهمیت بالایی دارد.</p>
+<h2 id="3-پژوهش-و-تحقیقات-علمی-scientific-research">3) پژوهش و تحقیقات علمی  (Scientific Research)</h2>
+<p>در حوزه پژوهش و تحقیقات علمی، حجم عظیمی از مقالات، گزارش‌ها و داده‌ها به‌صورت مستمر تولید می‌شود. جستجوی مؤثر و استخراج اطلاعات دقیق از این منابع برای پژوهشگران حیاتی است.</p>
+<p>مدل‌های RAG می‌توانند با جستجوی سریع و بازیابی مقالات و داده‌های مرتبط، پژوهشگران را در تهیه پیش‌زمینه مطالعات، خلاصه‌سازی ادبیات و حتی نگارش مقالات یاری کنند. این فناوری به افزایش سرعت و کیفیت تحقیقات علمی کمک می‌کند و امکان تحلیل دقیق‌تر منابع متعدد را فراهم می‌آورد.</p>
+<hr>
+<h1 id="مزایا-و-معایب">مزایا و معایب</h1>
+<h2 id="مزایا">مزایا</h2>
+<ul>
+<li>
+<p>دقت بالاتر نسبت به مدل‌های مولد ساده:<br>
+  در RAG، مدل علاوه بر دانش ذخیره‌شده در پارامترهای خود، به داده‌های واقعی و به‌روز دسترسی دارد. این موضوع موجب افزایش دقت و مرتبط بودن پاسخ‌ها می‌شود و احتمال تولید اطلاعات نادرست (hallucination) را کاهش می‌دهد.</p>
+</li>
+<li>
+<p>کاهش وابستگی به حافظه طولانی مدل:<br>
+  مدل‌های زبانی بزرگ معمولاً برای نگهداری دانش گسترده نیازمند پارامترهای بسیار زیاد و آموزش‌های زمان‌بر هستند. در RAG، بخشی از دانش موردنیاز به‌صورت بیرونی و پویا نگهداری می‌شود که باعث کاهش بار حافظه‌ای و نیاز به آموزش مجدد مدل می‌گردد.</p>
+</li>
+<li>
+<p>سرعت بیشتر در پردازش اطلاعات:<br>
+  با تقسیم وظایف به بخش بازیابی و تولید، RAG امکان پردازش سریع‌تر داده‌های حجیم را فراهم می‌کند؛ زیرا مرحله بازیابی می‌تواند بهینه‌سازی شده و به‌سرعت اسناد مرتبط را بیابد، سپس مدل تولید متن بر اساس آن عمل می‌کند.</p>
+</li>
+</ul>
+<h2 id="معایب">معایب</h2>
+<ul>
+<li>
+<p>نیاز به پایگاه‌داده معتبر و به‌روز برای جستجو:<br>
+  کیفیت خروجی RAG به‌شدت وابسته به صحت و جامعیت داده‌های موجود در منبع بازیابی است. اگر پایگاه‌داده ناقص، منسوخ یا نامعتبر باشد، پاسخ‌های تولید شده ممکن است نادرست یا ناقص باشند.</p>
+</li>
+<li>
+<p>پیچیدگی بیشتر در پیاده‌سازی:<br>
+  ترکیب دو فرایند مجزا یعنی بازیابی و تولید متن، نیازمند معماری‌های پیچیده‌تر و هماهنگی میان اجزا است. این موضوع طراحی، پیاده‌سازی و نگهداری سیستم را دشوارتر می‌کند.</p>
+</li>
+<li>
+<p>مدیریت اسناد و منابع بزرگ:<br>
+  پردازش و نمایه‌سازی حجم وسیعی از اسناد، به‌ویژه در محیط‌های داده‌محور و سازمانی، چالش‌های فنی و زیرساختی ایجاد می‌کند. حفظ کارایی بازیابی و اطمینان از کیفیت داده‌ها در این مقیاس، نیازمند منابع و ابزارهای مناسب است.</p>
+</li>
+</ul>
+<hr>
+<h1 id="مقایسه-rag-با-دیگر-مدلهای-مولد">مقایسه RAG با دیگر مدل‌های مولد</h1>
+<h2 id="مقایسه-با-سیستمهای-مبتنی-بر-بازیابی-retrieval-based-systems">مقایسه با سیستم‌های مبتنی بر بازیابی (Retrieval-Based Systems)</h2>
+<p>سیستم‌های صرفاً بازیابی اطلاعات بر اساس استخراج مستقیم پاسخ از مجموعه اسناد یا پایگاه‌داده عمل می‌کنند و عموماً توانایی تولید متن یا پاسخ‌های پیچیده را ندارند. این سیستم‌ها پاسخ‌ها را معمولاً به‌صورت قطعات متنی موجود ارائه می‌دهند بدون امکان تولید محتوای نو.</p>
+<p>در مقابل، RAG علاوه بر بازیابی اطلاعات مرتبط، توانایی تولید پاسخ‌های جدید و هم‌خوان با زمینه پرسش را دارد. این ترکیب، انعطاف‌پذیری و توانایی پاسخگویی به سؤالات پیچیده‌تر و غیرمستقیم را افزایش می‌دهد.</p>
+<h2 id="مقایسه-با-مدلهای-مولد-خالص-pure-generative-models">مقایسه با مدل‌های مولد خالص (Pure Generative Models)</h2>
+<p>مدل‌های مولد خالص مانند GPT-3 به طور کامل بر اساس دانش ضمنی ذخیره‌شده در پارامترهای مدل عمل می‌کنند و مستقل از منابع داده بیرونی پاسخ تولید می‌کنند. این موضوع محدودیت‌هایی در به‌روزرسانی دانش و دقت پاسخ‌ها ایجاد می‌کند.</p>
+<p>RAG با تلفیق بازیابی اطلاعات به‌روز و تولید متن، امکان تولید پاسخ‌های دقیق‌تر و مستندتر را فراهم می‌آورد و می‌تواند دانش مدل را به‌صورت پویا و بدون نیاز به آموزش مجدد، به‌روزرسانی کند.</p>
+<h2 id="ترکیب-rag-با-مدلهای-دیگر-مثل-bert-و-gpt-3">ترکیب RAG با مدل‌های دیگر مثل BERT و GPT-3</h2>
+<p>RAG  می‌تواند به‌صورت ترکیبی با مدل‌های زبان مانند BERT و GPT-3 مورداستفاده قرار گیرد. برای مثال:
+- مدل‌های مانند BERT می‌توانند در مرحله بازیابی اطلاعات برای درک بهتر پرسش و یافتن اسناد مرتبط به کار روند.
+- مدل‌های مولد مانند GPT-3 وظیفه تولید متن نهایی بر اساس داده‌های بازیابی شده را بر عهده دارند.</p>
+<p>این همکاری چندمرحله‌ای، از قدرت درک معنایی عمیق مدل‌های مبتنی بر Transformer بهره‌مند می‌شود و هم‌زمان دقت و به‌روزرسانی پاسخ‌ها را تضمین می‌کند.</p>
+<hr>
+<h1 id="چالشها-و-محدودیتها">چالش‌ها و محدودیت‌ها</h1>
+<h2 id="چالشهای-مرتبط-با-جستجوی-اطلاعات">چالش‌های مرتبط با جستجوی اطلاعات</h2>
+<p>کیفیت بازیابی اطلاعات به اعتبار و به‌روزرسانی پایگاه‌داده بستگی دارد. در صورت ناقص یا قدیمی بودن منابع، احتمال تولید پاسخ‌های نادرست افزایش می‌یابد. اطمینان از صحت و جامعیت داده‌ها یکی از چالش‌های اصلی RAG است.</p>
+<h2 id="مدیریت-منابع-بزرگ-اطلاعات-و-کاهش-خطا-در-انتخاب-منابع">مدیریت منابع بزرگ اطلاعات و کاهش خطا در انتخاب منابع</h2>
+<p>پردازش و نمایه‌سازی حجم وسیعی از اسناد نیازمند زیرساخت‌های قوی و الگوریتم‌های بهینه است. انتخاب منابع نامرتبط یا ناکارآمد می‌تواند منجر به کاهش کیفیت پاسخ‌ها شود. بهینه‌سازی معیارهای بازیابی و فیلترکردن منابع نامناسب، از جمله مسائل مهم در این حوزه است.</p>
+<h2 id="مسائل-مرتبط-با-تعصب-bias-و-انصاف-fairness">مسائل مرتبط با تعصب (Bias) و انصاف (Fairness)</h2>
+<p>هم در مرحله بازیابی و هم در تولید متن، امکان بروز تعصبات مدل یا داده‌های آموزشی وجود دارد که می‌تواند منجر به پاسخ‌های ناعادلانه یا مغرضانه شود. مدیریت این ریسک‌ها و تضمین انصاف در عملکرد سیستم، چالشی پیچیده و ضروری برای توسعه‌دهندگان RAG  است.</p>
+<hr>
+<h1 id="نمونههای-عملی">نمونه‌های عملی</h1>
+<p>تکنولوژی RAG در پروژه‌ها و محصولات متعددی به کار رفته است.</p>
+<ul>
+<li>
+<p>شرکت Facebook AI Research (FAIR)، یکی از پیشگامان اصلی توسعه RAG، این معماری را برای بهبود سامانه‌های پرسش و پاسخ توسعه داده است که با بهره‌گیری از بازیابی اطلاعات، دقت پاسخ‌ها را افزایش می‌دهد.</p>
+</li>
+<li>
+<p>شرکت‌های بزرگی مانند Microsoft  و  Google نیز در دستیارهای هوشمند خود از رویکردهای مشابه RAG استفاده می‌کنند تا به داده‌های به‌روز دسترسی داشته باشند و پاسخ‌های دقیق‌تری تولید کنند.</p>
+</li>
+<li>
+<p>در حوزه پزشکی، سامانه‌هایی برای کمک به تشخیص بیماری‌ها و ارائه توصیه‌های بالینی، با استفاده از RAG توانسته‌اند به‌سرعت به دانش روز و مقالات جدید دسترسی یابند.</p>
+</li>
+</ul>
+<hr>
+<h1 id="مثال-ساده-پیادهسازی-rag">مثال ساده پیاده‌سازی RAG</h1>
+<p>یک نمونه ساده می‌تواند شامل استفاده از یک موتور بازیابی متن مانند FAISS  برای بازیابی اسناد مرتبط و یک مدل مولد مانند GPT-3  یا T5  برای تولید متن باشد.</p>
+<p>مراحل کلی عبارت‌اند از:</p>
+<ol>
+<li>تبدیل اسناد به embedding و ذخیره در یک دیتاست برداری (با FAISS)  </li>
+<li>تبدیل پرسش کاربر به embedding و جستجو در دیتاست برای یافتن اسناد مشابه  </li>
+<li>ارسال متن بازیابی شده به همراه پرسش به مدل مولد برای تولید پاسخ  </li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModel</span><span class="p">,</span> <span class="n">AutoModelForSeq2SeqLM</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 1. Sample documents</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="s2">"The Eiffel Tower is located in Paris."</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="s2">"Python is a popular programming language."</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="s2">"The Great Wall of China is visible from space."</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">]</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># 2. Load embedding model (using Sentence Transformer)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">embedding_model_name</span> <span class="o">=</span> <span class="s2">"sentence-transformers/all-MiniLM-L6-v2"</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">tokenizer_emb</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">embedding_model_name</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">model_emb</span> <span class="o">=</span> <span class="n">AutoModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">embedding_model_name</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">embed_text</span><span class="p">(</span><span class="n">texts</span><span class="p">):</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer_emb</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"pt"</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="n">embeddings</span> <span class="o">=</span> <span class="n">model_emb</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">last_hidden_state</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="k">return</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># 3. Convert documents to embeddings and build FAISS index</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">doc_embeddings</span> <span class="o">=</span> <span class="n">embed_text</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">embedding_dim</span> <span class="o">=</span> <span class="n">doc_embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">index</span> <span class="o">=</span> <span class="n">faiss</span><span class="o">.</span><span class="n">IndexFlatL2</span><span class="p">(</span><span class="n">embedding_dim</span><span class="p">)</span>  <span class="c1"># L2 distance index</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">index</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">doc_embeddings</span><span class="p">)</span>  <span class="c1"># Add document embeddings to index</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="c1"># 4. Load generative model (T5)</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="n">generator_model_name</span> <span class="o">=</span> <span class="s2">"t5-small"</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="n">tokenizer_gen</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">generator_model_name</span><span class="p">)</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="n">model_gen</span> <span class="o">=</span> <span class="n">AutoModelForSeq2SeqLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">generator_model_name</span><span class="p">)</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="c1"># 5. User query</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="n">query</span> <span class="o">=</span> <span class="s2">"Where is the Eiffel Tower located?"</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="c1"># 6. Embed the query and perform similarity search</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="n">query_embedding</span> <span class="o">=</span> <span class="n">embed_text</span><span class="p">([</span><span class="n">query</span><span class="p">])</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Number of top documents to retrieve</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query_embedding</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="c1"># 7. Prepare input for generative model: combine query and retrieved docs</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">retrieved_docs</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">documents</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="n">input_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"question: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2"> context: </span><span class="si">{</span><span class="n">retrieved_docs</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="c1"># 8. Generate answer</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer_gen</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"pt"</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="n">outputs</span> <span class="o">=</span> <span class="n">model_gen</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="n">answer</span> <span class="o">=</span> <span class="n">tokenizer_gen</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Query:"</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Retrieved documents:"</span><span class="p">,</span> <span class="n">retrieved_docs</span><span class="p">)</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Generated answer:"</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+</span></code></pre></div>
+<h1 id="آینده-rag">آینده RAG</h1>
+<h2 id="روند-توسعه-و-پیشرفتها">روند توسعه و پیشرفت‌ها</h2>
+<p>انتظار می‌رود معماری‌های RAG با بهبود الگوریتم‌های بازیابی معنایی، افزایش مقیاس‌پذیری و ادغام با مدل‌های مولد پیشرفته‌تر، به طور قابل‌توجهی توسعه یابند. آموزش‌های end-to-end با داده‌های بزرگ‌تر و تنوع بیشتر، دقت و توانایی این سیستم‌ها را بهبود خواهد بخشید.</p>
+<p>همچنین، تمرکز بر بهبود مدیریت منابع داده، کاهش تعصب و ارتقا قابلیت‌های تفسیر و شفافیت مدل‌ها از زمینه‌های مهم پیشرفت است.</p>
+<h2 id="تأثیر-در-صنایع-مختلف">تأثیر در صنایع مختلف</h2>
+<ul>
+<li>در صنعت بهداشت، RAG می‌تواند با دسترسی سریع به دانش پزشکی روز و داده‌های بالینی، فرایند تشخیص و درمان را بهبود بخشد.</li>
+<li>در صنعت مالی، این فناوری می‌تواند تحلیل سریع اسناد قانونی، گزارش‌های مالی و داده‌های بازار را ممکن سازد و تصمیم‌گیری هوشمند را تسهیل کند.</li>
+<li>در حوزه بازی‌های ویدئویی، RAG می‌تواند به تولید داستان‌های پویا، راهنمای بازی و تعامل هوشمند با بازیکنان کمک کند.</li>
+</ul>
+<hr>
+<h1 id="نتیجهگیری">نتیجه‌گیری</h1>
+<p>Retrieval-Augmented Generation به‌عنوان یک رویکرد نوآورانه، ترکیب مؤثری از بازیابی اطلاعات و تولید متن را ارائه می‌دهد که منجر به پاسخ‌های دقیق‌تر، به‌روزتر و مستندتر می‌شود. این فناوری با کاهش محدودیت‌های مدل‌های مولد خالص، پتانسیل بالایی برای کاربردهای متنوع در صنعت و پژوهش دارد.</p>
+<p>برای علاقه‌مندان به ورود به این حوزه، توصیه می‌شود ابتدا با مفاهیم بازیابی اطلاعات و مدل‌های مولد مبتنی بر Transformer آشنا شده، سپس از ابزارها و کتابخانه‌های موجود مانند Hugging Face و Haystack برای پیاده‌سازی نمونه‌های اولیه استفاده کنند.</p>
+<p>توسعه این فناوری نیازمند توجه به چالش‌های فنی، اخلاقی و مدیریتی است که با تحقیق و همکاری میان‌رشته‌ای می‌توان به آن‌ها پاسخ داد و کاربردهای RAG را به سطوح بالاتری ارتقا داد.</p>
+<hr>
+<h1 id="منابع">منابع</h1>
+<ol>
+<li>Lewis, P., Perez, E., Piktus, A., Karpukhin, V., Goyal, N., Küttler, H., ... &amp; Riedel, S. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. Advances in Neural Information Processing Systems (NeurIPS).  </li>
+<li>Izacard, G., &amp; Grave, E. (2021). Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering. arXiv preprint arXiv:2102.00062.  </li>
+<li>Karpukhin, V., Oguz, B., Min, S., Lewis, P., Wu, L., Edunov, S., ... &amp; Yih, W.-t. (2020). Dense Passage Retrieval for Open-Domain Question Answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP).  </li>
+<li>Izacard, G., &amp; Grave, E. (2022). RAG: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. arXiv preprint arXiv:2005.11401.  </li>
+<li>Fan, A., Lewis, M., &amp; Dauphin, Y. (2019). Strategies for Pre-training Large Scale Language Models. arXiv preprint arXiv:1904.05862.<br>
+```</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  برگشت به بالا
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="پاورقی">
+        
+          
+          <a href="../../../05/12/%D8%A8%D8%A7%D9%86%DA%A9%D8%AF%D8%A7%D8%B1%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF-%D9%85%D9%87%D9%86%D8%AF%D8%B3%DB%8C-%D9%86%D8%B1%D9%85%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%88-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%AF%D8%B1-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D9%85%D8%A7%D9%84%DB%8C-%D9%85%D8%AF%D8%B1%D9%86/" class="md-footer__link md-footer__link--prev" aria-label="قبلی: بانکداری هوشمند: کاربرد مهندسی نرم‌افزار و هوش مصنوعی در خدمات مالی مدرن">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                قبلی
+              </span>
+              <div class="md-ellipsis">
+                بانکداری هوشمند: کاربرد مهندسی نرم‌افزار و هوش مصنوعی در خدمات مالی مدرن
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ۲۰۲۵ - ۲۰۲۴ © تمامی حقوق محفوظ است. آزمایشگاه مهندسی نرم افزار هوشمند - دانشگاه صنعتی امیرکبیر (پلی تکنیک تهران)
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="tel:+98(21)64545108" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25 1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mortazazakeri" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/mztel" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.footnote.tooltips"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "search.result.more.one": "1 \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.more.other": "# \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.term.missing": "\u0645\u0648\u062c\u0648\u062f \u0646\u06cc\u0633\u062a", "select.version": "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0631\u0627\u06cc\u0634"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
