@@ -10,13 +10,13 @@ docs_dir: docs/en/
 
 theme:
     name: material
+    custom_dir: overrides
     language: en
     font:
         text: Roboto
         code: Roboto Mono
-    logo: assets/ceaut.png
-
-    # favicon: images/favicon.png
+    logo: assets/logo-mark.png
+    favicon: assets/favicon.png
     features:
       - content.tooltips
       # Navigation features
@@ -46,11 +46,15 @@ theme:
   # Palette toggle for light mode
     palette:
       - scheme: default
+        primary: custom
+        accent: custom
         toggle:
             icon: material/brightness-7
             name: Switch to dark mode
    # Palette toggle for dark mode
       - scheme: slate
+        primary: custom
+        accent: custom
         toggle:
            icon: material/brightness-4
            name: Switch to light mode
@@ -81,12 +85,10 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  - pymdownx.tasklist:
-      clickable_checkbox: true
-
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+      clickable_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -105,6 +107,7 @@ nav:
     - Products: products.md
     - Research:
         - research/index.md
+        - Publications: research/publications.md
     - People: people.md
     - Checklists:
         - checklist/index.md
@@ -132,6 +135,28 @@ plugins:
 
   - social:
       enabled: !ENV [CI, false]
+      # The card generator maps a *named* palette colour to a card background;
+      # `primary: custom` is not in that map, so it silently falls back to
+      # indigo. These two keys are what keep the cards on brand.
+      cards_layout_options:
+        background_color: "#12325c"
+        color: "#ffffff"
+
+  # Downloads external assets (Google Fonts, GitHub avatars, twemoji) at build
+  # time and serves them from this site — no third-party requests at runtime.
+  - privacy:
+      # The theme bundle references the mermaid CDN even when no page contains a
+      # diagram; without this, 3.5 MB of unused JS is downloaded into every build.
+      assets_exclude:
+        - unpkg.com/mermaid@*
+
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+      abstract_chars_count: 300
 
 
   - glightbox:
@@ -145,6 +170,7 @@ plugins:
       draggable: true
       skip_classes:
         - custom-skip-class-name
+        - no-lightbox
       auto_caption: false
       caption_position: bottom
       background: white

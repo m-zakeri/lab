@@ -4,7 +4,7 @@
 
 <!-- 4 -->
 :material-account-tie: رسول رضوانی جلال
-![Rasoul RezvaniJalal](figs/Rezvani.jpeg){ width="150"  align=left loading=lazy}
+![Rasoul RezvaniJalal](figs/Rezvani.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -28,7 +28,7 @@
 
 <!-- 3 -->
 :material-account-tie: مصطفی مرادی
-![Mostafa Moradi](figs/Moradi.jpg){ width="150"  align=left loading=lazy}
+![Mostafa Moradi](figs/Moradi.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -52,7 +52,7 @@
 
 <!-- 2 -->
 :material-account-tie: __نام و نام خانوادگی__
-![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
+![نام و نام خانوادگی](figs/account.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -73,7 +73,7 @@
 
 <!-- 1 -->
 :material-account-tie: __نام و نام خانوادگی__
-![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
+![نام و نام خانوادگی](figs/account.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**

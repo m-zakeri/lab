@@ -6,7 +6,7 @@
 
 <!-- 1 -->
 :material-account-tie: __علیرضا پاکساز__
-![Alireza Paksaz](figs/account.png){ width="150"  align=left loading=lazy}
+![علیرضا پاکساز](figs/account.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -27,7 +27,7 @@
 
 <!-- 2 -->
 :material-account-tie: __حسین اسدی__
-![Hossein Asadi](figs/Asadi.jpg){ width="120"  align=left loading=lazy align=left}
+![حسین اسدی](figs/Asadi.webp){ width="120"  align=left loading=lazy align=left}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -44,7 +44,7 @@
 
 <!-- 3 -->
 :material-account-tie: __حامد فلاحی__
-![Hamed Fallahi](figs/Fallahi.jpg){ width="120" align=left loading=lazy }
+![حامد فلاحی](figs/Fallahi.webp){ width="120" align=left loading=lazy }
 <br/>
 رشته:
 **مهندسی کامپیوتر**

@@ -1,9 +1,409 @@
+/* =========================================================================
+   ISERL — design layer (Persian / RTL)
+   Overrides Material's tokens. Keep in sync with docs/en/assets/styles.css;
+   only the "Persian typography" block at the end is language-specific.
+   ========================================================================= */
 
-.circle-image {
-    width: 175px; /* Adjust size as needed */
-    height: 175px; /* Adjust size as needed */
-    border-radius: 50%;
-    object-fit: cover;
+/* --- 1. Brand tokens ---------------------------------------------------- */
+
+[data-md-color-primary="custom"] {
+  --md-footer-bg-color:         #16294a;
+  --md-footer-bg-color--dark:   #0b2140;
+  --md-primary-fg-color:        #12325c;
+  --md-primary-fg-color--light: #1e4b85;
+  --md-primary-fg-color--dark:  #0b2140;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, .7);
 }
 
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color:             #b45309;
+  --md-accent-fg-color--transparent: rgba(180, 83, 9, .1);
+  --md-accent-bg-color:             #ffffff;
+  --md-accent-bg-color--light:      rgba(255, 255, 255, .7);
+}
 
+:root {
+  --brand-ink:      #12325c;
+  --brand-ink-2:    #1e4b85;
+  --brand-accent:   #b45309;
+  --brand-surface:  #ffffff;
+  --brand-surface-2:#f5f7fa;
+  --brand-border:   #e2e6ec;
+  --brand-muted:    #5b6473;
+  --brand-radius:   .75rem;
+  --brand-shadow:   0 1px 2px rgba(16, 24, 40, .04), 0 8px 24px rgba(16, 24, 40, .06);
+  --brand-shadow-lg:0 2px 4px rgba(16, 24, 40, .06), 0 16px 40px rgba(16, 24, 40, .1);
+  --brand-hero-from:#12325c;
+  --brand-hero-to:  #1d4a80;
+}
+
+/* Body link colour: distinct from body text, but still restrained. */
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #1e4b85;
+  --md-default-fg-color: #1f2430;
+  --md-default-fg-color--light: #5b6473;
+}
+
+/* Dark scheme: navy-tinted surfaces instead of Material's neutral grey. */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:       #0f1724;
+  --md-default-bg-color--light: #151d2c;
+  --md-typeset-a-color:        #8fb3e0;
+  --md-code-bg-color:          #151d2c;
+
+  --brand-ink:      #cfe0f7;
+  --brand-ink-2:    #8fb3e0;
+  --brand-accent:   #e9a23b;
+  --brand-surface:  #151d2c;
+  --brand-surface-2:#111827;
+  --brand-border:   #26314a;
+  --brand-muted:    #9aa6bb;
+  --brand-shadow:   0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .3);
+  --brand-shadow-lg:0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .45);
+  --brand-hero-from:#0d1a2e;
+  --brand-hero-to:  #14314f;
+}
+
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #0d1a2e;
+}
+
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: #e9a23b;
+  --md-accent-fg-color--transparent: rgba(233, 162, 59, .12);
+}
+
+/* --- 2. Typography ------------------------------------------------------ */
+
+.md-typeset {
+  font-size: .8rem;
+  line-height: 2;                 /* Persian needs more leading than Latin */
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--brand-ink);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.md-typeset h1 { font-size: 1.85rem; line-height: 1.6; margin-bottom: .8rem; }
+.md-typeset h2 {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-top: 2.2rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--brand-border);
+}
+.md-typeset h3 { font-size: 1.05rem; line-height: 1.7; margin-top: 1.6rem; }
+
+.md-typeset a { text-underline-offset: .18em; }
+.md-typeset a:hover { color: var(--md-accent-fg-color); }
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--brand-border);
+  margin: 2.2rem 0;
+}
+
+/* Landing pages hide the sidebars, so cap top-level prose to a readable
+   measure while cards and heroes still span the full width. */
+.md-typeset > p,
+.md-typeset > ul,
+.md-typeset > ol { max-width: 48rem; }
+
+/* --- 3. Header, tabs, footer ------------------------------------------- */
+
+.md-header {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.55rem;
+  width: auto;
+}
+
+.md-tabs { border-top: 1px solid rgba(255, 255, 255, .1); }
+.md-tabs__link { opacity: .8; font-weight: 500; }
+.md-tabs__link:hover,
+.md-tabs__link--active { opacity: 1; }
+
+.md-nav__title { font-weight: 700; }
+
+/* --- 4. Hero ------------------------------------------------------------ */
+
+.md-typeset .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: center;
+  margin: 0 0 2.5rem;
+  padding: 2.4rem 2.2rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--brand-hero-from), var(--brand-hero-to));
+  color: #fff;
+  box-shadow: var(--brand-shadow-lg);
+}
+
+/* Two columns once there is room; single column on narrow viewports. */
+@media screen and (min-width: 60em) {
+  .md-typeset .hero {
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    gap: 2.2rem;
+    padding: 2.8rem 2.6rem;
+  }
+}
+
+.md-typeset .hero__body { min-width: 0; }
+
+/* The hero heading is decorative chrome — no permalink anchor. */
+.md-typeset .hero .headerlink { display: none; }
+
+.md-typeset .hero__eyebrow {
+  margin: 0 0 .5rem;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: rgba(255, 255, 255, .72);
+}
+
+.md-typeset .hero__title {
+  margin: 0 0 .7rem;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #fff;
+}
+
+.md-typeset .hero__tagline {
+  margin: 0 0 1.3rem;
+  font-size: .84rem;
+  line-height: 2;
+  color: rgba(255, 255, 255, .88);
+  max-width: 34rem;
+}
+
+.md-typeset .hero__actions { margin: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+
+.md-typeset .hero__art {
+  width: 13rem;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.md-typeset .hero__art p { margin: 0; }
+
+.md-typeset .hero__art img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .28);
+}
+
+/* Buttons inside the hero read against the navy panel. */
+.md-typeset .hero .md-button {
+  border-color: rgba(255, 255, 255, .6);
+  color: #fff;
+}
+.md-typeset .hero .md-button--primary {
+  background-color: #fff;
+  border-color: #fff;
+  /* Fixed navy: the hero panel is dark in both schemes, so this must not
+     follow --brand-ink (which lightens in the slate scheme). */
+  color: #12325c;
+}
+.md-typeset .hero .md-button:hover {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #fff;
+}
+
+/* --- 5. Buttons --------------------------------------------------------- */
+
+.md-typeset .md-button {
+  border-radius: .5rem;
+  border-width: 1px;
+  padding: .5rem 1.1rem;
+  font-weight: 600;
+  transition: background-color .15s, color .15s, border-color .15s, transform .15s;
+}
+.md-typeset .md-button:hover { transform: translateY(-1px); }
+
+/* --- 6. Cards ----------------------------------------------------------- */
+
+.md-typeset .grid { gap: 1rem; }
+
+.md-typeset .grid > .card,
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  background-color: var(--brand-surface);
+  box-shadow: var(--brand-shadow);
+  padding: 1.1rem 1.2rem;
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+
+.md-typeset .grid > .card:hover,
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-ink-2);
+  box-shadow: var(--brand-shadow-lg);
+}
+
+/* Roster cards: centre the whole card when it carries a portrait. */
+.md-typeset .grid > .card:has(img),
+.md-typeset .grid.cards > ul > li:has(img) { text-align: center; }
+
+/* One avatar treatment everywhere — overrides the per-page width/align
+   attributes, which currently differ from page to page. */
+.md-typeset .grid > .card img,
+.md-typeset .grid.cards > ul > li img {
+  float: none;
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  margin: .7rem auto .9rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--brand-surface-2);
+  box-shadow: 0 0 0 1px var(--brand-border), 0 4px 12px rgba(16, 24, 40, .1);
+}
+
+.md-typeset .grid > .card strong:first-of-type,
+.md-typeset .grid.cards > ul > li strong:first-of-type {
+  color: var(--brand-ink);
+  font-size: .95em;
+}
+
+/* Social icon row at the foot of a person card. */
+.md-typeset .grid > .card .twemoji,
+.md-typeset .grid.cards > ul > li .twemoji { vertical-align: -.15em; }
+
+.md-typeset .grid > .card a .twemoji svg,
+.md-typeset .grid.cards > ul > li a .twemoji svg {
+  height: 1.05em;
+  fill: var(--brand-muted);
+  transition: fill .15s;
+}
+.md-typeset .grid > .card a:hover .twemoji svg,
+.md-typeset .grid.cards > ul > li a:hover .twemoji svg { fill: var(--md-accent-fg-color); }
+
+/* Course cards are built as tables inside a .grid — make them read as cards. */
+.md-typeset .grid table:not([class]) {
+  width: 100%;
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--brand-shadow);
+  overflow: hidden;
+}
+.md-typeset .grid table:not([class]) th {
+  background-color: var(--brand-ink);
+  color: #fff;
+  font-size: .95em;
+  padding: .8rem 1rem;
+}
+.md-typeset .grid table:not([class]) td {
+  border: 0;
+  padding: .7rem 1rem;
+  line-height: 1.9;
+}
+.md-typeset .grid table:not([class]) img {
+  border-radius: .5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Publications -------------------------------------------------------
+   Each entry pairs a localized title with a Latin metadata block. The block
+   is dir="ltr" so DOIs and author lists keep their own ordering inside RTL
+   prose (a bare "10.1016/x" renders reversed under an RTL base direction). */
+
+.md-typeset .pub-en {
+  display: block;
+  direction: ltr;
+  text-align: left;
+  margin-top: .15rem;
+}
+
+.md-typeset .pub-en__title,
+.md-typeset .pub-en__meta,
+.md-typeset .pub-en__doi { display: block; }
+
+.md-typeset .pub-en__title { line-height: 1.55; }
+
+.md-typeset .pub-en__meta {
+  color: var(--brand-muted);
+  font-size: .88em;
+  line-height: 1.6;
+}
+
+.md-typeset .pub-en__doi {
+  font-size: .82em;
+  word-break: break-all;
+}
+
+.md-typeset .pub-en + *,
+.md-typeset li:has(> .pub-en) { margin-bottom: .1rem; }
+
+/* --- 7. Content blocks -------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th { background-color: var(--brand-surface-2); }
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--brand-radius);
+  border-width: 1px;
+  box-shadow: var(--brand-shadow);
+}
+
+.md-typeset img { border-radius: .4rem; }
+.md-typeset .hero__art img { border-radius: 50%; }
+
+/* Legacy helper kept for pages that still reference it. */
+.circle-image {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid > .card,
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .md-button { transition: none; }
+  .md-typeset .grid > .card:hover,
+  .md-typeset .grid.cards > ul > li:hover,
+  .md-typeset .md-button:hover { transform: none; }
+}
+
+/* --- 8. Persian typography (this file only) ----------------------------- */
+
+/* Latin runs inside Persian prose: isolate them so surrounding punctuation
+   and brackets stay on the correct side under the bidi algorithm. */
+.md-typeset code,
+.md-typeset kbd,
+.md-typeset a,
+.md-typeset strong { unicode-bidi: isolate; }
+
+/* Code is always LTR, regardless of the surrounding paragraph direction. */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset .highlight {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Persian has no italic; slanted Persian glyphs are a Latin artefact. */
+.md-typeset em { font-style: normal; font-weight: 600; }
+
+.md-typeset ul,
+.md-typeset ol { line-height: 1.95; }
+
+.md-typeset li { margin-bottom: .3em; }
