@@ -6,7 +6,7 @@
 <div class="grid" markdown>
 
 :material-account-tie: __Dr. Morteza Zakeri__  
-![Morteza Zakeri](images/people/zakeri.jpg){ width="175" align=right loading=lazy .circle-image}  
+![Dr. Morteza Zakeri](images/people/zakeri.webp){ width="175" align=right loading=lazy .circle-image}  
 <br/>
 **Ph.D. in Computer Engineering**
 <br/>
@@ -27,7 +27,7 @@
 
 <!-- Card 1 -->
 :material-account-tie: __Full Name__  
-![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
+![Full Name](images/people/account.webp){ width="150" align=right loading=lazy }  
 <br/>  
 - Major:  
 **Computer Engineering**  
@@ -44,7 +44,7 @@
 
 <!-- Card 2 -->
 :material-account-tie: __Full Name__  
-![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
+![Full Name](images/people/account.webp){ width="150" align=right loading=lazy }  
 <br/>
 Major:
 **Computer Engineering**
@@ -69,7 +69,7 @@ Research Areas:
 
 <!-- Card 1 -->
 :material-account-tie: __Full Name__  
-![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
+![Full Name](images/people/account.webp){ width="150" align=right loading=lazy }  
 <br/>  
 Major:  
 **Computer Engineering**  
@@ -86,7 +86,7 @@ Research Areas:
 
 <!-- Card 2 -->
 :material-account-tie: __Full Name__  
-![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
+![Full Name](images/people/account.webp){ width="150" align=right loading=lazy }  
 <br/>  
 Major:  
 **Computer Engineering**  
@@ -110,7 +110,7 @@ Research Areas:
 
 <!-- Card 1 -->
 :material-account-tie: __Alireza Paksaz__  
-![Alireza Paksaz](images/people/account.png){ width="150"  align=right loading=lazy }  
+![Alireza Paksaz](images/people/account.webp){ width="150"  align=right loading=lazy }  
 <br/>
 Field of Study:  
 **Computer Engineering**  
@@ -128,7 +128,7 @@ Research Areas:
 
 <!-- Card 2 -->
 :material-account-tie: __Full Name__  
-![Morteza Zakeri](images/people/account.png){ width="150" align=right loading=lazy }  
+![Full Name](images/people/account.webp){ width="150" align=right loading=lazy }  
 <br/>  
 Major:  
 **Computer Engineering**  

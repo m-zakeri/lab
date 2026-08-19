@@ -6,7 +6,7 @@
 
 <!-- 2 -->
 :material-account-tie: __نام و نام خانوادگی__
-![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
+![نام و نام خانوادگی](figs/account.webp){ width="150"  align=left loading=lazy}
 <br/>
 - رشته:
 **مهندسی کامپیوتر**
@@ -28,7 +28,7 @@
 
 <!-- 1 -->
 :material-account-tie: __نام و نام خانوادگی__
-![Morteza Zakeri](figs/account.png){  width="150"  align=left loading=lazy }
+![نام و نام خانوادگی](figs/account.webp){  width="150"  align=left loading=lazy }
 <br/>
 رشته:
 **مهندسی کامپیوتر**

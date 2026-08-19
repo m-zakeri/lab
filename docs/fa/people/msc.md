@@ -5,7 +5,7 @@
 
 <!-- 1 -->
 :material-account-tie: __جواد بشارتی‌فر__
-![Morteza Zakeri](figs/javad.png){ width="150"  align=left loading=lazy}
+![جواد بشارتی‌فر](figs/javad.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی کامپیوتر**
@@ -26,7 +26,7 @@
 
 <!-- 2 -->
 :material-account-tie: __رومینا فیروزی__
-![Morteza Zakeri](figs/account.png){ width="150"  align=left loading=lazy}
+![رومینا فیروزی](figs/account.webp){ width="150"  align=left loading=lazy}
 <br/>
 رشته:
 **مهندسی فناوری اطلاعات**

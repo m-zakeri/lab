@@ -6,7 +6,7 @@
 <div class="grid" markdown>
 
 :material-account-tie: __دکتر مرتضی ذاکری__
-![Morteza Zakeri](figs/zakeri.jpg){ width="150"  align=left loading=lazy .circle-image}
+![دکتر مرتضی ذاکری](figs/zakeri.webp){ width="150"  align=left loading=lazy .circle-image}
 <br/>
 **دکتری مهندسی کامپیوتر**
 <br/>

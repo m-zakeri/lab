@@ -1,93 +1,112 @@
-# About ISERL
-
-The **Intelligent Software Engineering Research Laboratory (ISERL)** at [**Amirkabir University of Technology (Tehran Polytechnic)**](https://aut.ac.ir/en){target="_blank"} is a premier research facility dedicated to advancing the field of software engineering. The laboratory focuses on innovative research and development across various domains of software engineering, aiming to solve complex problems and improve software quality, reliability, and performance. **ISERL** provides a collaborative environment for researchers, industry professionals, and students to work together on cutting-edge projects. The laboratory is active in:
-
-- Developing technologies related to assessing and improving the quality of processes.
-- Designing, developing, and creating artifacts of software systems.
-
-Its goal is to **automate tasks related to software engineering** at various levels, from development to the final product, by utilizing **artificial intelligence** and **compiler techniques**. The outcomes include:
-
-- Reduced costs.
-- Increased efficiency for software teams.
-
-The laboratory operates in three areas:
-
-1. **Research**  
-2. **Industry**  
-3. **Education**
-
-
-
+---
+title: Home
+hide:
+  - navigation
+  - toc
+social:
+  cards_layout_options:
+    title: Intelligent Software Engineering Laboratory
 ---
 
-### Research Activities
+<div class="hero" markdown>
+<div class="hero__body" markdown>
 
-The research activities focus on topics such as:
+<p class="hero__eyebrow">Department of Computer Engineering — Amirkabir University of Technology (Tehran Polytechnic)</p>
+<h1 class="hero__title">Intelligent Software Engineering Laboratory</h1>
+<p class="hero__tagline">
+Automating software engineering tasks — from design and development through to the final product — with artificial intelligence, compilers, and domain-specific languages. The outcome: lower costs and more productive software teams.
+</p>
 
-- Program testing and debugging.
-- Software analysis.
-- Internal and external software quality assessment.
-- Reverse engineering and software refactoring.
-- Software methodologies.
+<p class="hero__actions" markdown>
+[Research](research/index.md){ .md-button .md-button--primary }
+[Services](services.md){ .md-button }
+[Contact us](https://www.m-zakeri.ir/pages/contact-me.html){ target="_blank" .md-button }
+</p>
 
-The laboratory includes three active research groups:
+</div>
+<div class="hero__art" markdown>
+![Intelligent Software Engineering Laboratory](assets/hero-medallion.webp){ .no-lightbox loading=eager }
+</div>
+</div>
 
-1. **Software Testing and Quality Assurance Group**  
-2. **Software Evolution and Refactoring Group**  
-3. **Requirements Engineering and Software Engineering Methodologies Group**
+The **Intelligent Software Engineering Research Laboratory (ISERL)** at [Amirkabir University of Technology (Tehran Polytechnic)](https://aut.ac.ir/en){target="_blank"} advances the measurement and improvement of software process quality, software artifact quality, software testing, reverse engineering, and software evolution. Its work is organised across three areas: research, industry, and education.
 
----
+<div class="grid cards" markdown>
 
-### Industrial Activities
+- :fontawesome-solid-flask: __Research__
 
-The laboratory's industrial activities include:
+    ---
 
-- Consultancy engineering services in:
+    Three active groups covering testing and debugging, design and architecture, and software methodology.
 
-  - Automated software testing.
-  - Software security and intelligent antivirus systems.
-  - Reverse engineering and intelligent program analysis.
-  - Automatic program refactoring.
-  - Automating software development and deployment processes.
+    [:octicons-arrow-right-24: Research activities](research/index.md)
 
----
+- :fontawesome-solid-industry: __Industry__
 
-### Educational Activities
+    ---
 
-The laboratory provides specialized courses in:
+    Consultancy engineering services and software products for industry and public organisations.
 
-- Software testing and quality assurance.
-- Secure software design and development.
-- Compiler and transpiler engineering.
-- Intelligent and automated software engineering.
-- Clean architecture and coding.
+    [:octicons-arrow-right-24: Services and products](services.md)
 
----
+- :fontawesome-solid-graduation-cap: __Education__
 
+    ---
+
+    Specialised courses, plus checklists for BSc projects, MSc theses, and PhD dissertations.
+
+    [:octicons-arrow-right-24: Checklists](checklist/index.md)
+
+</div>
+
+## Research activities
+
+Research focuses on program testing and debugging, software analysis, internal and external software quality assessment, reverse engineering and refactoring, and software methodologies. The laboratory hosts three active research groups:
+
+1. Software Testing and Quality Assurance Group
+2. Software Evolution and Refactoring Group
+3. Requirements Engineering and Software Engineering Methodologies Group
+
+[Research overview](research/index.md){ .md-button }
+
+## Industrial activities
+
+Consultancy engineering services cover:
+
+- Automated software testing
+- Software security and intelligent antivirus systems
+- Reverse engineering and intelligent program analysis
+- Automatic program refactoring
+- Automating software development and deployment processes
+
+[Services](services.md){ .md-button }
+[Products](products.md){ .md-button }
+
+## Educational activities
+
+Specialised courses are offered in software testing and quality assurance, secure software design and development, compiler and transpiler engineering, intelligent and automated software engineering, and clean architecture and coding.
+
+[Checklists for students](checklist/index.md){ .md-button }
 
 ## Mission
-Towards high-quality software systems and better development experience with Compiler 2.0 and Software 2.0.
 
+Towards high-quality software systems and a better development experience with Compiler 2.0 and Software 2.0.
 
 ## Vision
-To be a national leader in software engineering research and education, recognized for AUT contributions to the development of innovative solutions that transform the software industry.
 
+To be a national leader in software engineering research and education, recognised for AUT's contributions to innovative solutions that transform the software industry.
 
 ## Objectives
-1. **Innovative Research:** Conduct pioneering and world-class research to develop new methodologies, tools, and technologies solving complex problems in software engineering.
-2. **Education and Training:** Offer high-quality education and training programs to prepare and nurture the next generation of software engineers.
-3. **Collaboration:** Establish strong partnerships with industry, academia, and government to drive practical applications and innovation.
-4. **Technology Transfer:** Facilitate the transfer of research outcomes to industry to enhance software engineering practices, software systems quality, and reliable computing.
-5. **Community Engagement:** Engage with the broader software engineering community through seminars, workshops, and publications.
 
+1. **Innovative research** — pioneering, world-class research producing new methodologies, tools, and technologies for complex software engineering problems.
+2. **Education and training** — high-quality programmes that prepare the next generation of software engineers.
+3. **Collaboration** — strong partnerships with industry, academia, and government to drive practical application and innovation.
+4. **Technology transfer** — moving research outcomes into industry to improve engineering practice, software quality, and reliable computing.
+5. **Community engagement** — seminars, workshops, and publications for the wider software engineering community.
 
----
+## Get in touch
 
-## Additional Information
+For the full list of services and products offered by the laboratory, see the related pages on this site.
 
-For a detailed list of services and products offered by the laboratory, please:
-
-- Visit the related pages on the laboratory's website.  
-- Use the provided contact link to reach out to us.
-
-[Contact Us](https://www.m-zakeri.ir/pages/contact-me.html){target="_blank" .md-button .md-button--primary }
+[Contact us](https://www.m-zakeri.ir/pages/contact-me.html){ target="_blank" .md-button .md-button--primary }
+[FAQ](faq.md){ .md-button }
