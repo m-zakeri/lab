@@ -1,6 +1,6 @@
 # mkdocs serve -f mkdocs_en.yml --dev-addr=127.0.0.1:8001
 site_name: Intelligent Software Engineering Laboratory
-site_url: https://m-zakeri.github.io/lab/en/
+site_url: https://www.m-zakeri.ir/lab/en/
 site_description: Intelligent Software Engineering Laboratory - Tehran Polytechnic
 site_author: Morteza Zakeri
 copyright: 2024 - 2025 &copy; all rights reserved.  Intelligent Software Engineering Laboratory at Tehran Polytechnic
@@ -142,13 +142,11 @@ plugins:
         background_color: "#12325c"
         color: "#ffffff"
 
-  # Downloads external assets (Google Fonts, GitHub avatars, twemoji) at build
-  # time and serves them from this site — no third-party requests at runtime.
-  - privacy:
-      # The theme bundle references the mermaid CDN even when no page contains a
-      # diagram; without this, 3.5 MB of unused JS is downloaded into every build.
-      assets_exclude:
-        - unpkg.com/mermaid@*
+  # NOTE: the `privacy` plugin (which self-hosted Google Fonts) was removed so
+  # fonts load from Google's CDN (fonts.gstatic.com) instead of the origin. The
+  # origin is fronted by a proxy that does not cache and intermittently 504s, so
+  # routing 30+ self-hosted font files through it was making pages fail to load.
+  # Emoji use `to_svg` (inlined at build), so no third-party request is needed.
 
   - rss:
       match_path: blog/posts/.*
