@@ -4,9 +4,9 @@
 
 <div class="grid cards" markdown>
 
-<!-- 2 -->
-:material-account-tie: __نام و نام خانوادگی__
-![نام و نام خانوادگی](figs/account.webp){ width="150"  align=left loading=lazy}
+<!-- 1 -->
+:material-account-tie: __پاشا احمدی__
+![پاشا احمدی](figs/Pasha_Ahmadi.webp){ width="150" align=left loading=lazy }
 <br/>
 - رشته:
 **مهندسی کامپیوتر**
@@ -16,35 +16,12 @@
 <br/>
 - 
 زمینه های پژوهشی:
-**آزمون نرم افزار، یادگیری ژرف، امنیت نرم افزار**
+**مهندسی نرم‌افزار مبتنی بر هوش مصنوعی، پردازش زبان طبیعی، بینایی کامپیوتر**
 <br/>
 <br/>
-[:fontawesome-brands-google-scholar:](#)
+[:fontawesome-brands-github:](https://github.com/phapsa1379)
 |
-[:simple-researchgate:](#)
-|
-[:fontawesome-brands-linkedin-in:](#)
-{ .card }
-
-<!-- 1 -->
-:material-account-tie: __نام و نام خانوادگی__
-![نام و نام خانوادگی](figs/account.webp){  width="150"  align=left loading=lazy }
-<br/>
-رشته:
-**مهندسی کامپیوتر**
-<br/>
-گرایش:
-**نرم افزار**
-<br/>
-زمینه های پژوهشی:
-**آزمون نرم افزار، یادگیری ژرف، امنیت نرم افزار**
-<br/>
-<br/>
-[:fontawesome-brands-google-scholar:](#)
-|
-[:simple-researchgate:](#)
-|
-[:fontawesome-brands-linkedin-in:](#)
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/pasha-ahmadi-22b7a41b9/)
 { .card }
 
 </div>
