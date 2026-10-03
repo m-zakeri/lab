@@ -309,6 +309,17 @@
   padding: .7rem 1rem;
   line-height: 1.9;
 }
+/* Card action buttons: compact and identical in size, whatever the label. */
+.md-typeset .grid table:not([class]) .md-button {
+  box-sizing: border-box;
+  width: 8.5rem;
+  margin: .15rem .2rem;
+  padding: .25rem .6rem;
+  font-size: .7rem;
+  line-height: 1.6;
+  text-align: center;
+  white-space: nowrap;
+}
 .md-typeset .grid table:not([class]) img {
   border-radius: .5rem;
   max-width: 100%;
