@@ -57,4 +57,21 @@
 <br/>
 { .card }
 
+<!-- 4 -->
+:material-account-tie: __رز ناظری__
+![رز ناظری](figs/Nazeri.webp){ width="120" align=left loading=lazy }
+<br/>
+رشته:
+**مهندسی کامپیوتر**
+<br/>
+گرایش:
+** نرم افزار**
+<br/>
+زمینه های پژوهشی:
+**مهندسی نرم‌افزار مبتنی بر هوش مصنوعی، مکانیزم‌های کنترلی، بهبود فرایند مهندسی نرم‌افزار**
+<br/>
+<br/>
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/miss-rose-nazeri)
+{ .card }
+
 </div>
