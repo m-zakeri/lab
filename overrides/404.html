@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+
+{% block content %}
+  {% if config.theme.language == "fa" %}
+    <h1>صفحه پیدا نشد</h1>
+    <p>
+      نشانی درخواست‌شده وجود ندارد یا جابه‌جا شده است.
+      می‌توانید از پیوندهای زیر ادامه دهید یا از جست‌وجوی بالای صفحه استفاده کنید.
+    </p>
+    <p>
+      <a class="md-button md-button--primary" href="{{ config.site_url }}">صفحه نخست</a>
+      <a class="md-button" href="{{ config.site_url }}research/">پژوهش</a>
+      <a class="md-button" href="{{ config.site_url }}people/">افراد</a>
+      <a class="md-button" href="{{ config.site_url }}courses/">آموزش</a>
+    </p>
+    <p>
+      اگر گمان می‌کنید این پیوند باید کار کند،
+      <a href="https://github.com/m-zakeri/lab/issues" target="_blank" rel="noopener">مسئله‌ای در گیت‌هاب ثبت کنید</a>.
+    </p>
+  {% else %}
+    <h1>Page not found</h1>
+    <p>
+      The address you requested does not exist, or it has moved.
+      Try one of the links below, or use the search box at the top of the page.
+    </p>
+    <p>
+      <a class="md-button md-button--primary" href="{{ config.site_url }}">Home</a>
+      <a class="md-button" href="{{ config.site_url }}research/">Research</a>
+      <a class="md-button" href="{{ config.site_url }}people/">People</a>
+      <a class="md-button" href="{{ config.site_url }}checklist/">Checklists</a>
+    </p>
+    <p>
+      If you think this link should work,
+      <a href="https://github.com/m-zakeri/lab/issues" target="_blank" rel="noopener">open an issue on GitHub</a>.
+    </p>
+  {% endif %}
+{% endblock %}
