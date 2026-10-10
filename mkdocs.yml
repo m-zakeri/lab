@@ -120,6 +120,7 @@ nav:
       - industry/index.md
       - خدمات: industry/services.md
       - محصولات: industry/products.md
+      - موقعیت‌های شغلی: industry/positions.md
   - آموزش:
       - courses/index.md
       - مهندسی کامپایلر: courses/compiler_engineering.md
