@@ -194,5 +194,8 @@ extra:
 extra_css:
     - assets/styles.css
 
+extra_javascript:
+    - assets/landing.js
+
 watch:
   - docs

@@ -9,10 +9,11 @@ social:
 ---
 
 <div class="hero" markdown>
+<div class="hero__glow" aria-hidden="true"></div>
 <div class="hero__body" markdown>
 
-<p class="hero__eyebrow">دانشکده مهندسی کامپیوتر — دانشگاه صنعتی امیرکبیر (پلی‌تکنیک تهران)</p>
-<h1 class="hero__title">آزمایشگاه مهندسی نرم‌افزار هوشمند</h1>
+<p class="hero__eyebrow"><span class="hero__dot"></span>دانشکده مهندسی کامپیوتر — دانشگاه صنعتی امیرکبیر (پلی‌تکنیک تهران)</p>
+<h1 class="hero__title">آزمایشگاه <span class="hero__accent">مهندسی نرم‌افزار هوشمند</span></h1>
 <p class="hero__tagline">
 خودکارسازی وظایف مهندسی نرم‌افزار — از طراحی و توسعه تا محصول نهایی — با بهره‌گیری از فنون هوش مصنوعی، کامپایلرها و زبان‌های خاص‌منظوره؛ برای کاهش هزینه‌ها و افزایش بازدهی تیم‌های نرم‌افزاری.
 </p>
@@ -23,111 +24,182 @@ social:
 [ارتباط با ما](contact.md){ .md-button }
 </p>
 
+<ul class="hero__facts">
+<li><strong>۳</strong> گروه پژوهشی فعال</li>
+<li><strong>۹</strong> درس، دوره و کارگاه</li>
+<li><strong>پژوهش · صنعت · آموزش</strong></li>
+</ul>
+
 </div>
 <div class="hero__art" markdown>
+<div class="hero__orbit" aria-hidden="true"></div>
 ![آزمایشگاه مهندسی نرم‌افزار هوشمند](assets/hero-medallion.webp){ .no-lightbox loading=eager }
 </div>
 </div>
 
-آزمایشگاه تحقیقاتی مهندسی نرم‌افزار هوشمند [دانشگاه صنعتی امیرکبیر (پلی‌تکنیک تهران)](https://aut.ac.ir/){target="_blank"} در زمینه توسعه فناوری‌های مرتبط با سنجش و بهبود کیفیت فرایندها، کیفیت مصنوعات سیستم‌های نرم‌افزاری، آزمون نرم‌افزار، مهندسی معکوس و تکامل نرم‌افزار فعالیت می‌کند. فعالیت‌های آزمایشگاه در سه بخش پژوهش، صنعت و آموزش سازمان‌دهی و دنبال می‌گردد.
+<div class="marquee" aria-label="حوزه‌های تخصصی آزمایشگاه">
+<ul class="marquee__track">
+<li>آزمون خودکار نرم‌افزار</li>
+<li>مکان‌یابی خودکار خطا</li>
+<li>بازآرایی خودکار کد</li>
+<li>مهندسی معکوس</li>
+<li>تکامل نرم‌افزار</li>
+<li>کامپایلرها و ترنسپایلرها</li>
+<li>زبان‌های خاص‌منظوره</li>
+<li>امنیت نرم‌افزار</li>
+<li>مهندسی نیازمندی‌ها</li>
+<li>سنجش کیفیت نرم‌افزار</li>
+</ul>
+<ul class="marquee__track" aria-hidden="true">
+<li>آزمون خودکار نرم‌افزار</li>
+<li>مکان‌یابی خودکار خطا</li>
+<li>بازآرایی خودکار کد</li>
+<li>مهندسی معکوس</li>
+<li>تکامل نرم‌افزار</li>
+<li>کامپایلرها و ترنسپایلرها</li>
+<li>زبان‌های خاص‌منظوره</li>
+<li>امنیت نرم‌افزار</li>
+<li>مهندسی نیازمندی‌ها</li>
+<li>سنجش کیفیت نرم‌افزار</li>
+</ul>
+</div>
 
-<div class="grid cards" markdown>
+<div class="section-head" markdown>
+<p class="section-head__kicker">درباره آزمایشگاه</p>
+<h2 class="section-head__title">سه محور، یک هدف: نرم‌افزار باکیفیت‌تر</h2>
+<p class="section-head__lead">آزمایشگاه تحقیقاتی مهندسی نرم‌افزار هوشمند <a href="https://aut.ac.ir/" target="_blank" rel="noopener">دانشگاه صنعتی امیرکبیر</a> در زمینه سنجش و بهبود کیفیت فرایندها و مصنوعات نرم‌افزاری، آزمون نرم‌افزار، مهندسی معکوس و تکامل نرم‌افزار فعالیت می‌کند.</p>
+</div>
 
-- :fontawesome-solid-flask: __پژوهش__
+<div class="pillars" markdown>
 
-    ---
+[<span class="pillar__icon">:fontawesome-solid-flask:</span>
+<span class="pillar__num">۰۱</span>
+<span class="pillar__title">پژوهش</span>
+<span class="pillar__text">سه گروه پژوهشی فعال در حوزه‌های آزمون و اشکال‌زدایی، طراحی و معماری، و متدولوژی نرم‌افزار.</span>
+<span class="pillar__more">فعالیت‌های پژوهشی :octicons-arrow-left-24:</span>](research/index.md){ .pillar }
 
-    سه گروه پژوهشی فعال در حوزه‌های آزمون و اشکال‌زدایی، طراحی و معماری، و متدولوژی نرم‌افزار.
+[<span class="pillar__icon">:fontawesome-solid-industry:</span>
+<span class="pillar__num">۰۲</span>
+<span class="pillar__title">صنعت</span>
+<span class="pillar__text">خدمات مهندسی مشاوره‌ای و محصولات نرم‌افزاری برای صنایع و سازمان‌ها.</span>
+<span class="pillar__more">خدمات و محصولات :octicons-arrow-left-24:</span>](industry/index.md){ .pillar }
 
-    [:octicons-arrow-left-24: فعالیت‌های پژوهشی](research/index.md)
-
-- :fontawesome-solid-industry: __صنعت__
-
-    ---
-
-    خدمات مهندسی مشاوره‌ای و محصولات نرم‌افزاری برای صنایع و سازمان‌ها.
-
-    [:octicons-arrow-left-24: خدمات و محصولات](industry/index.md)
-
-- :fontawesome-solid-graduation-cap: __آموزش__
-
-    ---
-
-    دروس دانشگاهی، آموزش‌های آزاد و کارگاه‌های تخصصی مهندسی نرم‌افزار.
-
-    [:octicons-arrow-left-24: دروس و دوره‌ها](courses/index.md)
+[<span class="pillar__icon">:fontawesome-solid-graduation-cap:</span>
+<span class="pillar__num">۰۳</span>
+<span class="pillar__title">آموزش</span>
+<span class="pillar__text">دروس دانشگاهی، آموزش‌های آزاد و کارگاه‌های تخصصی مهندسی نرم‌افزار.</span>
+<span class="pillar__more">دروس و دوره‌ها :octicons-arrow-left-24:</span>](courses/index.md){ .pillar }
 
 </div>
 
-## فعالیت‌های پژوهشی
+<div class="split" markdown>
+<div class="split__intro" markdown>
+<p class="section-head__kicker">پژوهش</p>
+<h2 class="section-head__title">فعالیت‌های پژوهشی</h2>
+<p>فعالیت‌های پژوهشی آزمایشگاه بر آزمون و اشکال‌زدایی برنامه، تحلیل نرم‌افزار، سنجش کیفیت داخلی و خارجی، مهندسی معکوس و بازآرایی، و متدلوژی‌های نرم‌افزار متمرکز است.</p>
+<ol class="steps">
+<li>گروه آزمون و اشکال‌زدایی نرم‌افزار</li>
+<li>گروه طراحی و معماری نرم‌افزار</li>
+<li>گروه متدولوژی نرم‌افزار و مهندسی نیازمندی‌ها</li>
+</ol>
+<p markdown>[همه فعالیت‌های پژوهشی](research/index.md){ .md-button }</p>
+</div>
+<div class="tiles" markdown>
 
-فعالیت‌های پژوهشی آزمایشگاه بر موضوعات آزمون و اشکال‌زدایی برنامه، تحلیل نرم‌افزار، سنجش کیفیت داخلی و خارجی نرم‌افزار، مهندسی معکوس و بازآرایی نرم‌افزار و متدلوژی‌های نرم‌افزار متمرکز است. آزمایشگاه شامل سه گروه پژوهشی فعال است:
+[<span class="tile__icon">:fontawesome-solid-flask:</span>
+<span class="tile__title">پژوهش و توسعه در مهندسی نرم‌افزار</span>
+<span class="tile__text">روش‌ها و فناوری‌های نوین برای بهبود کیفیت، کارایی و قابلیت اطمینان سیستم‌های نرم‌افزاری.</span>](research/index.md){ .tile }
 
-1. گروه آزمون و اشکال‌زدایی نرم‌افزار
-2. گروه طراحی و معماری نرم‌افزار
-3. گروه متدولوژی نرم‌افزار و مهندسی نیازمندی‌ها
+[<span class="tile__icon">:fontawesome-solid-layer-group:</span>
+<span class="tile__title">پژوهش‌های بین‌رشته‌ای</span>
+<span class="tile__text">تلفیق مهندسی نرم‌افزار با مواد، عمران، محیط زیست، پزشکی و کشاورزی.</span>](research/interdisciplinary_research.md){ .tile }
 
-<div class="grid cards" markdown>
+[<span class="tile__icon">:material-application-cog:</span>
+<span class="tile__title">پژوهش‌های کاربردی</span>
+<span class="tile__text">تشخیص هوشمند پول‌شویی، جرائم مالی و هوشمندسازی صنعت بیمه.</span>](research/applied_research.md){ .tile }
 
-- :fontawesome-solid-flask: [__پژوهش و توسعه در مهندسی نرم‌افزار__](research/index.md)  
-  بررسی روش‌ها و فناوری‌های نوین در مهندسی نرم‌افزار برای بهبود کیفیت، کارایی و قابلیت اطمینان سیستم‌های نرم‌افزاری.
+[<span class="tile__icon">:fontawesome-solid-lightbulb:</span>
+<span class="tile__title">ایده‌ها و موضوعات</span>
+<span class="tile__text">پیشنهادهای پژوهشی برای پروژه‌های کارشناسی، پایان‌نامه‌ها و رساله‌ها.</span>](research/research_rfps.md){ .tile }
 
-- :fontawesome-solid-layer-group: [__پژوهش‌های بین‌رشته‌ای__](research/interdisciplinary_research.md)  
-  تلفیق مهندسی نرم‌افزار با حوزه‌های مهندسی مواد، عمران، محیط زیست، پزشکی و کشاورزی برای حل مسائل پیچیده.
+</div>
+</div>
 
-- :material-application-cog: [__پژوهش‌های کاربردی__](research/applied_research.md)  
-  توسعه راهکارهای عملی در زمینه‌هایی مانند تشخیص هوشمند پول‌شویی، جرائم مالی و هوشمندسازی صنعت بیمه.
+<div class="band" markdown>
+<div class="section-head" markdown>
+<p class="section-head__kicker">صنعت</p>
+<h2 class="section-head__title">از پژوهش تا محصول</h2>
+<p class="section-head__lead">خدمات مهندسی مشاوره‌ای در آزمون خودکار نرم‌افزار، امنیت نرم‌افزار و ضدویروس‌های هوشمند، مهندسی معکوس و تحلیل هوشمند برنامه، بازآرایی خودکار و هوشمندسازی فرایندهای توسعه و استقرار نرم‌افزار.</p>
+</div>
 
-- :fontawesome-solid-lightbulb: [__ایده‌ها و موضوعات__](research/research_rfps.md)  
-  پیشنهادهای پژوهشی برای پروژه‌های کارشناسی، پایان‌نامه‌های کارشناسی ارشد و رساله‌های دکتری.
+<div class="products" markdown>
+
+[<span class="product__icon">:simple-litiengine:</span>
+<span class="product__body">
+<span class="product__title">موتور بازآرایی خودکار</span>
+<span class="product__text">بازآرایی خودکار کد، بهینه‌سازی معماری نرم‌افزار و بهبود خوانایی و قابلیت نگهداری کد.</span>
+</span>
+<span class="product__go">:octicons-arrow-up-left-24:</span>](https://www.m-zakeri.ir/CodART/){ .product target=_blank rel=noopener }
+
+[<span class="product__icon">:fontawesome-solid-shield-virus:</span>
+<span class="product__body">
+<span class="product__title">ضدویروس هوشمند</span>
+<span class="product__text">تشخیص بدافزارهای پیچیده و حملات سایبری به‌صورت بلادرنگ با یادگیری ماشین.</span>
+</span>
+<span class="product__go">:octicons-arrow-left-24:</span>](industry/products.md){ .product }
 
 </div>
 
-[همه فعالیت‌های پژوهشی](research/index.md){ .md-button }
+<p class="band__actions" markdown>[همه خدمات و محصولات](industry/index.md){ .md-button .md-button--primary } [موقعیت‌های شغلی](industry/positions.md){ .md-button }</p>
+</div>
 
-## فعالیت‌های صنعتی
+<div class="section-head" markdown>
+<p class="section-head__kicker">آموزش</p>
+<h2 class="section-head__title">دروس فعال آزمایشگاه</h2>
+<p class="section-head__lead">دوره‌های تخصصی در آزمون و تضمین کیفیت، طراحی و توسعه امن نرم‌افزار، مهندسی کامپایلرها و ترنسپایلرها، و معماری و کدنویسی پاک.</p>
+</div>
 
-فعالیت‌های صنعتی آزمایشگاه بر پایه محورهای پژوهشی فوق بنا شده‌اند و به‌طور کلی عبارت‌اند از خدمات مهندسی مشاوره‌ای در زمینه آزمون خودکار نرم‌افزار، امنیت نرم‌افزار و ضدویروس‌های هوشمند، مهندسی معکوس و تحلیل هوشمند برنامه، بازآرایی خودکار برنامه و هوشمندسازی فرایندهای توسعه و استقرار نرم‌افزار. موارد اشاره‌شده پیش‌نیازهای ضروری برای ایجاد راهکارهای هوشمند برای صنایع و سازمان‌های مختلف هستند.
+<div class="courses" markdown>
 
-برخی از محصولات در حال توسعه فعال در آزمایشگاه عبارت‌اند از:
+[<span class="course__media">![مهندسی کامپایلر](courses/figs/compiler-logo2.webp){ .no-lightbox loading=lazy }</span>
+<span class="course__body">
+<span class="course__tag">کارشناسی</span>
+<span class="course__title">مهندسی کامپایلر</span>
+<span class="course__text">اصول طراحی و پیاده‌سازی کامپایلرها، تحلیل واژگانی و نحوی، و بهینه‌سازی کد.</span>
+</span>](courses/compiler_engineering.md){ .course }
 
-<div class="grid cards" markdown>
+[<span class="course__media">![آزمون نرم‌افزار](courses/figs/software-testing.webp){ .no-lightbox loading=lazy }</span>
+<span class="course__body">
+<span class="course__tag">کارشناسی</span>
+<span class="course__title">آزمون نرم‌افزار</span>
+<span class="course__text">آزمون جعبه‌سیاه و جعبه‌سفید، خودکارسازی آزمون و تحلیل خطاها.</span>
+</span>](courses/software_testing.md){ .course }
 
-- :simple-litiengine: [__موتور بازآرایی خودکار__](https://www.m-zakeri.ir/CodART/){target="_blank"}  
-  ابزار پیشرفته برای بازآرایی کد به‌صورت خودکار، بهینه‌سازی معماری نرم‌افزار و بهبود خوانایی و قابلیت نگهداری کد.
+[<span class="course__media">![مهندسی نرم‌افزار پیشرفته](courses/figs/ase.webp){ .no-lightbox loading=lazy }</span>
+<span class="course__body">
+<span class="course__tag">تحصیلات تکمیلی</span>
+<span class="course__title">مهندسی نرم‌افزار پیشرفته</span>
+<span class="course__text">معماری نرم‌افزار، متدولوژی‌های توسعه، مهندسی نیازمندی‌ها و تضمین کیفیت.</span>
+</span>](courses/software_engineering_advanced.md){ .course }
 
-- :fontawesome-solid-shield-virus: [__ضدویروس هوشمند__](industry/products.md)  
-  سیستم تشخیص تهدیدات سایبری با استفاده از یادگیری ماشین برای شناسایی بدافزارهای پیچیده و حملات سایبری به‌صورت بلادرنگ.
+[<span class="course__media">![آزمون نرم‌افزار پیشرفته](courses/figs/software-testing-advanced.webp){ .no-lightbox loading=lazy }</span>
+<span class="course__body">
+<span class="course__tag">تحصیلات تکمیلی</span>
+<span class="course__title">آزمون نرم‌افزار پیشرفته</span>
+<span class="course__text">مدل‌های پیشرفته آزمون، آزمون امنیتی، آزمون عملکردی و قابلیت اطمینان.</span>
+</span>](courses/software_testing_advanced.md){ .course }
 
 </div>
 
-[همه خدمات و محصولات](industry/index.md){ .md-button }
+<p class="center" markdown>[همه دروس و دوره‌ها](courses/index.md){ .md-button }</p>
 
-## فعالیت‌های آموزشی
-
-فعالیت‌های آموزشی آزمایشگاه شامل برگزاری دوره‌های تخصصی در حوزه آزمون و تضمین کیفیت نرم‌افزار، طراحی و توسعه امن نرم‌افزار، مهندسی کامپایلرها و ترنسپایلرها، مهندسی نرم‌افزار هوشمند و خودکار، و معماری و کدنویسی پاک است. برخی از دروس فعال آزمایشگاه در دانشکده مهندسی کامپیوتر دانشگاه صنعتی امیرکبیر به شرح زیر است:
-
-<div class="grid cards" markdown>
-
-- :fontawesome-solid-code: [__مهندسی کامپایلر__](courses/compiler_engineering.md)  
-  بررسی اصول طراحی و پیاده‌سازی کامپایلرها، تحلیل واژگانی و نحوی، و بهینه‌سازی کد.
-
-- :fontawesome-solid-vial: [__آزمون نرم‌افزار__](courses/software_testing.md)  
-  معرفی روش‌های آزمون نرم‌افزار، آزمون جعبه‌سیاه و جعبه‌سفید، خودکارسازی آزمون و تحلیل خطاها.
-
-- :fontawesome-solid-laptop-code: [__مهندسی نرم‌افزار پیشرفته__](courses/software_engineering_advanced.md)  
-  بررسی معماری نرم‌افزار، متدولوژی‌های توسعه، مهندسی نیازمندی‌ها و تضمین کیفیت.
-
-- :fontawesome-solid-bug: [__آزمون نرم‌افزار پیشرفته__](courses/software_testing_advanced.md)  
-  تحلیل مدل‌های پیشرفته آزمون نرم‌افزار، تکنیک‌های آزمون امنیتی، آزمون عملکردی و قابلیت اطمینان.
-
+<div class="cta" markdown>
+<div class="cta__body" markdown>
+<h2 class="cta__title">همکاری با آزمایشگاه</h2>
+<p class="cta__text">برای طرح پرسش، پیشنهاد همکاری پژوهشی یا صنعتی، یا درخواست خدمات با ما در ارتباط باشید.</p>
 </div>
-
-[همه دروس و دوره‌ها](courses/index.md){ .md-button }
-
-## همکاری با آزمایشگاه
-
-برای مشاهده فهرست دقیق خدمات و محصولات ارائه‌شده توسط آزمایشگاه به صفحات مرتبط وب‌سایت مراجعه فرمایید. برای طرح پرسش، پیشنهاد همکاری یا درخواست خدمات از پیوند زیر اقدام نمایید.
-
+<p class="cta__actions" markdown>
 [ارتباط با ما](contact.md){ .md-button .md-button--primary }
 [پرسش‌های متداول](faq.md){ .md-button }
+</p>
+</div>
