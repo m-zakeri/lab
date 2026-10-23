@@ -1,0 +1,77 @@
+# دانشجویان کارشناسی
+
+
+
+<div class="grid" markdown>
+
+<!-- 1 -->
+:material-account-tie: __علیرضا پاکساز__
+![علیرضا پاکساز](figs/account.webp){ width="150"  align=left loading=lazy}
+<br/>
+رشته:
+**مهندسی کامپیوتر**
+<br/>
+گرایش:
+**نرم افزار**
+<br/>
+زمینه های پژوهشی:
+**بازی، توسعه بازی، مدل های زبانی بزرگ**
+<br/>
+<br/>
+[:fontawesome-brands-google-scholar:](#)
+|
+[:simple-researchgate:](#)
+|
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/alireza-paksaz/)
+{ .card }
+
+<!-- 2 -->
+:material-account-tie: __حسین اسدی__
+![حسین اسدی](figs/Asadi.webp){ width="120"  align=left loading=lazy align=left}
+<br/>
+رشته:
+**مهندسی کامپیوتر**
+<br/>
+گرایش:
+**نرم افزار**
+<br/>
+زمینه های پژوهشی:
+**کامپایلر**
+<br/>
+<br/>
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/hossein-asadi0109/)
+{ .card }
+
+<!-- 3 -->
+:material-account-tie: __حامد فلاحی__
+![حامد فلاحی](figs/Fallahi.webp){ width="120" align=left loading=lazy }
+<br/>
+رشته:
+**مهندسی کامپیوتر**
+<br/>
+گرایش:
+**نرم افزار**
+<br/>
+زمینه های پژوهشی:
+**آزمون نرم‌افزار ،یادگیری ماشین، کامپایلر**
+<br/>
+{ .card }
+
+<!-- 4 -->
+:material-account-tie: __رز ناظری__
+![رز ناظری](figs/Nazeri.webp){ width="120" align=left loading=lazy }
+<br/>
+رشته:
+**مهندسی کامپیوتر**
+<br/>
+گرایش:
+** نرم افزار**
+<br/>
+زمینه های پژوهشی:
+**مهندسی نرم‌افزار مبتنی بر هوش مصنوعی، مکانیزم‌های کنترلی، بهبود فرایند مهندسی نرم‌افزار**
+<br/>
+<br/>
+[:fontawesome-brands-linkedin-in:](https://www.linkedin.com/in/miss-rose-nazeri)
+{ .card }
+
+</div>

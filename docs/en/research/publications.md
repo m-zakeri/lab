@@ -1,0 +1,73 @@
+# Publications
+
+Work from the laboratory appears in international journals and conferences. The list below is built from Crossref metadata; laboratory members are shown in bold.
+
+[Full list and citation metrics on Google Scholar](https://scholar.google.com/citations?user=km5DzwwAAAAJ&hl=en){ target="_blank" .md-button .md-button--primary }
+
+
+## Journal articles
+
+
+### 2025
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Testability-driven development: An improvement to the TDD efficiency</span><span class="pub-en__meta">Saeed Parsa, <strong>Morteza Zakeri-Nasrabadi</strong>, Burak Turhan — <em>Computer Standards &amp; Interfaces</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.csi.2024.103877" target="_blank" rel="noopener">doi:10.1016/j.csi.2024.103877</a></span>
+
+
+### 2024
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Designing high-performance ion-exchangeable glasses with multi-objective optimization and machine learning</span><span class="pub-en__meta">Omid Banapour Ghaffari, Bijan Eftekhari Yekta, <strong>Morteza Zakeri-Nasrabadi</strong> — <em>Ceramics International</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.ceramint.2024.08.141" target="_blank" rel="noopener">doi:10.1016/j.ceramint.2024.08.141</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Measuring and improving software testability at the design level</span><span class="pub-en__meta"><strong>Morteza Zakeri-Nasrabadi</strong>, Saeed Parsa, Sadegh Jafari — <em>Information and Software Technology</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.infsof.2024.107511" target="_blank" rel="noopener">doi:10.1016/j.infsof.2024.107511</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Multi-type requirements traceability prediction by code data augmentation and fine-tuning MS-CodeBERT</span><span class="pub-en__meta">Ali Majidzadeh, Mehrdad Ashtiani, <strong>Morteza Zakeri-Nasrabadi</strong> — <em>Computer Standards &amp; Interfaces</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.csi.2024.103850" target="_blank" rel="noopener">doi:10.1016/j.csi.2024.103850</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Assessing Neural Markers of Attention During Exposure to Construction Noise Using Machine Learning Classification of Electroencephalogram Data</span><span class="pub-en__meta">Mostafa Mir, Farnad Nasirzadeh, <strong>Morteza Zakeri-Nasrabadi</strong>, Aron T. Hill, Chandan Karmakar — <em>Elsevier BV</em></span><a class="pub-en__doi" href="https://doi.org/10.2139/ssrn.4698727" target="_blank" rel="noopener">doi:10.2139/ssrn.4698727</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Dynamic domain testing with multi-agent Markov chain Monte Carlo method</span><span class="pub-en__meta">Roshan Golmohammadi, Saeed Parsa, <strong>Morteza Zakeri-Nasrabadi</strong> — <em>Soft Computing</em></span><a class="pub-en__doi" href="https://doi.org/10.1007/s00500-024-09680-5" target="_blank" rel="noopener">doi:10.1007/s00500-024-09680-5</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Natural language requirements testability measurement based on requirement smells</span><span class="pub-en__meta"><strong>Morteza Zakeri-Nasrabadi</strong>, Saeed Parsa — <em>Neural Computing and Applications</em></span><a class="pub-en__doi" href="https://doi.org/10.1007/s00521-024-09730-x" target="_blank" rel="noopener">doi:10.1007/s00521-024-09730-x</a></span>
+
+
+### 2023
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Estimating 'Depth of Layer' (DOL) in Ion-Exchanged Glasses Using Explainable Machine Learning</span><span class="pub-en__meta">Omid Banapour Ghaffari, Bijan Eftekhari Yekta, <strong>Morteza Zakeri-Nasrabadi</strong> — <em>Elsevier BV</em></span><a class="pub-en__doi" href="https://doi.org/10.2139/ssrn.4597581" target="_blank" rel="noopener">doi:10.2139/ssrn.4597581</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Supporting single responsibility through automated extract method refactoring</span><span class="pub-en__meta">Alireza Ardalani, Saeed Parsa, <strong>Morteza Zakeri-Nasrabadi</strong>, Alexander Chatzigeorgiou — <em>Empirical Software Engineering</em></span><a class="pub-en__doi" href="https://doi.org/10.1007/s10664-023-10427-3" target="_blank" rel="noopener">doi:10.1007/s10664-023-10427-3</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">A systematic literature review on source code similarity measurement and clone detection: Techniques, applications, and challenges</span><span class="pub-en__meta"><strong>Morteza Zakeri-Nasrabadi</strong>, Saeed Parsa, Mohammad Ramezani, Chanchal Roy, Masoud Ekhtiarzadeh — <em>Journal of Systems and Software</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.jss.2023.111796" target="_blank" rel="noopener">doi:10.1016/j.jss.2023.111796</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">A Systematic Literature Review on the Code Smells Datasets and Validation Mechanisms</span><span class="pub-en__meta"><strong>Morteza Zakeri-Nasrabadi</strong>, Saeed Parsa, Ehsan Esmaili, Fabio Palomba — <em>ACM Computing Surveys</em></span><a class="pub-en__doi" href="https://doi.org/10.1145/3596908" target="_blank" rel="noopener">doi:10.1145/3596908</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Method name recommendation based on source code metrics</span><span class="pub-en__meta">Saeed Parsa, <strong>Morteza Zakeri-Nasrabadi</strong>, Masoud Ekhtiarzadeh, Mohammad Ramezani — <em>Journal of Computer Languages</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.cola.2022.101177" target="_blank" rel="noopener">doi:10.1016/j.cola.2022.101177</a></span>
+
+
+### 2022
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">An ensemble meta-estimator to predict source code testability</span><span class="pub-en__meta"><strong>Morteza Zakeri-Nasrabadi</strong>, Saeed Parsa — <em>Applied Soft Computing</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.asoc.2022.109562" target="_blank" rel="noopener">doi:10.1016/j.asoc.2022.109562</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">An automated extract method refactoring approach to correct the long method code smell</span><span class="pub-en__meta">Mahnoosh Shahidi, Mehrdad Ashtiani, <strong>Morteza Zakeri-Nasrabadi</strong> — <em>Journal of Systems and Software</em></span><a class="pub-en__doi" href="https://doi.org/10.1016/j.jss.2022.111221" target="_blank" rel="noopener">doi:10.1016/j.jss.2022.111221</a></span>
+
+
+### 2021
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Learning to predict test effectiveness</span><span class="pub-en__meta"><strong>Morteza Zakeri‐Nasrabadi</strong>, Saeed Parsa — <em>International Journal of Intelligent Systems</em></span><a class="pub-en__doi" href="https://doi.org/10.1002/int.22722" target="_blank" rel="noopener">doi:10.1002/int.22722</a></span>
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">A comprehensive survey on non-invasive wearable bladder volume monitoring systems</span><span class="pub-en__meta"><strong>Morteza Zakeri Nasrabadi</strong>, Hamideh Tabibi, Mahsa Salmani, Mahdieh Torkashvand, Eisa Zarepour — <em>Medical &amp; Biological Engineering &amp; Computing</em></span><a class="pub-en__doi" href="https://doi.org/10.1007/s11517-021-02395-x" target="_blank" rel="noopener">doi:10.1007/s11517-021-02395-x</a></span>
+
+
+### 2020
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Format-aware learn&amp;fuzz: deep test data generation for efficient fuzzing</span><span class="pub-en__meta"><strong>Morteza Zakeri Nasrabadi</strong>, Saeed Parsa, Akram Kalaee — <em>Neural Computing and Applications</em></span><a class="pub-en__doi" href="https://doi.org/10.1007/s00521-020-05039-7" target="_blank" rel="noopener">doi:10.1007/s00521-020-05039-7</a></span>
+
+
+## Conference papers
+
+
+### 2021
+
+- <span class="pub-en" dir="ltr"><span class="pub-en__title">Learning to Predict Software Testability</span><span class="pub-en__meta"><strong>Morteza Zakeri Nasrabadi</strong>, Saeed Parsa — <em>2021 26th International Computer Conference, Computer Society of Iran (CSICC)</em></span><a class="pub-en__doi" href="https://doi.org/10.1109/CSICC52343.2021.9420548" target="_blank" rel="noopener">doi:10.1109/CSICC52343.2021.9420548</a></span>
+
+
+---
+
+A few national-journal and conference entries are maintained only on the Persian site. See [Google Scholar](https://scholar.google.com/citations?user=km5DzwwAAAAJ&hl=en){ target="_blank" } for the complete list.

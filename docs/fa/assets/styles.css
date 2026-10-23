@@ -1,0 +1,1119 @@
+/* =========================================================================
+   ISERL — design layer (Persian / RTL)
+   Overrides Material's tokens. Keep in sync with docs/en/assets/styles.css;
+   only the "Persian typography" block at the end is language-specific.
+   ========================================================================= */
+
+/* --- 1. Brand tokens ---------------------------------------------------- */
+
+[data-md-color-primary="custom"] {
+  --md-footer-bg-color:         #16294a;
+  --md-footer-bg-color--dark:   #0b2140;
+  --md-primary-fg-color:        #12325c;
+  --md-primary-fg-color--light: #1e4b85;
+  --md-primary-fg-color--dark:  #0b2140;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, .7);
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color:             #b45309;
+  --md-accent-fg-color--transparent: rgba(180, 83, 9, .1);
+  --md-accent-bg-color:             #ffffff;
+  --md-accent-bg-color--light:      rgba(255, 255, 255, .7);
+}
+
+:root {
+  --brand-ink:      #12325c;
+  --brand-ink-2:    #1e4b85;
+  --brand-accent:   #b45309;
+  --brand-surface:  #ffffff;
+  --brand-surface-2:#f5f7fa;
+  --brand-border:   #e2e6ec;
+  --brand-muted:    #5b6473;
+  --brand-radius:   .75rem;
+  --brand-shadow:   0 1px 2px rgba(16, 24, 40, .04), 0 8px 24px rgba(16, 24, 40, .06);
+  --brand-shadow-lg:0 2px 4px rgba(16, 24, 40, .06), 0 16px 40px rgba(16, 24, 40, .1);
+  --brand-hero-from:#12325c;
+  --brand-hero-to:  #1d4a80;
+}
+
+/* Body link colour: distinct from body text, but still restrained. */
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #1e4b85;
+  --md-default-fg-color: #1f2430;
+  --md-default-fg-color--light: #5b6473;
+}
+
+/* Dark scheme: navy-tinted surfaces instead of Material's neutral grey. */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:       #0f1724;
+  --md-default-bg-color--light: #151d2c;
+  --md-typeset-a-color:        #8fb3e0;
+  --md-code-bg-color:          #151d2c;
+
+  --brand-ink:      #cfe0f7;
+  --brand-ink-2:    #8fb3e0;
+  --brand-accent:   #e9a23b;
+  --brand-surface:  #151d2c;
+  --brand-surface-2:#111827;
+  --brand-border:   #26314a;
+  --brand-muted:    #9aa6bb;
+  --brand-shadow:   0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .3);
+  --brand-shadow-lg:0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .45);
+  --brand-hero-from:#0d1a2e;
+  --brand-hero-to:  #14314f;
+}
+
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #0d1a2e;
+}
+
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: #e9a23b;
+  --md-accent-fg-color--transparent: rgba(233, 162, 59, .12);
+}
+
+/* --- 2. Typography ------------------------------------------------------ */
+
+.md-typeset {
+  font-size: .8rem;
+  line-height: 2;                 /* Persian needs more leading than Latin */
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--brand-ink);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.md-typeset h1 { font-size: 1.85rem; line-height: 1.6; margin-bottom: .8rem; }
+.md-typeset h2 {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-top: 2.2rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--brand-border);
+}
+.md-typeset h3 { font-size: 1.05rem; line-height: 1.7; margin-top: 1.6rem; }
+
+.md-typeset a { text-underline-offset: .18em; }
+.md-typeset a:hover { color: var(--md-accent-fg-color); }
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--brand-border);
+  margin: 2.2rem 0;
+}
+
+/* Landing pages hide the sidebars, so cap top-level prose to a readable
+   measure while cards and heroes still span the full width. */
+.md-typeset > p,
+.md-typeset > ul,
+.md-typeset > ol { max-width: 48rem; }
+
+/* --- 3. Header, tabs, footer ------------------------------------------- */
+
+.md-header {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.55rem;
+  width: auto;
+}
+
+.md-tabs { border-top: 1px solid rgba(255, 255, 255, .1); }
+.md-tabs__link { opacity: .8; font-weight: 500; }
+.md-tabs__link:hover,
+.md-tabs__link--active { opacity: 1; }
+
+.md-nav__title { font-weight: 700; }
+
+/* --- 4. Hero ------------------------------------------------------------ */
+
+.md-typeset .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: center;
+  margin: 0 0 1.4rem;
+  padding: 2rem 1.3rem;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(233, 162, 59, .18), transparent 45%),
+    linear-gradient(135deg, var(--brand-hero-from), var(--brand-hero-to));
+  color: #fff;
+  box-shadow: var(--brand-shadow-lg);
+}
+
+/* Dotted grid texture, faded towards the edges. */
+.md-typeset .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(rgba(255, 255, 255, .14) 1px, transparent 1.2px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 75%);
+          mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 75%);
+}
+
+@media screen and (min-width: 45em) {
+  .md-typeset .hero { padding: 2.6rem 2.2rem; }
+}
+
+/* Two slow-drifting colour blobs behind the content. */
+.md-typeset .hero__glow,
+.md-typeset .hero__glow::after {
+  position: absolute;
+  z-index: -1;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+.md-typeset .hero__glow {
+  inset-block-start: -8rem;
+  inset-inline-start: -6rem;
+  background: rgba(64, 132, 214, .45);
+  animation: hero-drift 18s ease-in-out infinite alternate;
+}
+.md-typeset .hero__glow::after {
+  content: "";
+  inset-block-start: 14rem;
+  inset-inline-start: 30rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(233, 162, 59, .28);
+  animation: hero-drift 22s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes hero-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(4rem, 2rem) scale(1.15); }
+}
+
+/* Two columns once there is room; single column on narrow viewports. */
+@media screen and (min-width: 60em) {
+  .md-typeset .hero {
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: 2.6rem;
+    padding: 3.4rem 3rem;
+  }
+}
+
+.md-typeset .hero__body { min-width: 0; }
+
+/* The hero heading is decorative chrome — no permalink anchor. */
+.md-typeset .hero .headerlink { display: none; }
+
+.md-typeset .hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 1rem;
+  padding: .3rem .8rem;
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .85);
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.md-typeset .hero__dot {
+  flex: none;
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: #f5b54a;
+  box-shadow: 0 0 0 0 rgba(245, 181, 74, .6);
+  animation: hero-pulse 2.4s ease-out infinite;
+}
+
+@keyframes hero-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(245, 181, 74, .55); }
+  70%  { box-shadow: 0 0 0 .5rem rgba(245, 181, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 181, 74, 0); }
+}
+
+.md-typeset .hero__title {
+  margin: 0 0 .8rem;
+  font-size: 1.8rem;
+  line-height: 1.45;
+  font-weight: 800;
+  color: #fff;
+}
+@media screen and (min-width: 60em) {
+  .md-typeset .hero__title { font-size: 2.3rem; }
+}
+
+.md-typeset .hero__accent {
+  background: linear-gradient(90deg, #ffd27a, #f5a524 60%, #ffd27a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  animation: hero-shine 8s linear infinite;
+}
+
+@keyframes hero-shine { to { background-position: 200% center; } }
+
+.md-typeset .hero__tagline {
+  margin: 0 0 1.5rem;
+  font-size: .86rem;
+  line-height: 2;
+  color: rgba(255, 255, 255, .86);
+  max-width: 36rem;
+}
+
+.md-typeset .hero__actions { margin: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+
+.md-typeset ul.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.4rem;
+  margin: 1.6rem 0 0;
+  padding: 1rem 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  font-size: .68rem;
+  color: rgba(255, 255, 255, .72);
+}
+.md-typeset .hero__facts li { margin: 0; }
+.md-typeset .hero__facts strong {
+  color: #fff;
+  font-size: 1.15em;
+  margin-inline-end: .2rem;
+}
+
+.md-typeset .hero__art {
+  position: relative;
+  width: 13rem;
+  max-width: 70%;
+  justify-self: center;
+}
+@media screen and (min-width: 60em) {
+  .md-typeset .hero__art { width: 15rem; max-width: 100%; }
+}
+
+.md-typeset .hero__art p { margin: 0; }
+
+.md-typeset .hero__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .35), 0 0 0 6px rgba(255, 255, 255, .06);
+  animation: hero-float 7s ease-in-out infinite;
+}
+
+/* Dashed ring orbiting the medallion. */
+.md-typeset .hero__orbit {
+  position: absolute;
+  inset: -.9rem;
+  border: 1px dashed rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  animation: hero-spin 40s linear infinite;
+}
+.md-typeset .hero__orbit::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 12%;
+  inset-inline-start: 8%;
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: #f5b54a;
+  box-shadow: 0 0 12px #f5b54a;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes hero-spin { to { transform: rotate(360deg); } }
+
+/* Buttons on the navy panels (hero, call-to-action band). */
+.md-typeset .hero .md-button,
+.md-typeset .cta .md-button {
+  border-color: rgba(255, 255, 255, .55);
+  color: #fff;
+}
+.md-typeset .hero .md-button--primary,
+.md-typeset .cta .md-button--primary {
+  background-color: #fff;
+  border-color: #fff;
+  /* Fixed navy: the panels are dark in both schemes, so this must not
+     follow --brand-ink (which lightens in the slate scheme). */
+  color: #12325c;
+}
+.md-typeset .hero .md-button:hover,
+.md-typeset .cta .md-button:hover {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #fff;
+}
+
+/* --- 5. Buttons --------------------------------------------------------- */
+
+.md-typeset .md-button {
+  border-radius: .5rem;
+  border-width: 1px;
+  padding: .5rem 1.1rem;
+  font-weight: 600;
+  transition: background-color .15s, color .15s, border-color .15s, transform .15s;
+}
+.md-typeset .md-button:hover { transform: translateY(-1px); }
+
+/* --- 6. Cards ----------------------------------------------------------- */
+
+.md-typeset .grid { gap: 1rem; }
+
+.md-typeset .grid > .card,
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  background-color: var(--brand-surface);
+  box-shadow: var(--brand-shadow);
+  padding: 1.1rem 1.2rem;
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+
+.md-typeset .grid > .card:hover,
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-ink-2);
+  box-shadow: var(--brand-shadow-lg);
+}
+
+/* Roster cards: centre the whole card when it carries a portrait. */
+.md-typeset .grid > .card:has(img),
+.md-typeset .grid.cards > ul > li:has(img) { text-align: center; }
+
+/* One avatar treatment everywhere — overrides the per-page width/align
+   attributes, which currently differ from page to page. */
+.md-typeset .grid > .card img,
+.md-typeset .grid.cards > ul > li img {
+  float: none;
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  margin: .7rem auto .9rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--brand-surface-2);
+  box-shadow: 0 0 0 1px var(--brand-border), 0 4px 12px rgba(16, 24, 40, .1);
+}
+
+.md-typeset .grid > .card strong:first-of-type,
+.md-typeset .grid.cards > ul > li strong:first-of-type {
+  color: var(--brand-ink);
+  font-size: .95em;
+}
+
+/* Social icon row at the foot of a person card. */
+.md-typeset .grid > .card .twemoji,
+.md-typeset .grid.cards > ul > li .twemoji { vertical-align: -.15em; }
+
+.md-typeset .grid > .card a .twemoji svg,
+.md-typeset .grid.cards > ul > li a .twemoji svg {
+  height: 1.05em;
+  fill: var(--brand-muted);
+  transition: fill .15s;
+}
+.md-typeset .grid > .card a:hover .twemoji svg,
+.md-typeset .grid.cards > ul > li a:hover .twemoji svg { fill: var(--md-accent-fg-color); }
+
+/* Course cards are built as tables inside a .grid — make them read as cards. */
+.md-typeset .grid table:not([class]) {
+  width: 100%;
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--brand-shadow);
+  overflow: hidden;
+}
+.md-typeset .grid table:not([class]) th {
+  background-color: var(--brand-ink);
+  color: #fff;
+  font-size: .95em;
+  padding: .8rem 1rem;
+}
+.md-typeset .grid table:not([class]) td {
+  border: 0;
+  padding: .7rem 1rem;
+  line-height: 1.9;
+}
+/* Card action buttons: compact and identical in size, whatever the label. */
+.md-typeset .grid table:not([class]) .md-button {
+  box-sizing: border-box;
+  width: 9.5rem;
+  margin: .15rem .2rem;
+  padding: .25rem .6rem;
+  font-size: .7rem;
+  line-height: 1.6;
+  text-align: center;
+  white-space: nowrap;
+}
+.md-typeset .grid table:not([class]) img {
+  border-radius: .5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Publications -------------------------------------------------------
+   Each entry pairs a localized title with a Latin metadata block. The block
+   is dir="ltr" so DOIs and author lists keep their own ordering inside RTL
+   prose (a bare "10.1016/x" renders reversed under an RTL base direction). */
+
+.md-typeset .pub-en {
+  display: block;
+  direction: ltr;
+  text-align: left;
+  margin-top: .15rem;
+}
+
+.md-typeset .pub-en__title,
+.md-typeset .pub-en__meta,
+.md-typeset .pub-en__doi { display: block; }
+
+.md-typeset .pub-en__title { line-height: 1.55; }
+
+.md-typeset .pub-en__meta {
+  color: var(--brand-muted);
+  font-size: .88em;
+  line-height: 1.6;
+}
+
+.md-typeset .pub-en__doi {
+  font-size: .82em;
+  word-break: break-all;
+}
+
+.md-typeset .pub-en + *,
+.md-typeset li:has(> .pub-en) { margin-bottom: .1rem; }
+
+/* --- 6a. Tab dropdowns --------------------------------------------------
+   overrides/partials/tabs-item.html adds a sub-page menu to every tab that
+   has children. It opens on hover and on keyboard focus. Tabs only exist
+   from 76.25em up; below that the drawer already lists sub-pages. */
+
+@media screen and (min-width: 76.25em) {
+  /* Upstream clips the tab bar (overflow + paint containment) so it can
+     scroll sideways; the menus need to paint outside it. */
+  .md-tabs,
+  .md-tabs__list {
+    overflow: visible;
+    contain: none;
+  }
+
+  .md-tabs__item { position: relative; }
+
+  .md-tabs__item--dropdown > .md-tabs__link { align-items: center; }
+
+  .md-tabs__caret {
+    display: inline-block;
+    width: .32rem;
+    height: .32rem;
+    margin-inline-start: .4rem;
+    margin-block-start: -.2rem;
+    border: solid currentcolor;
+    border-width: 0 .09rem .09rem 0;
+    transform: rotate(45deg);
+    transition: transform .25s cubic-bezier(.1, .7, .1, 1);
+  }
+
+  .md-tabs__dropdown {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: -.3rem;
+    z-index: 5;
+    min-width: 13rem;
+    padding-block-start: .3rem;   /* hover bridge between tab and menu */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-.4rem) scale(.98);
+    transform-origin: top;
+    transition: opacity .18s ease, transform .22s cubic-bezier(.1, .7, .1, 1), visibility 0s linear .22s;
+  }
+
+  .md-tabs__item--dropdown:hover > .md-tabs__dropdown,
+  .md-tabs__item--dropdown:focus-within > .md-tabs__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  .md-tabs__item--dropdown:hover .md-tabs__caret,
+  .md-tabs__item--dropdown:focus-within .md-tabs__caret {
+    transform: translateY(.15rem) rotate(225deg);
+  }
+
+  .md-tabs__dropdown-list {
+    margin: 0;
+    padding: .35rem;
+    list-style: none;
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--brand-border);
+    border-radius: .75rem;
+    box-shadow: var(--brand-shadow-lg);
+  }
+
+  .md-tabs__dropdown-item { margin: 0; }
+
+  .md-tabs__dropdown-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    font-size: .68rem;
+    line-height: 1.6;
+    white-space: nowrap;
+    color: var(--md-default-fg-color);
+    transition: background-color .15s, color .15s, padding .2s;
+  }
+
+  .md-tabs__dropdown-link:hover,
+  .md-tabs__dropdown-link:focus-visible {
+    color: var(--md-accent-fg-color);
+    background-color: var(--md-accent-fg-color--transparent);
+    padding-inline-start: 1rem;
+    outline: none;
+  }
+
+  .md-tabs__dropdown-link--active {
+    color: var(--brand-ink-2);
+    font-weight: 600;
+    background-color: var(--brand-surface-2);
+  }
+
+  .md-tabs__dropdown-external {
+    font-size: .85em;
+    opacity: .55;
+  }
+}
+
+/* --- 6b. Landing sections ------------------------------------------------ */
+
+.md-typeset .section-head {
+  max-width: 44rem;
+  margin: 3.2rem 0 1.4rem;
+}
+
+.md-typeset .section-head__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 .3rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .section-head__kicker::before {
+  content: "";
+  width: 1.4rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentcolor;
+}
+
+.md-typeset .section-head__title {
+  margin: 0 0 .6rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.md-typeset .section-head__lead,
+.md-typeset .split__intro > p {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset > p.center { max-width: none; text-align: center; margin-top: 1.4rem; }
+
+/* Grid items are Markdown links, which Python-Markdown wraps in <p>. */
+.md-typeset .pillars > p,
+.md-typeset .tiles > p,
+.md-typeset .products > p,
+.md-typeset .courses > p { display: contents; }
+
+/* Shared card behaviour: lift, border tint and a pointer-following glow
+   (--mx/--my are set by assets/landing.js). */
+.md-typeset a.pillar,
+.md-typeset a.tile,
+.md-typeset a.product,
+.md-typeset a.course {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  color: var(--md-default-fg-color);
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  border-radius: 1rem;
+  box-shadow: var(--brand-shadow);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s, border-color .25s, opacity .6s ease;
+}
+.md-typeset a.pillar::before,
+.md-typeset a.tile::before,
+.md-typeset a.product::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(18rem circle at var(--mx, 50%) var(--my, 0%), var(--md-accent-fg-color--transparent), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.md-typeset a.pillar:hover,
+.md-typeset a.tile:hover,
+.md-typeset a.product:hover,
+.md-typeset a.course:hover,
+.md-typeset a.pillar:focus-visible,
+.md-typeset a.tile:focus-visible,
+.md-typeset a.product:focus-visible,
+.md-typeset a.course:focus-visible {
+  color: var(--md-default-fg-color);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--md-accent-fg-color) 45%, var(--brand-border));
+  box-shadow: var(--brand-shadow-lg);
+}
+.md-typeset a.pillar:hover::before,
+.md-typeset a.tile:hover::before,
+.md-typeset a.product:hover::before { opacity: 1; }
+
+/* Icon chip used by pillars, tiles and products. */
+.md-typeset .pillar__icon,
+.md-typeset .tile__icon,
+.md-typeset .product__icon {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: .8rem;
+  background: linear-gradient(135deg, #12325c, #2a64a8);
+  box-shadow: 0 6px 16px rgba(18, 50, 92, .25);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+.md-typeset .pillar__icon svg,
+.md-typeset .tile__icon svg,
+.md-typeset .product__icon svg { fill: #fff; height: 1.15rem; width: 1.15rem; }
+.md-typeset a:hover .pillar__icon,
+.md-typeset a:hover .tile__icon,
+.md-typeset a:hover .product__icon { transform: rotate(-6deg) scale(1.06); }
+
+.md-typeset .pillar__title,
+.md-typeset .tile__title,
+.md-typeset .product__title,
+.md-typeset .course__title {
+  display: block;
+  font-weight: 700;
+  color: var(--brand-ink);
+}
+
+.md-typeset .pillar__text,
+.md-typeset .tile__text,
+.md-typeset .product__text,
+.md-typeset .course__text {
+  display: block;
+  font-size: .72rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Pillars: the three areas of activity. */
+.md-typeset .pillars {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+@media screen and (min-width: 45em) {
+  .md-typeset .pillars { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.md-typeset a.pillar {
+  flex-direction: column;
+  gap: .6rem;
+  padding: 1.5rem 1.4rem 1.3rem;
+}
+.md-typeset .pillar__num {
+  position: absolute;
+  inset-block-start: .9rem;
+  inset-inline-end: 1.2rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--brand-border);
+  transition: color .3s;
+}
+.md-typeset a.pillar:hover .pillar__num { color: var(--md-accent-fg-color--transparent); }
+.md-typeset .pillar__title { font-size: 1.05rem; margin-top: .4rem; }
+.md-typeset .pillar__text { flex: 1; }
+.md-typeset .pillar__more {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .pillar__more svg,
+.md-typeset .product__go svg {
+  fill: currentcolor;
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+}
+.md-typeset a.pillar:hover .pillar__more svg { transform: translateX(.25rem); }
+[dir="rtl"] .md-typeset a.pillar:hover .pillar__more svg { transform: translateX(-.25rem); }
+
+/* Split: research intro beside a 2×2 grid of tiles. */
+.md-typeset .split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+  align-items: start;
+}
+@media screen and (min-width: 60em) {
+  .md-typeset .split { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.4rem; }
+}
+.md-typeset .split__intro .section-head__title { margin-top: 0; }
+
+.md-typeset ol.steps {
+  margin: 1.1rem 0 1.3rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.md-typeset ol.steps li {
+  position: relative;
+  margin: 0 0 .55rem;
+  padding-inline-start: 2.2rem;
+  font-weight: 600;
+  counter-increment: step;
+}
+.md-typeset ol.steps li::before {
+  content: counter(step);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: .1em;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: .68rem;
+  color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset .tiles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .9rem;
+}
+@media screen and (min-width: 30em) {
+  .md-typeset .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.md-typeset a.tile {
+  flex-direction: column;
+  gap: .45rem;
+  padding: 1.1rem 1.15rem;
+}
+.md-typeset .tile__icon { width: 2.1rem; height: 2.1rem; border-radius: .65rem; }
+.md-typeset .tile__icon svg { height: .95rem; width: .95rem; }
+.md-typeset .tile__title { font-size: .82rem; }
+
+/* Band: tinted full-width panel for the industry section. */
+.md-typeset .band {
+  margin: 3.4rem 0 0;
+  padding: .2rem 1.6rem 1.6rem;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(60% 80% at 100% 0%, var(--md-accent-fg-color--transparent), transparent 70%),
+    var(--brand-surface-2);
+  border: 1px solid var(--brand-border);
+}
+@media screen and (min-width: 60em) {
+  .md-typeset .band { padding: .4rem 2.4rem 2.2rem; }
+}
+.md-typeset .band .section-head { margin-top: 2rem; }
+
+.md-typeset .products {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+@media screen and (min-width: 45em) {
+  .md-typeset .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.md-typeset a.product {
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.3rem;
+}
+.md-typeset .product__body { flex: 1; min-width: 0; }
+.md-typeset .product__title { font-size: .92rem; margin-bottom: .15rem; }
+.md-typeset .product__go {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+  transition: background-color .25s, color .25s;
+}
+.md-typeset a.product:hover .product__go {
+  color: #fff;
+  background: var(--md-accent-fg-color);
+}
+.md-typeset .band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 1.4rem 0 0;
+}
+
+/* Courses: image cards. */
+.md-typeset .courses {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+@media screen and (min-width: 40em) {
+  .md-typeset .courses { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (min-width: 76.25em) {
+  .md-typeset .courses { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.md-typeset a.course { flex-direction: column; }
+.md-typeset .course__media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--brand-surface-2);
+}
+.md-typeset .course__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform .6s cubic-bezier(.2, .8, .2, 1);
+}
+.md-typeset a.course:hover .course__media img { transform: scale(1.06); }
+.md-typeset .course__body {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: .9rem 1.05rem 1.1rem;
+}
+.md-typeset .course__tag {
+  align-self: flex-start;
+  padding: .05rem .55rem;
+  font-size: .6rem;
+  font-weight: 700;
+  border-radius: 999px;
+  color: var(--brand-ink-2);
+  background: color-mix(in srgb, var(--brand-ink-2) 12%, transparent);
+}
+.md-typeset .course__title { font-size: .85rem; }
+
+/* Call to action band at the foot of the page. */
+.md-typeset .cta {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem 2rem;
+  margin: 3.6rem 0 1rem;
+  padding: 2rem 2.2rem;
+  border-radius: 1.25rem;
+  color: #fff;
+  background:
+    radial-gradient(70% 120% at 0% 100%, rgba(233, 162, 59, .25), transparent 60%),
+    linear-gradient(135deg, var(--brand-hero-from), var(--brand-hero-to));
+  box-shadow: var(--brand-shadow-lg);
+}
+.md-typeset .cta__body { max-width: 34rem; }
+.md-typeset .cta__title {
+  margin: 0 0 .3rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.md-typeset .cta__text { margin: 0; color: rgba(255, 255, 255, .82); }
+.md-typeset .cta__actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0; }
+
+/* Topic ticker under the hero. Always laid out LTR so the scroll maths is
+   the same in both languages; each label keeps its own direction. */
+.md-typeset .marquee {
+  display: flex;
+  direction: ltr;
+  overflow: hidden;
+  margin: 0 0 1rem;
+  padding: .5rem 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.md-typeset ul.marquee__track {
+  display: flex;
+  flex: none;
+  gap: .6rem;
+  min-width: 100%;
+  margin: 0;
+  padding: 0 .3rem;
+  list-style: none;
+  animation: marquee 45s linear infinite;
+}
+.md-typeset .marquee:hover .marquee__track { animation-play-state: paused; }
+.md-typeset .marquee__track li {
+  flex: none;
+  margin: 0;
+  padding: .3rem .9rem;
+  font-size: .68rem;
+  font-weight: 600;
+  white-space: nowrap;
+  unicode-bidi: plaintext;
+  color: var(--md-default-fg-color--light);
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  border-radius: 999px;
+}
+.md-typeset .marquee__track li::before {
+  content: "";
+  display: inline-block;
+  width: .35rem;
+  height: .35rem;
+  margin: 0 .5rem .1rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: var(--md-accent-fg-color);
+}
+
+@keyframes marquee { to { transform: translateX(calc(-100% - .6rem)); } }
+
+/* Scroll reveal. Only active once assets/landing.js has run, so the page
+   is fully visible without JavaScript. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .7s cubic-bezier(.2, .8, .2, 1);
+}
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+/* Cards keep their hover lift once revealed. */
+.js-reveal a.reveal.is-visible:hover { transform: translateY(-4px); }
+
+[data-md-color-scheme="slate"] .md-typeset .pillar__icon,
+[data-md-color-scheme="slate"] .md-typeset .tile__icon,
+[data-md-color-scheme="slate"] .md-typeset .product__icon {
+  background: linear-gradient(135deg, #1e4b85, #3b7bc4);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
+/* --- 7. Content blocks -------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius);
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th { background-color: var(--brand-surface-2); }
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--brand-radius);
+  border-width: 1px;
+  box-shadow: var(--brand-shadow);
+}
+
+.md-typeset img { border-radius: .4rem; }
+.md-typeset .hero__art img { border-radius: 50%; }
+
+/* Legacy helper kept for pages that still reference it. */
+.circle-image {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid > .card,
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .md-button { transition: none; }
+  .md-typeset .grid > .card:hover,
+  .md-typeset .grid.cards > ul > li:hover,
+  .md-typeset .md-button:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .hero__glow,
+  .md-typeset .hero__glow::after,
+  .md-typeset .hero__dot,
+  .md-typeset .hero__accent,
+  .md-typeset .hero__art img,
+  .md-typeset .hero__orbit { animation: none; }
+  .md-typeset .marquee { -webkit-mask-image: none; mask-image: none; }
+  .md-typeset .marquee__track { animation: none; flex-wrap: wrap; flex: 1; justify-content: center; }
+  .md-typeset .marquee__track[aria-hidden="true"] { display: none; }
+  .md-typeset a.pillar,
+  .md-typeset a.tile,
+  .md-typeset a.product,
+  .md-typeset a.course,
+  .md-tabs__dropdown { transition: none; }
+  .md-typeset a.pillar:hover,
+  .md-typeset a.tile:hover,
+  .md-typeset a.product:hover,
+  .md-typeset a.course:hover,
+  .md-typeset a.course:hover .course__media img { transform: none; }
+}
+
+/* --- 8. Persian typography (this file only) ----------------------------- */
+
+/* Latin runs inside Persian prose: isolate them so surrounding punctuation
+   and brackets stay on the correct side under the bidi algorithm. */
+.md-typeset code,
+.md-typeset kbd,
+.md-typeset a,
+.md-typeset strong { unicode-bidi: isolate; }
+
+/* Code is always LTR, regardless of the surrounding paragraph direction. */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset .highlight {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Persian has no italic; slanted Persian glyphs are a Latin artefact. */
+.md-typeset em { font-style: normal; font-weight: 600; }
+
+.md-typeset ul,
+.md-typeset ol { line-height: 1.95; }
+
+.md-typeset li { margin-bottom: .3em; }
